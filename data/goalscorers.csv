@@ -1,0 +1,2038 @@
+date,home_team,away_team,team,scorer,minute,own_goal,penalty
+1984-04-08,England,Denmark,England,Linda Curl,31,FALSE,FALSE
+1984-04-08,England,Denmark,Denmark,Inge Hindkjær,49,FALSE,TRUE
+1984-04-08,England,Denmark,England,Elisabeth Deighan,51,FALSE,FALSE
+1984-04-08,Italy,Sweden,Italy,Carolina Morace,18,FALSE,FALSE
+1984-04-08,Italy,Sweden,Sweden,Helen Johansson,23,FALSE,FALSE
+1984-04-08,Italy,Sweden,Italy,Elisabetta Vignotto,31,FALSE,FALSE
+1984-04-08,Italy,Sweden,Sweden,Pia Sundhage,48,FALSE,FALSE
+1984-04-08,Italy,Sweden,Sweden,Doris Uusitalo,57,FALSE,FALSE
+1984-04-28,Denmark,England,England,Debbie Bampton,44,FALSE,FALSE
+1984-04-28,Sweden,Italy,Sweden,Pia Sundhage,28,FALSE,FALSE
+1984-04-28,Sweden,Italy,Italy,Carolina Morace,50,FALSE,FALSE
+1984-04-28,Sweden,Italy,Sweden,Pia Sundhage,52,FALSE,FALSE
+1984-05-12,Sweden,England,Sweden,Pia Sundhage,57,FALSE,FALSE
+1984-05-27,England,Sweden,England,Linda Curl,31,FALSE,FALSE
+1987-06-11,Norway,Italy,Norway,Trude Stendal,40,FALSE,FALSE
+1987-06-11,Norway,Italy,Norway,Heidi Støre,73,FALSE,FALSE
+1987-06-11,Sweden,England,Sweden,Anette Börjesson,32,FALSE,FALSE
+1987-06-11,Sweden,England,England,Jackie Sherrard,35,FALSE,FALSE
+1987-06-11,Sweden,England,England,Kerry Davis,43,FALSE,FALSE
+1987-06-11,Sweden,England,Sweden,Gunilla Axén,50,FALSE,FALSE
+1987-06-11,Sweden,England,Sweden,Gunilla Axén,100,FALSE,FALSE
+1987-06-13,Italy,England,England,Kerry Davis,4,FALSE,TRUE
+1987-06-13,Italy,England,Italy,Carolina Morace,36,FALSE,FALSE
+1987-06-13,Italy,England,Italy,Elisabetta Vignotto,50,FALSE,FALSE
+1987-06-14,Norway,Sweden,Norway,Trude Stendal,28,FALSE,FALSE
+1987-06-14,Norway,Sweden,Norway,Trude Stendal,72,FALSE,FALSE
+1987-06-14,Norway,Sweden,Sweden,Lena Videkull,73,FALSE,FALSE
+1989-06-28,Germany,Italy,Germany,Silvia Neid,57,FALSE,FALSE
+1989-06-28,Germany,Italy,Italy,Elisabetta Vignotto,72,FALSE,FALSE
+1989-06-28,Sweden,Norway,Norway,Linda Medalen,1,FALSE,FALSE
+1989-06-28,Sweden,Norway,Norway,Sissel Grude,52,FALSE,FALSE
+1989-06-28,Sweden,Norway,Sweden,Lena Videkull,54,FALSE,FALSE
+1989-06-30,Sweden,Italy,Italy,Feriana Ferraguzzi,28,FALSE,FALSE
+1989-06-30,Sweden,Italy,Sweden,Pia Sundhage,43,FALSE,FALSE
+1989-06-30,Sweden,Italy,Sweden,Helen Johansson,94,FALSE,FALSE
+1989-07-02,Germany,Norway,Germany,Ursula Lohn,22,FALSE,FALSE
+1989-07-02,Germany,Norway,Germany,Ursula Lohn,36,FALSE,FALSE
+1989-07-02,Germany,Norway,Germany,Heidi Mohr,45,FALSE,FALSE
+1989-07-02,Germany,Norway,Norway,Sissel Grude,54,FALSE,FALSE
+1989-07-02,Germany,Norway,Germany,Angelika Fehrmann,73,FALSE,FALSE
+1991-07-11,Germany,Italy,Germany,Heidi Mohr,30,FALSE,FALSE
+1991-07-11,Germany,Italy,Germany,Heidi Mohr,58,FALSE,FALSE
+1991-07-11,Germany,Italy,Germany,Sissy Raith,60,FALSE,FALSE
+1991-07-14,Denmark,Italy,Denmark,Helle Jensen,22,FALSE,FALSE
+1991-07-14,Denmark,Italy,Italy,Silvia Fiorini,68,FALSE,FALSE
+1991-07-14,Denmark,Italy,Denmark,Maura Furlotti,85,TRUE,FALSE
+1991-07-14,Germany,Norway,Norway,Birthe Hegstad,54,FALSE,FALSE
+1991-07-14,Germany,Norway,Germany,Heidi Mohr,62,FALSE,FALSE
+1991-07-14,Germany,Norway,Germany,Heidi Mohr,100,FALSE,FALSE
+1991-07-14,Germany,Norway,Germany,Silvia Neid,110,FALSE,FALSE
+1991-11-16,China PR,Norway,China PR,Ma Li,22,FALSE,FALSE
+1991-11-16,China PR,Norway,China PR,Liu Ailing,45,FALSE,FALSE
+1991-11-16,China PR,Norway,China PR,Liu Ailing,50,FALSE,FALSE
+1991-11-16,China PR,Norway,China PR,Sun Qingmei,75,FALSE,FALSE
+1991-11-17,Denmark,New Zealand,Denmark,Helle Jensen,15,FALSE,FALSE
+1991-11-17,Denmark,New Zealand,Denmark,Helle Jensen,40,FALSE,FALSE
+1991-11-17,Denmark,New Zealand,Denmark,Susan Mackensie,42,FALSE,FALSE
+1991-11-17,Germany,Nigeria,Germany,Silvia Neid,16,FALSE,FALSE
+1991-11-17,Germany,Nigeria,Germany,Heidi Mohr,32,FALSE,FALSE
+1991-11-17,Germany,Nigeria,Germany,Heidi Mohr,34,FALSE,FALSE
+1991-11-17,Germany,Nigeria,Germany,Gudrun Gottschlich,57,FALSE,FALSE
+1991-11-17,Japan,Brazil,Brazil,Elane Rego dos Santos,4,FALSE,FALSE
+1991-11-17,Sweden,United States,United States,Carin Jennings-Gabarra,40,FALSE,FALSE
+1991-11-17,Sweden,United States,United States,Carin Jennings-Gabarra,49,FALSE,FALSE
+1991-11-17,Sweden,United States,United States,Mia Hamm,62,FALSE,FALSE
+1991-11-17,Sweden,United States,Sweden,Lena Videkull,65,FALSE,FALSE
+1991-11-17,Sweden,United States,Sweden,Ingrid Johansson,71,FALSE,FALSE
+1991-11-17,Taiwan,Italy,Italy,Feriana Ferraguzzi,15,FALSE,FALSE
+1991-11-17,Taiwan,Italy,Italy,Adele Marsiletti,29,FALSE,FALSE
+1991-11-17,Taiwan,Italy,Italy,Carolina Morace,37,FALSE,FALSE
+1991-11-17,Taiwan,Italy,Italy,Carolina Morace,52,FALSE,FALSE
+1991-11-17,Taiwan,Italy,Italy,Carolina Morace,66,FALSE,FALSE
+1991-11-19,Brazil,United States,United States,April Heinrichs,23,FALSE,FALSE
+1991-11-19,Brazil,United States,United States,April Heinrichs,35,FALSE,FALSE
+1991-11-19,Brazil,United States,United States,Carin Jennings-Gabarra,38,FALSE,FALSE
+1991-11-19,Brazil,United States,United States,Michelle Akers,39,FALSE,FALSE
+1991-11-19,Brazil,United States,United States,Mia Hamm,63,FALSE,FALSE
+1991-11-19,China PR,Denmark,Denmark,Lisbet Kolding,24,FALSE,FALSE
+1991-11-19,China PR,Denmark,China PR,Sun Wen,37,FALSE,FALSE
+1991-11-19,China PR,Denmark,Denmark,Hanne Nissen,55,FALSE,FALSE
+1991-11-19,China PR,Denmark,China PR,Wei Haiying,76,FALSE,FALSE
+1991-11-19,Italy,Nigeria,Italy,Carolina Morace,68,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Lena Videkull,1,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Lena Videkull,11,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Anneli Andelén,15,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Malin Lundgren,25,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Helen Nilsson,27,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Pia Sundhage,34,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Anneli Andelén,60,FALSE,FALSE
+1991-11-19,Japan,Sweden,Sweden,Sayuri Yamaguchi,70,TRUE,FALSE
+1991-11-19,Norway,New Zealand,Norway,Terry McCahill,30,TRUE,FALSE
+1991-11-19,Norway,New Zealand,Norway,Linda Medalen,32,FALSE,FALSE
+1991-11-19,Norway,New Zealand,Norway,Linda Medalen,38,FALSE,FALSE
+1991-11-19,Norway,New Zealand,Norway,Hege Riise,49,FALSE,FALSE
+1991-11-19,Taiwan,Germany,Germany,Bettina Wiegmann,10,FALSE,TRUE
+1991-11-19,Taiwan,Germany,Germany,Heidi Mohr,21,FALSE,FALSE
+1991-11-19,Taiwan,Germany,Germany,Heidi Mohr,50,FALSE,FALSE
+1991-11-21,Brazil,Sweden,Sweden,Pia Sundhage,42,FALSE,TRUE
+1991-11-21,Brazil,Sweden,Sweden,Susanne Hedberg,56,FALSE,FALSE
+1991-11-21,China PR,New Zealand,China PR,Zhou Yang,20,FALSE,FALSE
+1991-11-21,China PR,New Zealand,China PR,Liu Ailing,22,FALSE,FALSE
+1991-11-21,China PR,New Zealand,China PR,Wu Weiying,24,FALSE,FALSE
+1991-11-21,China PR,New Zealand,China PR,Liu Ailing,60,FALSE,FALSE
+1991-11-21,China PR,New Zealand,New Zealand,Kim Nye,65,FALSE,FALSE
+1991-11-21,Italy,Germany,Germany,Heidi Mohr,67,FALSE,FALSE
+1991-11-21,Italy,Germany,Germany,Britta Unsleber,79,FALSE,FALSE
+1991-11-21,Japan,United States,United States,Michelle Akers,20,FALSE,FALSE
+1991-11-21,Japan,United States,United States,Michelle Akers,37,FALSE,FALSE
+1991-11-21,Japan,United States,United States,Wendy Gebauer,39,FALSE,FALSE
+1991-11-21,Norway,Denmark,Norway,Tina Svensson,14,FALSE,TRUE
+1991-11-21,Norway,Denmark,Denmark,Annette Thychosen,54,FALSE,TRUE
+1991-11-21,Norway,Denmark,Norway,Linda Medalen,56,FALSE,FALSE
+1991-11-21,Taiwan,Nigeria,Taiwan,Lin Mei-chun,38,FALSE,FALSE
+1991-11-21,Taiwan,Nigeria,Taiwan,Chou Tai-ying,55,FALSE,FALSE
+1991-11-24,China PR,Sweden,Sweden,Pia Sundhage,3,FALSE,FALSE
+1991-11-24,Denmark,Germany,Germany,Bettina Wiegmann,17,FALSE,TRUE
+1991-11-24,Denmark,Germany,Denmark,Susan Mackensie,25,FALSE,TRUE
+1991-11-24,Denmark,Germany,Germany,Heidi Mohr,98,FALSE,FALSE
+1991-11-24,Norway,Italy,Norway,Birthe Hegstad,22,FALSE,FALSE
+1991-11-24,Norway,Italy,Italy,Raffaella Salmaso,31,FALSE,FALSE
+1991-11-24,Norway,Italy,Norway,Agnete Carlsen,67,FALSE,FALSE
+1991-11-24,Norway,Italy,Italy,Rita Guarino,80,FALSE,FALSE
+1991-11-24,Norway,Italy,Norway,Tina Svensson,96,FALSE,TRUE
+1991-11-24,United States,Taiwan,United States,Michelle Akers,8,FALSE,FALSE
+1991-11-24,United States,Taiwan,United States,Michelle Akers,29,FALSE,FALSE
+1991-11-24,United States,Taiwan,United States,Michelle Akers,33,FALSE,FALSE
+1991-11-24,United States,Taiwan,United States,Julie Foudy,38,FALSE,FALSE
+1991-11-24,United States,Taiwan,United States,Michelle Akers,44,FALSE,TRUE
+1991-11-24,United States,Taiwan,United States,Michelle Akers,48,FALSE,FALSE
+1991-11-24,United States,Taiwan,United States,Joy Fawcett,79,FALSE,FALSE
+1991-11-27,Germany,United States,United States,Carin Jennings-Gabarra,10,FALSE,FALSE
+1991-11-27,Germany,United States,United States,Carin Jennings-Gabarra,22,FALSE,FALSE
+1991-11-27,Germany,United States,United States,Carin Jennings-Gabarra,33,FALSE,FALSE
+1991-11-27,Germany,United States,Germany,Heidi Mohr,34,FALSE,FALSE
+1991-11-27,Germany,United States,United States,April Heinrichs,54,FALSE,FALSE
+1991-11-27,Germany,United States,Germany,Bettina Wiegmann,63,FALSE,FALSE
+1991-11-27,Germany,United States,United States,April Heinrichs,75,FALSE,FALSE
+1991-11-27,Sweden,Norway,Sweden,Lena Videkull,6,FALSE,FALSE
+1991-11-27,Sweden,Norway,Norway,Tina Svensson,39,FALSE,TRUE
+1991-11-27,Sweden,Norway,Norway,Linda Medalen,41,FALSE,FALSE
+1991-11-27,Sweden,Norway,Norway,Agnete Carlsen,67,FALSE,FALSE
+1991-11-27,Sweden,Norway,Norway,Linda Medalen,77,FALSE,FALSE
+1991-11-29,Sweden,Germany,Sweden,Anneli Andelén,7,FALSE,FALSE
+1991-11-29,Sweden,Germany,Sweden,Pia Sundhage,11,FALSE,FALSE
+1991-11-29,Sweden,Germany,Sweden,Lena Videkull,29,FALSE,FALSE
+1991-11-29,Sweden,Germany,Sweden,Helen Nilsson,43,FALSE,FALSE
+1991-11-30,Norway,United States,United States,Michelle Akers,20,FALSE,FALSE
+1991-11-30,Norway,United States,Norway,Linda Medalen,29,FALSE,FALSE
+1991-11-30,Norway,United States,United States,Michelle Akers,78,FALSE,FALSE
+1993-06-29,Norway,Denmark,Norway,Anne Nymark Andersen,63,FALSE,FALSE
+1993-06-30,Italy,Germany,Germany,Heidi Mohr,56,FALSE,FALSE
+1993-06-30,Italy,Germany,Italy,Carolina Morace,63,FALSE,FALSE
+1993-07-03,Germany,Denmark,Denmark,Susan Mackensie,10,FALSE,FALSE
+1993-07-03,Germany,Denmark,Germany,Maren Meinert,31,FALSE,FALSE
+1993-07-03,Germany,Denmark,Denmark,Hanne Nissen,35,FALSE,FALSE
+1993-07-03,Germany,Denmark,Denmark,Susan Mackensie,42,FALSE,FALSE
+1993-07-04,Italy,Norway,Norway,Birthe Hegstad,75,FALSE,FALSE
+1994-12-11,England,Germany,England,Karen Farley,7,FALSE,FALSE
+1994-12-11,England,Germany,Germany,Heidi Mohr,32,FALSE,FALSE
+1994-12-11,England,Germany,Germany,Patricia Brocker,68,FALSE,FALSE
+1994-12-11,England,Germany,Germany,Heidi Mohr,80,FALSE,FALSE
+1994-12-11,England,Germany,Germany,Bettina Wiegmann,87,FALSE,TRUE
+1995-02-23,Germany,England,England,Karen Farley,1,FALSE,FALSE
+1995-02-23,Germany,England,Germany,Louise Waller,34,TRUE,FALSE
+1995-02-23,Germany,England,Germany,Birgit Prinz,79,FALSE,FALSE
+1995-02-26,Norway,Sweden,Sweden,Ulrika Kalte,15,FALSE,FALSE
+1995-02-26,Norway,Sweden,Norway,Ann Kristin Aarønes,44,FALSE,FALSE
+1995-02-26,Norway,Sweden,Sweden,Anneli Andelén,55,FALSE,FALSE
+1995-02-26,Norway,Sweden,Norway,Kristin Sandberg,60,FALSE,FALSE
+1995-02-26,Norway,Sweden,Sweden,Helen Johansson,61,FALSE,FALSE
+1995-02-26,Norway,Sweden,Norway,Ann Kristin Aarønes,64,FALSE,FALSE
+1995-02-26,Norway,Sweden,Norway,Anita Waage,89,FALSE,FALSE
+1995-03-04,Sweden,Norway,Norway,Linda Medalen,28,FALSE,FALSE
+1995-03-04,Sweden,Norway,Sweden,Ulrika Kalte,53,FALSE,FALSE
+1995-03-04,Sweden,Norway,Sweden,Lena Videkull,59,FALSE,FALSE
+1995-03-04,Sweden,Norway,Sweden,Lena Videkull,61,FALSE,FALSE
+1995-03-04,Sweden,Norway,Sweden,Lena Videkull,76,FALSE,FALSE
+1995-03-26,Germany,Sweden,Sweden,Malin Andersson,6,FALSE,FALSE
+1995-03-26,Germany,Sweden,Germany,Maren Meinert,33,FALSE,FALSE
+1995-03-26,Germany,Sweden,Germany,Birgit Prinz,64,FALSE,FALSE
+1995-03-26,Germany,Sweden,Germany,Bettina Wiegmann,85,FALSE,FALSE
+1995-03-26,Germany,Sweden,Sweden,Anneli Andelén,89,FALSE,FALSE
+1995-06-05,Germany,Japan,Germany,Silvia Neid,23,FALSE,FALSE
+1995-06-05,Sweden,Brazil,Brazil,Roseli de Belo,37,FALSE,FALSE
+1995-06-06,Denmark,Australia,Denmark,Gitte Krogh,12,FALSE,FALSE
+1995-06-06,Denmark,Australia,Denmark,Anne Dot Eggers Nielsen,25,FALSE,FALSE
+1995-06-06,Denmark,Australia,Denmark,Helle Jensen,37,FALSE,FALSE
+1995-06-06,Denmark,Australia,Denmark,Gitte Krogh,48,FALSE,FALSE
+1995-06-06,Denmark,Australia,Denmark,Christina Hansen,86,FALSE,FALSE
+1995-06-06,England,Canada,England,Gillian Coultard,51,FALSE,TRUE
+1995-06-06,England,Canada,England,Marieanne Spacey,76,FALSE,TRUE
+1995-06-06,England,Canada,England,Gillian Coultard,85,FALSE,FALSE
+1995-06-06,England,Canada,Canada,Helen Stoumbos,87,FALSE,FALSE
+1995-06-06,England,Canada,Canada,Geri Donnelly,90,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Kristin Sandberg,30,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Kristin Sandberg,44,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Hege Riise,49,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Ann Kristin Aarønes,60,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Linda Medalen,67,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Tina Svensson,76,FALSE,TRUE
+1995-06-06,Norway,Nigeria,Norway,Kristin Sandberg,82,FALSE,FALSE
+1995-06-06,Norway,Nigeria,Norway,Ann Kristin Aarønes,90,FALSE,FALSE
+1995-06-06,United States,China PR,United States,Tisha Venturini,22,FALSE,FALSE
+1995-06-06,United States,China PR,United States,Tiffeny Milbrett,34,FALSE,FALSE
+1995-06-06,United States,China PR,China PR,Wang Liping,38,FALSE,FALSE
+1995-06-06,United States,China PR,United States,Mia Hamm,51,FALSE,FALSE
+1995-06-06,United States,China PR,China PR,Wei Haiying,74,FALSE,FALSE
+1995-06-06,United States,China PR,China PR,Sun Wen,79,FALSE,FALSE
+1995-06-07,Brazil,Japan,Brazil,Pretinha,7,FALSE,FALSE
+1995-06-07,Brazil,Japan,Japan,Akemi Noda,13,FALSE,FALSE
+1995-06-07,Brazil,Japan,Japan,Akemi Noda,45,FALSE,FALSE
+1995-06-07,Sweden,Germany,Germany,Bettina Wiegmann,9,FALSE,TRUE
+1995-06-07,Sweden,Germany,Germany,Ursula Lohn,42,FALSE,FALSE
+1995-06-07,Sweden,Germany,Sweden,Malin Andersson,65,FALSE,TRUE
+1995-06-07,Sweden,Germany,Sweden,Pia Sundhage,80,FALSE,FALSE
+1995-06-07,Sweden,Germany,Sweden,Malin Andersson,86,FALSE,FALSE
+1995-06-08,China PR,Australia,China PR,Zhou Yang,23,FALSE,FALSE
+1995-06-08,China PR,Australia,Australia,Angela Iannotta,25,FALSE,FALSE
+1995-06-08,China PR,Australia,China PR,Shi Guihong,54,FALSE,FALSE
+1995-06-08,China PR,Australia,China PR,Shi Guihong,78,FALSE,FALSE
+1995-06-08,China PR,Australia,Australia,Sunni Hughes,89,FALSE,FALSE
+1995-06-08,China PR,Australia,China PR,Liu Ailing,90,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Canada,Silvana Burtini,12,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Canada,Geri Donnelly,20,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Nigeria,Rita Nwadike,26,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Canada,Silvana Burtini,55,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Nigeria,Patience Avre,60,FALSE,FALSE
+1995-06-08,Nigeria,Canada,Nigeria,Adaku Okoroafor,77,FALSE,FALSE
+1995-06-08,Norway,England,Norway,Tone Haugen,7,FALSE,FALSE
+1995-06-08,Norway,England,Norway,Hege Riise,37,FALSE,FALSE
+1995-06-08,United States,Denmark,United States,Kristine Lilly,9,FALSE,FALSE
+1995-06-08,United States,Denmark,United States,Tiffeny Milbrett,49,FALSE,FALSE
+1995-06-09,Brazil,Germany,Germany,Birgit Prinz,5,FALSE,FALSE
+1995-06-09,Brazil,Germany,Brazil,Roseli de Belo,19,FALSE,FALSE
+1995-06-09,Brazil,Germany,Germany,Maren Meinert,22,FALSE,FALSE
+1995-06-09,Brazil,Germany,Germany,Bettina Wiegmann,42,FALSE,TRUE
+1995-06-09,Brazil,Germany,Germany,Heidi Mohr,78,FALSE,FALSE
+1995-06-09,Brazil,Germany,Germany,Heidi Mohr,89,FALSE,FALSE
+1995-06-09,Brazil,Germany,Germany,Anouschka Bernhard,90,FALSE,FALSE
+1995-06-09,Sweden,Japan,Sweden,Lena Videkull,66,FALSE,FALSE
+1995-06-09,Sweden,Japan,Sweden,Anneli Andelén,88,FALSE,FALSE
+1995-06-10,China PR,Denmark,China PR,Shi Guihong,21,FALSE,FALSE
+1995-06-10,China PR,Denmark,Denmark,Christina Bonde,44,FALSE,FALSE
+1995-06-10,China PR,Denmark,China PR,Sun Wen,76,FALSE,FALSE
+1995-06-10,China PR,Denmark,China PR,Wei Haiying,90,FALSE,FALSE
+1995-06-10,Nigeria,England,England,Karen Farley,10,FALSE,FALSE
+1995-06-10,Nigeria,England,Nigeria,Adaku Okoroafor,13,FALSE,FALSE
+1995-06-10,Nigeria,England,England,Karen Walker,27,FALSE,FALSE
+1995-06-10,Nigeria,England,England,Karen Farley,38,FALSE,FALSE
+1995-06-10,Nigeria,England,Nigeria,Rita Nwadike,74,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Ann Kristin Aarønes,4,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Hege Riise,12,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Ann Kristin Aarønes,21,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Marianne Pettersen,71,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Randi Leinan,84,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Marianne Pettersen,89,FALSE,FALSE
+1995-06-10,Norway,Canada,Norway,Ann Kristin Aarønes,90,FALSE,FALSE
+1995-06-10,United States,Australia,Australia,Lisa Casagrande,54,FALSE,FALSE
+1995-06-10,United States,Australia,United States,Julie Foudy,69,FALSE,FALSE
+1995-06-10,United States,Australia,United States,Joy Fawcett,72,FALSE,FALSE
+1995-06-10,United States,Australia,United States,Carla Overbeck,90,FALSE,TRUE
+1995-06-10,United States,Australia,United States,Debbie Keller,90,FALSE,FALSE
+1995-06-13,Germany,England,Germany,Martina Voss-Tecklenburg,41,FALSE,FALSE
+1995-06-13,Germany,England,Germany,Maren Meinert,55,FALSE,FALSE
+1995-06-13,Germany,England,Germany,Heidi Mohr,82,FALSE,FALSE
+1995-06-13,Japan,United States,United States,Kristine Lilly,8,FALSE,FALSE
+1995-06-13,Japan,United States,United States,Kristine Lilly,42,FALSE,FALSE
+1995-06-13,Japan,United States,United States,Tiffeny Milbrett,45,FALSE,FALSE
+1995-06-13,Japan,United States,United States,Tisha Venturini,80,FALSE,FALSE
+1995-06-13,Norway,Denmark,Norway,Gro Espeseth,21,FALSE,FALSE
+1995-06-13,Norway,Denmark,Norway,Linda Medalen,64,FALSE,FALSE
+1995-06-13,Norway,Denmark,Norway,Hege Riise,85,FALSE,FALSE
+1995-06-13,Norway,Denmark,Denmark,Gitte Krogh,86,FALSE,FALSE
+1995-06-13,Sweden,China PR,China PR,Sun Qingmei,29,FALSE,FALSE
+1995-06-13,Sweden,China PR,Sweden,Ulrika Kalte,90,FALSE,FALSE
+1995-06-15,Germany,China PR,Germany,Bettina Wiegmann,88,FALSE,FALSE
+1995-06-15,United States,Norway,Norway,Ann Kristin Aarønes,10,FALSE,FALSE
+1995-06-17,China PR,United States,United States,Tisha Venturini,24,FALSE,FALSE
+1995-06-17,China PR,United States,United States,Mia Hamm,55,FALSE,FALSE
+1995-06-18,Germany,Norway,Norway,Hege Riise,37,FALSE,FALSE
+1995-06-18,Germany,Norway,Norway,Marianne Pettersen,40,FALSE,FALSE
+1996-07-21,Germany,Japan,Germany,Bettina Wiegmann,5,FALSE,FALSE
+1996-07-21,Germany,Japan,Japan,Futaba Kioka,18,FALSE,FALSE
+1996-07-21,Germany,Japan,Germany,Yumi Tomei,29,TRUE,FALSE
+1996-07-21,Germany,Japan,Japan,Akemi Noda,33,FALSE,FALSE
+1996-07-21,Germany,Japan,Germany,Heidi Mohr,52,FALSE,FALSE
+1996-07-21,Norway,Brazil,Norway,Linda Medalen,32,FALSE,FALSE
+1996-07-21,Norway,Brazil,Brazil,Pretinha,57,FALSE,FALSE
+1996-07-21,Norway,Brazil,Norway,Ann Kristin Aarønes,68,FALSE,FALSE
+1996-07-21,Norway,Brazil,Brazil,Pretinha,89,FALSE,FALSE
+1996-07-21,Sweden,China PR,China PR,Shi Guihong,31,FALSE,FALSE
+1996-07-21,Sweden,China PR,China PR,Zhao Lihong,32,FALSE,FALSE
+1996-07-21,United States,Denmark,United States,Tisha Venturini,37,FALSE,FALSE
+1996-07-21,United States,Denmark,United States,Mia Hamm,41,FALSE,FALSE
+1996-07-21,United States,Denmark,United States,Tiffeny Milbrett,49,FALSE,FALSE
+1996-07-23,Brazil,Japan,Brazil,Kátia Cilene Teixeira,68,FALSE,FALSE
+1996-07-23,Brazil,Japan,Brazil,Pretinha,78,FALSE,FALSE
+1996-07-23,Denmark,China PR,China PR,Shi Guihong,10,FALSE,FALSE
+1996-07-23,Denmark,China PR,China PR,Sun Qingmei,29,FALSE,FALSE
+1996-07-23,Denmark,China PR,China PR,Fan Yunjie,36,FALSE,FALSE
+1996-07-23,Denmark,China PR,China PR,Liu Ailing,49,FALSE,FALSE
+1996-07-23,Denmark,China PR,Denmark,Lene Madsen,55,FALSE,FALSE
+1996-07-23,Denmark,China PR,China PR,Sun Qingmei,59,FALSE,FALSE
+1996-07-23,Norway,Germany,Norway,Ann Kristin Aarønes,5,FALSE,FALSE
+1996-07-23,Norway,Germany,Germany,Bettina Wiegmann,32,FALSE,FALSE
+1996-07-23,Norway,Germany,Norway,Linda Medalen,34,FALSE,FALSE
+1996-07-23,Norway,Germany,Germany,Birgit Prinz,62,FALSE,FALSE
+1996-07-23,Norway,Germany,Norway,Hege Riise,65,FALSE,FALSE
+1996-07-23,United States,Sweden,United States,Tisha Venturini,15,FALSE,FALSE
+1996-07-23,United States,Sweden,United States,Shannon MacMillan,62,FALSE,FALSE
+1996-07-23,United States,Sweden,Sweden,Carla Overbeck,64,TRUE,FALSE
+1996-07-25,Brazil,Germany,Germany,Pia Wunderlich,4,FALSE,FALSE
+1996-07-25,Brazil,Germany,Brazil,Sissi,53,FALSE,FALSE
+1996-07-25,Denmark,Sweden,Sweden,Malin Swedberg,62,FALSE,FALSE
+1996-07-25,Denmark,Sweden,Sweden,Malin Swedberg,68,FALSE,FALSE
+1996-07-25,Denmark,Sweden,Sweden,Lena Videkull,76,FALSE,FALSE
+1996-07-25,Denmark,Sweden,Denmark,Helle Jensen,90,FALSE,FALSE
+1996-07-25,Norway,Japan,Norway,Marianne Pettersen,25,FALSE,FALSE
+1996-07-25,Norway,Japan,Norway,Linda Medalen,60,FALSE,FALSE
+1996-07-25,Norway,Japan,Norway,Trine Tangeraas,74,FALSE,FALSE
+1996-07-25,Norway,Japan,Norway,Marianne Pettersen,86,FALSE,FALSE
+1996-07-28,China PR,Brazil,China PR,Sun Qingmei,5,FALSE,FALSE
+1996-07-28,China PR,Brazil,Brazil,Roseli,67,FALSE,FALSE
+1996-07-28,China PR,Brazil,Brazil,Pretinha,72,FALSE,FALSE
+1996-07-28,China PR,Brazil,China PR,Wei Haiying,83,FALSE,FALSE
+1996-07-28,China PR,Brazil,China PR,Wei Haiying,90,FALSE,FALSE
+1996-07-28,United States,Norway,Norway,Linda Medalen,18,FALSE,FALSE
+1996-07-28,United States,Norway,United States,Michelle Akers,76,FALSE,FALSE
+1996-07-28,United States,Norway,United States,Shannon MacMillan,100,FALSE,FALSE
+1996-08-01,Brazil,Norway,Norway,Ann Kristin Aarønes,21,FALSE,FALSE
+1996-08-01,Brazil,Norway,Norway,Ann Kristin Aarønes,25,FALSE,FALSE
+1996-08-01,United States,China PR,United States,Shannon MacMillan,19,FALSE,FALSE
+1996-08-01,United States,China PR,China PR,Sun Wen,32,FALSE,FALSE
+1996-08-01,United States,China PR,United States,Tiffeny Milbrett,68,FALSE,FALSE
+1997-06-29,France,Spain,Spain,Isabel Parejo,14,FALSE,FALSE
+1997-06-29,France,Spain,France,Angélique Roujas,50,FALSE,FALSE
+1997-06-29,Sweden,Russia,Sweden,Hanna Ljungberg,10,FALSE,FALSE
+1997-06-29,Sweden,Russia,Russia,Larissa Savina,80,FALSE,FALSE
+1997-06-29,Sweden,Russia,Sweden,Anna Pohjanen,82,FALSE,FALSE
+1997-06-30,Germany,Italy,Germany,Maren Meinert,49,FALSE,FALSE
+1997-06-30,Germany,Italy,Italy,Antonella Carta,71,FALSE,FALSE
+1997-06-30,Norway,Denmark,Norway,Marianne Pettersen,16,FALSE,FALSE
+1997-06-30,Norway,Denmark,Norway,Marianne Pettersen,18,FALSE,FALSE
+1997-06-30,Norway,Denmark,Norway,Marianne Pettersen,49,FALSE,FALSE
+1997-06-30,Norway,Denmark,Norway,Heidi Støre,55,FALSE,FALSE
+1997-06-30,Norway,Denmark,Norway,Marianne Pettersen,81,FALSE,FALSE
+1997-07-02,Russia,France,France,Angélique Roujas,27,FALSE,FALSE
+1997-07-02,Russia,France,Russia,Irina Grigorieva,52,FALSE,FALSE
+1997-07-02,Russia,France,France,Angélique Roujas,56,FALSE,FALSE
+1997-07-02,Russia,France,France,Angélique Roujas,74,FALSE,FALSE
+1997-07-02,Sweden,Spain,Sweden,Victoria Sandell Svensson,7,FALSE,FALSE
+1997-07-03,Italy,Denmark,Denmark,Lene Terp,23,FALSE,FALSE
+1997-07-03,Italy,Denmark,Italy,Carolina Morace,49,FALSE,FALSE
+1997-07-03,Italy,Denmark,Denmark,Merete Pedersen,62,FALSE,FALSE
+1997-07-03,Italy,Denmark,Italy,Patrizia Panico,80,FALSE,FALSE
+1997-07-05,Russia,Spain,Spain,Ángeles Parejo,67,FALSE,FALSE
+1997-07-05,Sweden,France,Sweden,Malin Andersson,18,FALSE,TRUE
+1997-07-05,Sweden,France,Sweden,Cécile Locatelli,22,TRUE,FALSE
+1997-07-05,Sweden,France,Sweden,Kristin Jonsson,45,FALSE,FALSE
+1997-07-06,Denmark,Germany,Germany,Monika Meyer,82,FALSE,FALSE
+1997-07-06,Denmark,Germany,Germany,Birgit Prinz,90,FALSE,FALSE
+1997-07-06,Norway,Italy,Italy,Carolina Morace,4,FALSE,FALSE
+1997-07-06,Norway,Italy,Italy,Carolina Morace,90,FALSE,FALSE
+1997-07-09,Italy,Spain,Italy,Silvia Fiorini,11,FALSE,FALSE
+1997-07-09,Italy,Spain,Italy,Carolina Morace,29,FALSE,FALSE
+1997-07-09,Italy,Spain,Spain,Ángeles Parejo,89,FALSE,FALSE
+1997-07-09,Sweden,Germany,Germany,Bettina Wiegmann,84,FALSE,FALSE
+1997-07-12,Italy,Germany,Germany,Sandra Minnert,23,FALSE,FALSE
+1997-07-12,Italy,Germany,Germany,Birgit Prinz,50,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Pretinha,3,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Mexico,Maribel Domínguez,10,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Pretinha,12,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Sissi,29,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Kátia Cilene Teixeira,35,FALSE,TRUE
+1999-06-19,Brazil,Mexico,Brazil,Sissi,42,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Sissi,50,FALSE,FALSE
+1999-06-19,Brazil,Mexico,Brazil,Pretinha,90,FALSE,FALSE
+1999-06-19,China PR,Sweden,Sweden,Kristin Bengtsson,2,FALSE,FALSE
+1999-06-19,China PR,Sweden,China PR,Jin Yan,17,FALSE,FALSE
+1999-06-19,China PR,Sweden,China PR,Liu Ailing,69,FALSE,FALSE
+1999-06-19,Japan,Canada,Canada,Silvana Burtini,32,FALSE,FALSE
+1999-06-19,Japan,Canada,Japan,Nami Otake,64,FALSE,FALSE
+1999-06-19,United States,Denmark,United States,Mia Hamm,17,FALSE,FALSE
+1999-06-19,United States,Denmark,United States,Julie Foudy,73,FALSE,FALSE
+1999-06-19,United States,Denmark,United States,Kristine Lilly,89,FALSE,FALSE
+1999-06-20,Australia,Ghana,Australia,Julie Murray,74,FALSE,FALSE
+1999-06-20,Australia,Ghana,Ghana,Nana Gyamfuah,76,FALSE,FALSE
+1999-06-20,Germany,Italy,Italy,Patrizia Panico,36,FALSE,FALSE
+1999-06-20,Germany,Italy,Germany,Bettina Wiegmann,61,FALSE,TRUE
+1999-06-20,North Korea,Nigeria,Nigeria,Mercy Akide,50,FALSE,FALSE
+1999-06-20,North Korea,Nigeria,North Korea,Jo Song-ok,74,FALSE,FALSE
+1999-06-20,North Korea,Nigeria,Nigeria,Rita Nwadike,79,FALSE,FALSE
+1999-06-20,Norway,Russia,Norway,Brit Sandaune,28,FALSE,FALSE
+1999-06-20,Norway,Russia,Norway,Marianne Pettersen,68,FALSE,FALSE
+1999-06-20,Norway,Russia,Russia,Galina Komarova,78,FALSE,FALSE
+1999-06-23,Australia,Sweden,Sweden,Jane Törnqvist,8,FALSE,FALSE
+1999-06-23,Australia,Sweden,Sweden,Hanna Ljungberg,21,FALSE,FALSE
+1999-06-23,Australia,Sweden,Australia,Julie Murray,32,FALSE,FALSE
+1999-06-23,Australia,Sweden,Sweden,Hanna Ljungberg,69,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Sun Wen,9,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Jin Yan,16,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Sun Wen,21,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Sun Wen,54,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Zhang Ouying,82,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Zhang Ouying,90,FALSE,FALSE
+1999-06-23,China PR,Ghana,China PR,Zhao Lihong,90,FALSE,FALSE
+1999-06-23,Japan,Russia,Russia,Larisa Savina,29,FALSE,FALSE
+1999-06-23,Japan,Russia,Russia,Olga Letyushova,52,FALSE,FALSE
+1999-06-23,Japan,Russia,Russia,Natalia Karasseva,58,FALSE,FALSE
+1999-06-23,Japan,Russia,Russia,Natalia Barbashina,80,FALSE,FALSE
+1999-06-23,Japan,Russia,Russia,Olga Letyushova,90,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Ann Kristin Aarønes,8,FALSE,FALSE
+1999-06-23,Norway,Canada,Canada,Charmaine Hooper,31,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Ann Kristin Aarønes,36,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Unni Lehn,49,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Hege Riise,54,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Linda Medalen,62,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Marianne Pettersen,76,FALSE,FALSE
+1999-06-23,Norway,Canada,Norway,Solveig Gulbrandsen,87,FALSE,FALSE
+1999-06-24,Brazil,Italy,Brazil,Sissi,3,FALSE,FALSE
+1999-06-24,Brazil,Italy,Brazil,Sissi,63,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Inka Grings,10,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Sandra Smisek,45,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Ariane Hingst,49,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Inka Grings,57,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Renate Lingor,89,FALSE,FALSE
+1999-06-24,Germany,Mexico,Germany,Inka Grings,90,FALSE,FALSE
+1999-06-24,North Korea,Denmark,North Korea,Jin Pyol-hui,15,FALSE,FALSE
+1999-06-24,North Korea,Denmark,North Korea,Jo Song-ok,39,FALSE,FALSE
+1999-06-24,North Korea,Denmark,North Korea,Kim Kum-sil,73,FALSE,FALSE
+1999-06-24,North Korea,Denmark,Denmark,Janni Johansen,74,FALSE,FALSE
+1999-06-24,United States,Nigeria,Nigeria,Nkiru Okosieme,2,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Ifeanyi Chiejine,19,TRUE,FALSE
+1999-06-24,United States,Nigeria,United States,Mia Hamm,20,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Tiffeny Milbrett,23,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Kristine Lilly,32,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Michelle Akers,39,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Cindy Parlow Cone,42,FALSE,FALSE
+1999-06-24,United States,Nigeria,United States,Tiffeny Milbrett,83,FALSE,FALSE
+1999-06-26,Canada,Russia,Russia,Irina Grigorieva,54,FALSE,FALSE
+1999-06-26,Canada,Russia,Russia,Elena Fomina,66,FALSE,FALSE
+1999-06-26,Canada,Russia,Canada,Charmaine Hooper,76,FALSE,FALSE
+1999-06-26,Canada,Russia,Russia,Elena Fomina,86,FALSE,FALSE
+1999-06-26,Canada,Russia,Russia,Olga Karasseva,90,FALSE,FALSE
+1999-06-26,China PR,Australia,China PR,Sun Wen,39,FALSE,FALSE
+1999-06-26,China PR,Australia,China PR,Sun Wen,51,FALSE,FALSE
+1999-06-26,China PR,Australia,Australia,Cheryl Salisbury,66,FALSE,FALSE
+1999-06-26,China PR,Australia,China PR,Liu Ying,73,FALSE,FALSE
+1999-06-26,Ghana,Sweden,Sweden,Victoria Sandell Svensson,58,FALSE,FALSE
+1999-06-26,Ghana,Sweden,Sweden,Victoria Sandell Svensson,86,FALSE,FALSE
+1999-06-26,Norway,Japan,Norway,Hege Riise,8,FALSE,TRUE
+1999-06-26,Norway,Japan,Norway,Hiromi Ikeda,26,TRUE,FALSE
+1999-06-26,Norway,Japan,Norway,Ann Kristin Aarønes,36,FALSE,FALSE
+1999-06-26,Norway,Japan,Norway,Dagny Mellgren,61,FALSE,FALSE
+1999-06-27,Germany,Brazil,Germany,Birgit Prinz,8,FALSE,FALSE
+1999-06-27,Germany,Brazil,Brazil,Kátia Cilene Teixeira,15,FALSE,FALSE
+1999-06-27,Germany,Brazil,Brazil,Sissi,20,FALSE,FALSE
+1999-06-27,Germany,Brazil,Germany,Bettina Wiegmann,46,FALSE,TRUE
+1999-06-27,Germany,Brazil,Germany,Steffi Jones,58,FALSE,FALSE
+1999-06-27,Germany,Brazil,Brazil,Maycon,90,FALSE,FALSE
+1999-06-27,Mexico,Italy,Italy,Patrizia Panico,37,FALSE,FALSE
+1999-06-27,Mexico,Italy,Italy,Paola Zanni,51,FALSE,FALSE
+1999-06-27,Nigeria,Denmark,Nigeria,Mercy Akide,25,FALSE,FALSE
+1999-06-27,Nigeria,Denmark,Nigeria,Nkiru Okosieme,81,FALSE,FALSE
+1999-06-27,United States,North Korea,United States,Shannon MacMillan,56,FALSE,FALSE
+1999-06-27,United States,North Korea,United States,Tisha Venturini,68,FALSE,FALSE
+1999-06-27,United States,North Korea,United States,Tisha Venturini,76,FALSE,FALSE
+1999-06-30,China PR,Russia,China PR,Pu Wei,37,FALSE,FALSE
+1999-06-30,China PR,Russia,China PR,Jin Yan,56,FALSE,FALSE
+1999-06-30,Norway,Sweden,Norway,Ann Kristin Aarønes,51,FALSE,FALSE
+1999-06-30,Norway,Sweden,Norway,Marianne Pettersen,58,FALSE,FALSE
+1999-06-30,Norway,Sweden,Norway,Hege Riise,72,FALSE,TRUE
+1999-06-30,Norway,Sweden,Sweden,Malin Moström,90,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Brazil,Cidinha,4,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Brazil,Cidinha,22,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Brazil,Elissandra Regina Cavalcanti,35,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Nigeria,Prisca Emeafu,63,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Nigeria,Nkiru Okosieme,72,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Nigeria,Nkechi Egbe,85,FALSE,FALSE
+1999-07-01,Brazil,Nigeria,Brazil,Sissi,104,FALSE,FALSE
+1999-07-01,United States,Germany,Germany,Brandi Chastain,5,TRUE,FALSE
+1999-07-01,United States,Germany,United States,Tiffeny Milbrett,16,FALSE,FALSE
+1999-07-01,United States,Germany,Germany,Bettina Wiegmann,45,FALSE,FALSE
+1999-07-01,United States,Germany,United States,Brandi Chastain,49,FALSE,FALSE
+1999-07-01,United States,Germany,United States,Joy Fawcett,66,FALSE,FALSE
+1999-07-04,Norway,China PR,China PR,Sun Wen,3,FALSE,FALSE
+1999-07-04,Norway,China PR,China PR,Liu Ailing,14,FALSE,FALSE
+1999-07-04,Norway,China PR,China PR,Liu Ailing,51,FALSE,FALSE
+1999-07-04,Norway,China PR,China PR,Fan Yunjie,65,FALSE,FALSE
+1999-07-04,Norway,China PR,China PR,Sun Wen,72,FALSE,TRUE
+1999-07-04,United States,Brazil,United States,Cindy Parlow Cone,5,FALSE,FALSE
+1999-07-04,United States,Brazil,United States,Michelle Akers,80,FALSE,TRUE
+2000-09-13,Australia,Germany,Germany,Inka Grings,39,FALSE,FALSE
+2000-09-13,Australia,Germany,Germany,Bettina Wiegmann,70,FALSE,FALSE
+2000-09-13,Australia,Germany,Germany,Renate Lingor,90,FALSE,FALSE
+2000-09-13,Sweden,Brazil,Brazil,Delma Gonçalves,21,FALSE,FALSE
+2000-09-13,Sweden,Brazil,Brazil,Kátia Cilene Teixeira da Silva,70,FALSE,FALSE
+2000-09-14,China PR,Nigeria,China PR,Zhao Lihong,12,FALSE,FALSE
+2000-09-14,China PR,Nigeria,China PR,Sun Wen,57,FALSE,FALSE
+2000-09-14,China PR,Nigeria,China PR,Sun Wen,83,FALSE,FALSE
+2000-09-14,China PR,Nigeria,Nigeria,Perpetua Nkwocha,85,FALSE,FALSE
+2000-09-14,United States,Norway,United States,Tiffeny Milbrett,18,FALSE,FALSE
+2000-09-14,United States,Norway,United States,Mia Hamm,24,FALSE,FALSE
+2000-09-16,Australia,Sweden,Australia,Cheryl Salisbury,57,FALSE,FALSE
+2000-09-16,Australia,Sweden,Sweden,Malin Andersson,66,FALSE,TRUE
+2000-09-16,Germany,Brazil,Germany,Birgit Prinz,33,FALSE,FALSE
+2000-09-16,Germany,Brazil,Germany,Birgit Prinz,41,FALSE,FALSE
+2000-09-16,Germany,Brazil,Brazil,Raquel,72,FALSE,FALSE
+2000-09-17,Norway,Nigeria,Norway,Dagny Mellgren,22,FALSE,FALSE
+2000-09-17,Norway,Nigeria,Norway,Hege Riise,62,FALSE,TRUE
+2000-09-17,Norway,Nigeria,Nigeria,Mercy Akide,78,FALSE,FALSE
+2000-09-17,Norway,Nigeria,Norway,Marianne Pettersen,90,FALSE,FALSE
+2000-09-17,United States,China PR,United States,Julie Foudy,38,FALSE,FALSE
+2000-09-17,United States,China PR,China PR,Sun Wen,67,FALSE,FALSE
+2000-09-19,Australia,Brazil,Australia,Sunni Hughes,33,FALSE,FALSE
+2000-09-19,Australia,Brazil,Brazil,Raquel,56,FALSE,FALSE
+2000-09-19,Australia,Brazil,Brazil,Kátia Cilene Teixeira da Silva,64,FALSE,FALSE
+2000-09-19,Germany,Sweden,Germany,Ariane Hingst,88,FALSE,FALSE
+2000-09-20,Norway,China PR,Norway,Marianne Pettersen,55,FALSE,FALSE
+2000-09-20,Norway,China PR,China PR,Sun Wen,75,FALSE,TRUE
+2000-09-20,Norway,China PR,Norway,Margunn Haugenes,78,FALSE,FALSE
+2000-09-20,United States,Nigeria,United States,Brandi Chastain,26,FALSE,FALSE
+2000-09-20,United States,Nigeria,United States,Kristine Lilly,35,FALSE,FALSE
+2000-09-20,United States,Nigeria,Nigeria,Mercy Akide,48,FALSE,FALSE
+2000-09-20,United States,Nigeria,United States,Shannon MacMillan,56,FALSE,FALSE
+2000-09-24,Germany,Norway,Norway,Tina Wunderlich,80,TRUE,FALSE
+2000-09-24,United States,Brazil,United States,Mia Hamm,60,FALSE,FALSE
+2000-09-28,Germany,Brazil,Germany,Renate Lingor,64,FALSE,FALSE
+2000-09-28,Germany,Brazil,Germany,Birgit Prinz,79,FALSE,FALSE
+2000-09-28,Norway,United States,United States,Tiffeny Milbrett,5,FALSE,FALSE
+2000-09-28,Norway,United States,Norway,Gro Espeseth,44,FALSE,FALSE
+2000-09-28,Norway,United States,Norway,Ragnhild Gulbrandsen,78,FALSE,FALSE
+2000-09-28,Norway,United States,United States,Tiffeny Milbrett,90,FALSE,FALSE
+2000-09-28,Norway,United States,Norway,Dagny Mellgren,102,FALSE,FALSE
+2001-06-23,Germany,Sweden,Sweden,Hanna Ljungberg,14,FALSE,FALSE
+2001-06-23,Germany,Sweden,Germany,Claudia Müller,42,FALSE,FALSE
+2001-06-23,Germany,Sweden,Germany,Claudia Müller,65,FALSE,FALSE
+2001-06-23,Germany,Sweden,Germany,Maren Meinert,78,FALSE,FALSE
+2001-06-24,Russia,England,England,Angela Banks,45,FALSE,FALSE
+2001-06-24,Russia,England,Russia,Alexandra Svetlitskaya,62,FALSE,FALSE
+2001-06-25,Italy,Denmark,Italy,Patrizia Panico,12,FALSE,FALSE
+2001-06-25,Italy,Denmark,Italy,Patrizia Panico,72,FALSE,FALSE
+2001-06-25,Italy,Denmark,Denmark,Julie Rydahl Bukh,75,FALSE,FALSE
+2001-06-25,Norway,France,Norway,Monica Knudsen,14,FALSE,FALSE
+2001-06-25,Norway,France,Norway,Emmanuelle Sykora,18,TRUE,FALSE
+2001-06-25,Norway,France,Norway,Dagny Mellgren,40,FALSE,FALSE
+2001-06-27,Germany,Russia,Germany,Bettina Wiegmann,43,FALSE,FALSE
+2001-06-27,Germany,Russia,Germany,Birgit Prinz,50,FALSE,FALSE
+2001-06-27,Germany,Russia,Germany,Maren Meinert,69,FALSE,FALSE
+2001-06-27,Germany,Russia,Germany,Sandra Smisek,73,FALSE,FALSE
+2001-06-27,Germany,Russia,Germany,Sandra Smisek,89,FALSE,FALSE
+2001-06-27,Sweden,England,Sweden,Jane Törnqvist,3,FALSE,FALSE
+2001-06-27,Sweden,England,Sweden,Kristin Bengtsson,26,FALSE,FALSE
+2001-06-27,Sweden,England,Sweden,Hanna Ljungberg,75,FALSE,FALSE
+2001-06-27,Sweden,England,Sweden,Sofia Eriksson,80,FALSE,FALSE
+2001-06-28,France,Denmark,Denmark,Gitte Krogh,15,FALSE,TRUE
+2001-06-28,France,Denmark,Denmark,Christina Bonde,19,FALSE,FALSE
+2001-06-28,France,Denmark,France,Marinette Pichon,21,FALSE,FALSE
+2001-06-28,France,Denmark,France,Stéphanie Mugneret-Béghé,27,FALSE,FALSE
+2001-06-28,France,Denmark,Denmark,Julie Hauge Andersson,71,FALSE,FALSE
+2001-06-28,France,Denmark,France,Gaëlle Blouin,83,FALSE,FALSE
+2001-06-28,France,Denmark,Denmark,Gitte Krogh,90,FALSE,FALSE
+2001-06-28,Norway,Italy,Italy,Rita Guarino,14,FALSE,FALSE
+2001-06-28,Norway,Italy,Norway,Dagny Mellgren,16,FALSE,FALSE
+2001-06-30,Germany,England,Germany,Petra Wimbersky,57,FALSE,FALSE
+2001-06-30,Germany,England,Germany,Bettina Wiegmann,65,FALSE,FALSE
+2001-06-30,Germany,England,Germany,Renate Lingor,67,FALSE,FALSE
+2001-06-30,Sweden,Russia,Sweden,Linda Fagerström,76,FALSE,FALSE
+2001-07-01,Denmark,Norway,Denmark,Merete Pedersen,85,FALSE,FALSE
+2001-07-01,France,Italy,France,Marinette Pichon,37,FALSE,FALSE
+2001-07-01,France,Italy,France,Françoise Jézéquel,74,FALSE,TRUE
+2001-07-04,Denmark,Sweden,Sweden,Tina Nordlund,9,FALSE,FALSE
+2001-07-04,Germany,Norway,Germany,Sandra Smisek,57,FALSE,FALSE
+2001-07-07,Germany,Sweden,Germany,Claudia Müller,98,FALSE,FALSE
+2003-09-20,Germany,Canada,Canada,Christine Sinclair,4,FALSE,FALSE
+2003-09-20,Germany,Canada,Germany,Bettina Wiegmann,39,FALSE,TRUE
+2003-09-20,Germany,Canada,Germany,Stefanie Gottschlich,47,FALSE,FALSE
+2003-09-20,Germany,Canada,Germany,Birgit Prinz,75,FALSE,FALSE
+2003-09-20,Germany,Canada,Germany,Kerstin Garefrekes,90,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Homare Sawa,13,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Homare Sawa,38,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Emi Yamamoto,64,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Mio Otani,72,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Mio Otani,75,FALSE,FALSE
+2003-09-20,Japan,Argentina,Japan,Mio Otani,80,FALSE,FALSE
+2003-09-20,Nigeria,North Korea,North Korea,Jin Pyol-hui,13,FALSE,FALSE
+2003-09-20,Nigeria,North Korea,North Korea,Ri Un-gyong,73,FALSE,FALSE
+2003-09-20,Nigeria,North Korea,North Korea,Jin Pyol-hui,88,FALSE,FALSE
+2003-09-20,Norway,France,Norway,Anita Rapp,47,FALSE,FALSE
+2003-09-20,Norway,France,Norway,Dagny Mellgren,66,FALSE,FALSE
+2003-09-21,Australia,Russia,Australia,Kelly Golebiowski,38,FALSE,FALSE
+2003-09-21,Australia,Russia,Russia,Dianne Alagich,39,TRUE,FALSE
+2003-09-21,Australia,Russia,Russia,Elena Fomina,89,FALSE,FALSE
+2003-09-21,Brazil,South Korea,Brazil,Marta,14,FALSE,TRUE
+2003-09-21,Brazil,South Korea,Brazil,Kátia Cilene Teixeira,55,FALSE,FALSE
+2003-09-21,Brazil,South Korea,Brazil,Kátia Cilene Teixeira,62,FALSE,FALSE
+2003-09-21,China PR,Ghana,China PR,Sun Wen,29,FALSE,FALSE
+2003-09-21,United States,Sweden,United States,Kristine Lilly,27,FALSE,FALSE
+2003-09-21,United States,Sweden,United States,Cindy Parlow Cone,36,FALSE,FALSE
+2003-09-21,United States,Sweden,Sweden,Victoria Sandell Svensson,58,FALSE,FALSE
+2003-09-21,United States,Sweden,United States,Shannon Boxx,78,FALSE,FALSE
+2003-09-24,Canada,Argentina,Canada,Charmaine Hooper,19,FALSE,TRUE
+2003-09-24,Canada,Argentina,Canada,Christine Latham,79,FALSE,FALSE
+2003-09-24,Canada,Argentina,Canada,Christine Latham,82,FALSE,FALSE
+2003-09-24,France,South Korea,France,Marinette Pichon,84,FALSE,FALSE
+2003-09-24,Germany,Japan,Germany,Sandra Minnert,23,FALSE,FALSE
+2003-09-24,Germany,Japan,Germany,Birgit Prinz,36,FALSE,FALSE
+2003-09-24,Germany,Japan,Germany,Birgit Prinz,66,FALSE,FALSE
+2003-09-24,Norway,Brazil,Brazil,Daniela Alves Lima,26,FALSE,FALSE
+2003-09-24,Norway,Brazil,Brazil,Rosana dos Santos Augusto,37,FALSE,FALSE
+2003-09-24,Norway,Brazil,Norway,Marianne Pettersen,45,FALSE,FALSE
+2003-09-24,Norway,Brazil,Brazil,Marta,59,FALSE,FALSE
+2003-09-24,Norway,Brazil,Brazil,Kátia Cilene Teixeira,68,FALSE,FALSE
+2003-09-25,China PR,Australia,Australia,Heather Garriock,28,FALSE,FALSE
+2003-09-25,China PR,Australia,China PR,Bai Jie,46,FALSE,FALSE
+2003-09-25,Ghana,Russia,Russia,Marina Saenko,36,FALSE,FALSE
+2003-09-25,Ghana,Russia,Russia,Natalia Barbashina,54,FALSE,FALSE
+2003-09-25,Ghana,Russia,Russia,Olga Letyushova,80,FALSE,FALSE
+2003-09-25,Sweden,North Korea,Sweden,Victoria Sandell Svensson,7,FALSE,FALSE
+2003-09-25,United States,Nigeria,United States,Mia Hamm,6,FALSE,TRUE
+2003-09-25,United States,Nigeria,United States,Mia Hamm,12,FALSE,FALSE
+2003-09-25,United States,Nigeria,United States,Cindy Parlow Cone,47,FALSE,FALSE
+2003-09-25,United States,Nigeria,United States,Abby Wambach,65,FALSE,FALSE
+2003-09-25,United States,Nigeria,United States,Julie Foudy,89,FALSE,TRUE
+2003-09-27,Argentina,Germany,Germany,Maren Meinert,3,FALSE,FALSE
+2003-09-27,Argentina,Germany,Germany,Bettina Wiegmann,24,FALSE,TRUE
+2003-09-27,Argentina,Germany,Germany,Birgit Prinz,32,FALSE,FALSE
+2003-09-27,Argentina,Germany,Germany,Maren Meinert,43,FALSE,FALSE
+2003-09-27,Argentina,Germany,Argentina,Yanina Gaitán,71,FALSE,FALSE
+2003-09-27,Argentina,Germany,Germany,Conny Pohlers,89,FALSE,FALSE
+2003-09-27,Argentina,Germany,Germany,Martina Müller,90,FALSE,FALSE
+2003-09-27,Canada,Japan,Japan,Homare Sawa,20,FALSE,FALSE
+2003-09-27,Canada,Japan,Canada,Christine Latham,36,FALSE,FALSE
+2003-09-27,Canada,Japan,Canada,Christine Sinclair,49,FALSE,FALSE
+2003-09-27,Canada,Japan,Canada,Kara Lang,72,FALSE,FALSE
+2003-09-27,France,Brazil,Brazil,Kátia Cilene Teixeira,58,FALSE,FALSE
+2003-09-27,France,Brazil,France,Marinette Pichon,90,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Solveig Gulbrandsen,5,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Dagny Mellgren,24,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Dagny Mellgren,31,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Marianne Pettersen,40,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Brit Sandaune,52,FALSE,FALSE
+2003-09-27,South Korea,Norway,South Korea,Kim Jin-hee,75,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Linda Ørmen,80,FALSE,FALSE
+2003-09-27,South Korea,Norway,Norway,Linda Ørmen,90,FALSE,FALSE
+2003-09-28,China PR,Russia,China PR,Bai Jie,16,FALSE,FALSE
+2003-09-28,Ghana,Australia,Ghana,Alberta Sackey,34,FALSE,FALSE
+2003-09-28,Ghana,Australia,Ghana,Alberta Sackey,39,FALSE,FALSE
+2003-09-28,Ghana,Australia,Australia,Heather Garriock,61,FALSE,FALSE
+2003-09-28,Sweden,Nigeria,Sweden,Hanna Ljungberg,56,FALSE,FALSE
+2003-09-28,Sweden,Nigeria,Sweden,Hanna Ljungberg,79,FALSE,FALSE
+2003-09-28,Sweden,Nigeria,Sweden,Malin Moström,81,FALSE,FALSE
+2003-09-28,United States,North Korea,United States,Abby Wambach,17,FALSE,TRUE
+2003-09-28,United States,North Korea,United States,Cat Whitehill,48,FALSE,FALSE
+2003-09-28,United States,North Korea,United States,Cat Whitehill,66,FALSE,FALSE
+2003-10-01,Brazil,Sweden,Sweden,Victoria Sandell Svensson,23,FALSE,FALSE
+2003-10-01,Brazil,Sweden,Brazil,Marta,44,FALSE,TRUE
+2003-10-01,Brazil,Sweden,Sweden,Malin Andersson,53,FALSE,FALSE
+2003-10-01,United States,Norway,United States,Abby Wambach,24,FALSE,FALSE
+2003-10-02,China PR,Canada,Canada,Charmaine Hooper,7,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Martina Müller,25,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Sandra Minnert,57,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Pia Wunderlich,60,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Kerstin Garefrekes,62,FALSE,FALSE
+2003-10-02,Germany,Russia,Russia,Elena Danilova,70,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Birgit Prinz,80,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Kerstin Garefrekes,85,FALSE,FALSE
+2003-10-02,Germany,Russia,Germany,Birgit Prinz,89,FALSE,FALSE
+2003-10-05,Sweden,Canada,Canada,Kara Lang,64,FALSE,FALSE
+2003-10-05,Sweden,Canada,Sweden,Malin Moström,79,FALSE,FALSE
+2003-10-05,Sweden,Canada,Sweden,Josefine Öqvist,86,FALSE,FALSE
+2003-10-05,United States,Germany,Germany,Kerstin Garefrekes,15,FALSE,FALSE
+2003-10-05,United States,Germany,Germany,Maren Meinert,90,FALSE,FALSE
+2003-10-05,United States,Germany,Germany,Birgit Prinz,90,FALSE,FALSE
+2003-10-11,United States,Canada,United States,Kristine Lilly,22,FALSE,FALSE
+2003-10-11,United States,Canada,Canada,Christine Sinclair,38,FALSE,FALSE
+2003-10-11,United States,Canada,United States,Shannon Boxx,51,FALSE,FALSE
+2003-10-11,United States,Canada,United States,Tiffeny Milbrett,80,FALSE,FALSE
+2003-10-12,Germany,Sweden,Sweden,Hanna Ljungberg,41,FALSE,FALSE
+2003-10-12,Germany,Sweden,Germany,Maren Meinert,46,FALSE,FALSE
+2003-10-12,Germany,Sweden,Germany,Nia Künzer,98,FALSE,FALSE
+2004-08-11,Brazil,Australia,Brazil,Marta Vieira da Silva,36,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Birgit Prinz,13,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Birgit Prinz,21,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Pia Wunderlich,65,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Birgit Prinz,73,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Renate Lingor,76,FALSE,TRUE
+2004-08-11,Germany,China PR,Germany,Conny Pohlers,82,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Birgit Prinz,88,FALSE,FALSE
+2004-08-11,Germany,China PR,Germany,Martina Müller,90,FALSE,FALSE
+2004-08-11,Greece,United States,United States,Shannon Boxx,14,FALSE,FALSE
+2004-08-11,Greece,United States,United States,Abby Wambach,30,FALSE,FALSE
+2004-08-11,Greece,United States,United States,Mia Hamm,82,FALSE,FALSE
+2004-08-11,Sweden,Japan,Japan,Eriko Arakawa,24,FALSE,FALSE
+2004-08-14,China PR,Mexico,Mexico,Maribel Domínguez,11,FALSE,FALSE
+2004-08-14,China PR,Mexico,China PR,Ji Ting,34,FALSE,FALSE
+2004-08-14,Greece,Australia,Australia,Heather Garriock,27,FALSE,FALSE
+2004-08-14,Japan,Nigeria,Nigeria,Vera Okolo,55,FALSE,FALSE
+2004-08-14,United States,Brazil,United States,Mia Hamm,58,FALSE,TRUE
+2004-08-14,United States,Brazil,United States,Abby Wambach,77,FALSE,FALSE
+2004-08-17,Germany,Mexico,Germany,Petra Wimbersky,20,FALSE,FALSE
+2004-08-17,Germany,Mexico,Germany,Birgit Prinz,79,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Pretinha,21,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Cristiane Rozeira de Souza Silva,46,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Grazielle,49,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Cristiane Rozeira de Souza Silva,55,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Marta Vieira da Silva,70,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Daniela Alves Lima,72,FALSE,FALSE
+2004-08-17,Greece,Brazil,Brazil,Cristiane Rozeira de Souza Silva,77,FALSE,FALSE
+2004-08-17,Sweden,Nigeria,Nigeria,Mercy Akide,25,FALSE,FALSE
+2004-08-17,Sweden,Nigeria,Sweden,Hanna Marklund,68,FALSE,FALSE
+2004-08-17,Sweden,Nigeria,Sweden,Malin Moström,73,FALSE,FALSE
+2004-08-17,United States,Australia,United States,Kristine Lilly,19,FALSE,FALSE
+2004-08-17,United States,Australia,Australia,Joanne Peters,82,FALSE,FALSE
+2004-08-20,Germany,Nigeria,Nigeria,Mercy Akide,49,FALSE,FALSE
+2004-08-20,Germany,Nigeria,Germany,Steffi Jones,76,FALSE,FALSE
+2004-08-20,Germany,Nigeria,Germany,Conny Pohlers,81,FALSE,FALSE
+2004-08-20,Mexico,Brazil,Brazil,Cristiane Rozeira de Souza Silva,25,FALSE,FALSE
+2004-08-20,Mexico,Brazil,Brazil,Miraildes Maciel Mota,29,FALSE,FALSE
+2004-08-20,Mexico,Brazil,Brazil,Cristiane Rozeira de Souza Silva,49,FALSE,FALSE
+2004-08-20,Mexico,Brazil,Brazil,Miraildes Maciel Mota,54,FALSE,FALSE
+2004-08-20,Mexico,Brazil,Brazil,Marta Vieira da Silva,60,FALSE,FALSE
+2004-08-20,Sweden,Australia,Sweden,Hanna Ljungberg,25,FALSE,FALSE
+2004-08-20,Sweden,Australia,Sweden,Sara Larsson,30,FALSE,FALSE
+2004-08-20,Sweden,Australia,Australia,Lisa De Vanna,48,FALSE,FALSE
+2004-08-20,United States,Japan,United States,Kristine Lilly,43,FALSE,FALSE
+2004-08-20,United States,Japan,Japan,Emi Yamamoto,48,FALSE,FALSE
+2004-08-20,United States,Japan,United States,Abby Wambach,59,FALSE,FALSE
+2004-08-23,Brazil,Sweden,Brazil,Pretinha,64,FALSE,FALSE
+2004-08-23,United States,Germany,United States,Kristine Lilly,33,FALSE,FALSE
+2004-08-23,United States,Germany,Germany,Isabell Bachor,90,FALSE,FALSE
+2004-08-23,United States,Germany,United States,Heather O'Reilly,99,FALSE,FALSE
+2004-08-26,Germany,Sweden,Germany,Renate Lingor,17,FALSE,FALSE
+2004-08-26,United States,Brazil,United States,Lindsay Tarpley,39,FALSE,FALSE
+2004-08-26,United States,Brazil,Brazil,Delma Gonçalves,73,FALSE,FALSE
+2004-08-26,United States,Brazil,United States,Abby Wambach,112,FALSE,FALSE
+2005-06-05,England,Finland,England,Sanna Valkonen,18,TRUE,FALSE
+2005-06-05,England,Finland,England,Amanda Barr,40,FALSE,FALSE
+2005-06-05,England,Finland,Finland,Anna-Kaisa Rantanen,56,FALSE,FALSE
+2005-06-05,England,Finland,Finland,Laura Kalmari,88,FALSE,FALSE
+2005-06-05,England,Finland,England,Karen Carney,90,FALSE,FALSE
+2005-06-05,Sweden,Denmark,Sweden,Hanna Ljungberg,21,FALSE,FALSE
+2005-06-05,Sweden,Denmark,Denmark,Johanna Rasmussen,29,FALSE,FALSE
+2005-06-06,France,Italy,France,Hoda Lattaf,16,FALSE,FALSE
+2005-06-06,France,Italy,France,Marinette Pichon,20,FALSE,FALSE
+2005-06-06,France,Italy,France,Marinette Pichon,30,FALSE,FALSE
+2005-06-06,France,Italy,Italy,Sara Di Filippo,83,FALSE,FALSE
+2005-06-06,Germany,Norway,Germany,Conny Pohlers,61,FALSE,FALSE
+2005-06-08,England,Denmark,England,Fara Williams,52,FALSE,TRUE
+2005-06-08,England,Denmark,Denmark,Merete Pedersen,80,FALSE,FALSE
+2005-06-08,England,Denmark,Denmark,Cathrine Paaske Sørensen,88,FALSE,FALSE
+2005-06-09,Germany,Italy,Germany,Birgit Prinz,11,FALSE,FALSE
+2005-06-09,Germany,Italy,Germany,Conny Pohlers,18,FALSE,FALSE
+2005-06-09,Germany,Italy,Germany,Steffi Jones,55,FALSE,FALSE
+2005-06-09,Germany,Italy,Germany,Anja Mittag,74,FALSE,FALSE
+2005-06-09,Norway,France,France,Stéphanie Mugneret-Béghé,20,FALSE,FALSE
+2005-06-09,Norway,France,Norway,Isabell Herlovsen,66,FALSE,FALSE
+2005-06-11,England,Sweden,Sweden,Anna Sjöström,3,FALSE,FALSE
+2005-06-11,Finland,Denmark,Finland,Laura Kalmari,6,FALSE,FALSE
+2005-06-11,Finland,Denmark,Finland,Heidi Kackur,16,FALSE,FALSE
+2005-06-11,Finland,Denmark,Denmark,Cathrine Paaske Sørensen,45,FALSE,FALSE
+2005-06-12,France,Germany,Germany,Inka Grings,72,FALSE,FALSE
+2005-06-12,France,Germany,Germany,Renate Lingor,77,FALSE,TRUE
+2005-06-12,France,Germany,Germany,Sandra Minnert,83,FALSE,FALSE
+2005-06-12,Norway,Italy,Norway,Lise Klaveness,7,FALSE,FALSE
+2005-06-12,Norway,Italy,Italy,Melania Gabbiadini,8,FALSE,FALSE
+2005-06-12,Norway,Italy,Norway,Marit Fiane Grødum,29,FALSE,FALSE
+2005-06-12,Norway,Italy,Norway,Solveig Gulbrandsen,35,FALSE,FALSE
+2005-06-12,Norway,Italy,Norway,Dagny Mellgren,44,FALSE,FALSE
+2005-06-12,Norway,Italy,Italy,Melania Gabbiadini,53,FALSE,FALSE
+2005-06-12,Norway,Italy,Norway,Lise Klaveness,57,FALSE,FALSE
+2005-06-12,Norway,Italy,Italy,Elisa Camporese,69,FALSE,FALSE
+2005-06-15,Germany,Finland,Germany,Inka Grings,3,FALSE,FALSE
+2005-06-15,Germany,Finland,Germany,Conny Pohlers,8,FALSE,FALSE
+2005-06-15,Germany,Finland,Germany,Inka Grings,12,FALSE,FALSE
+2005-06-15,Germany,Finland,Finland,Minna Mustonen,15,FALSE,FALSE
+2005-06-15,Germany,Finland,Germany,Birgit Prinz,62,FALSE,FALSE
+2005-06-16,Sweden,Norway,Norway,Solveig Gulbrandsen,41,FALSE,FALSE
+2005-06-16,Sweden,Norway,Sweden,Hanna Ljungberg,43,FALSE,FALSE
+2005-06-16,Sweden,Norway,Norway,Isabell Herlovsen,65,FALSE,FALSE
+2005-06-16,Sweden,Norway,Sweden,Hanna Ljungberg,89,FALSE,FALSE
+2005-06-16,Sweden,Norway,Norway,Solveig Gulbrandsen,109,FALSE,FALSE
+2005-06-19,Germany,Norway,Germany,Inka Grings,21,FALSE,FALSE
+2005-06-19,Germany,Norway,Germany,Renate Lingor,24,FALSE,FALSE
+2005-06-19,Germany,Norway,Norway,Dagny Mellgren,41,FALSE,FALSE
+2005-06-19,Germany,Norway,Germany,Birgit Prinz,63,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Melanie Behringer,12,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Kerstin Garefrekes,17,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Melanie Behringer,24,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Birgit Prinz,29,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Birgit Prinz,45,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Renate Lingor,51,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Sandra Smisek,57,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Birgit Prinz,59,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Sandra Smisek,70,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Sandra Smisek,79,FALSE,FALSE
+2007-09-10,Germany,Argentina,Germany,Renate Lingor,90,FALSE,FALSE
+2007-09-11,Japan,England,Japan,Aya Miyama,55,FALSE,FALSE
+2007-09-11,Japan,England,England,Kelly Smith,81,FALSE,FALSE
+2007-09-11,Japan,England,England,Kelly Smith,83,FALSE,FALSE
+2007-09-11,Japan,England,Japan,Aya Miyama,90,FALSE,FALSE
+2007-09-11,Nigeria,Sweden,Sweden,Victoria Sandell Svensson,50,FALSE,FALSE
+2007-09-11,Nigeria,Sweden,Nigeria,Cynthia Uwak,82,FALSE,FALSE
+2007-09-11,United States,North Korea,United States,Abby Wambach,50,FALSE,FALSE
+2007-09-11,United States,North Korea,North Korea,Kil Son-hui,58,FALSE,FALSE
+2007-09-11,United States,North Korea,North Korea,Kim Yong-ae,62,FALSE,FALSE
+2007-09-11,United States,North Korea,United States,Heather O'Reilly,69,FALSE,FALSE
+2007-09-12,China PR,Denmark,China PR,Li Jie,31,FALSE,FALSE
+2007-09-12,China PR,Denmark,China PR,Bi Yan,50,FALSE,FALSE
+2007-09-12,China PR,Denmark,Denmark,Anne Dot Eggers Nielsen,51,FALSE,FALSE
+2007-09-12,China PR,Denmark,Denmark,Cathrine Paaske Sørensen,87,FALSE,FALSE
+2007-09-12,China PR,Denmark,China PR,Song Xiaoli,88,FALSE,FALSE
+2007-09-12,Ghana,Australia,Australia,Sarah Walsh,15,FALSE,FALSE
+2007-09-12,Ghana,Australia,Australia,Lisa De Vanna,57,FALSE,FALSE
+2007-09-12,Ghana,Australia,Australia,Heather Garriock,69,FALSE,FALSE
+2007-09-12,Ghana,Australia,Ghana,Anita Amankwa,70,FALSE,FALSE
+2007-09-12,Ghana,Australia,Australia,Lisa De Vanna,81,FALSE,FALSE
+2007-09-12,New Zealand,Brazil,Brazil,Daniela Alves Lima,10,FALSE,FALSE
+2007-09-12,New Zealand,Brazil,Brazil,Cristiane,54,FALSE,FALSE
+2007-09-12,New Zealand,Brazil,Brazil,Marta,74,FALSE,FALSE
+2007-09-12,New Zealand,Brazil,Brazil,Renata Costa,86,FALSE,FALSE
+2007-09-12,New Zealand,Brazil,Brazil,Marta,90,FALSE,FALSE
+2007-09-12,Norway,Canada,Canada,Candace Chapman,33,FALSE,FALSE
+2007-09-12,Norway,Canada,Norway,Ragnhild Gulbrandsen,52,FALSE,FALSE
+2007-09-12,Norway,Canada,Norway,Ane Stangeland Horpestad,81,FALSE,FALSE
+2007-09-14,Argentina,Japan,Japan,Yūki Nagasato,90,FALSE,FALSE
+2007-09-14,North Korea,Nigeria,North Korea,Kim Kyong-hwa,17,FALSE,FALSE
+2007-09-14,North Korea,Nigeria,North Korea,Ri Kum-suk,21,FALSE,FALSE
+2007-09-14,Sweden,United States,United States,Abby Wambach,34,FALSE,TRUE
+2007-09-14,Sweden,United States,United States,Abby Wambach,58,FALSE,FALSE
+2007-09-15,Australia,Norway,Norway,Ragnhild Gulbrandsen,5,FALSE,FALSE
+2007-09-15,Australia,Norway,Australia,Lisa De Vanna,83,FALSE,FALSE
+2007-09-15,Canada,Ghana,Canada,Christine Sinclair,16,FALSE,FALSE
+2007-09-15,Canada,Ghana,Canada,Sophie Schmidt,55,FALSE,FALSE
+2007-09-15,Canada,Ghana,Canada,Christine Sinclair,62,FALSE,FALSE
+2007-09-15,Canada,Ghana,Canada,Martina Franko,77,FALSE,FALSE
+2007-09-15,China PR,Brazil,Brazil,Marta,42,FALSE,FALSE
+2007-09-15,China PR,Brazil,Brazil,Cristiane,47,FALSE,FALSE
+2007-09-15,China PR,Brazil,Brazil,Cristiane,48,FALSE,FALSE
+2007-09-15,China PR,Brazil,Brazil,Marta,70,FALSE,FALSE
+2007-09-15,Denmark,New Zealand,Denmark,Katrine Pedersen,61,FALSE,FALSE
+2007-09-15,Denmark,New Zealand,Denmark,Cathrine Paaske Sørensen,66,FALSE,FALSE
+2007-09-17,England,Argentina,England,Eva González,9,TRUE,FALSE
+2007-09-17,England,Argentina,England,Jill Scott,10,FALSE,FALSE
+2007-09-17,England,Argentina,England,Fara Williams,50,FALSE,TRUE
+2007-09-17,England,Argentina,Argentina,Eva González,60,FALSE,FALSE
+2007-09-17,England,Argentina,England,Kelly Smith,64,FALSE,FALSE
+2007-09-17,England,Argentina,England,Kelly Smith,77,FALSE,FALSE
+2007-09-17,England,Argentina,England,Vicky Exley,90,FALSE,TRUE
+2007-09-17,Germany,Japan,Germany,Birgit Prinz,21,FALSE,FALSE
+2007-09-17,Germany,Japan,Germany,Renate Lingor,87,FALSE,TRUE
+2007-09-18,Nigeria,United States,United States,Lori Chalupny,1,FALSE,FALSE
+2007-09-18,North Korea,Sweden,Sweden,Lotta Schelin,4,FALSE,FALSE
+2007-09-18,North Korea,Sweden,North Korea,Ri Un-suk,22,FALSE,FALSE
+2007-09-18,North Korea,Sweden,Sweden,Lotta Schelin,54,FALSE,FALSE
+2007-09-20,Australia,Canada,Canada,Melissa Tancredi,1,FALSE,FALSE
+2007-09-20,Australia,Canada,Australia,Collette McCallum,53,FALSE,FALSE
+2007-09-20,Australia,Canada,Canada,Christine Sinclair,85,FALSE,FALSE
+2007-09-20,Australia,Canada,Australia,Cheryl Salisbury,90,FALSE,FALSE
+2007-09-20,Brazil,Denmark,Brazil,Pretinha,90,FALSE,FALSE
+2007-09-20,China PR,New Zealand,China PR,Li Jie,57,FALSE,FALSE
+2007-09-20,China PR,New Zealand,China PR,Xie Caixia,79,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Lene Storløkken,4,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Ragnhild Gulbrandsen,39,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Ane Stangeland Horpestad,45,FALSE,TRUE
+2007-09-20,Norway,Ghana,Norway,Isabell Herlovsen,56,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Ragnhild Gulbrandsen,59,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Ragnhild Gulbrandsen,62,FALSE,FALSE
+2007-09-20,Norway,Ghana,Norway,Lise Klaveness,69,FALSE,FALSE
+2007-09-20,Norway,Ghana,Ghana,Adjoa Bayor,73,FALSE,FALSE
+2007-09-20,Norway,Ghana,Ghana,Florence Okoe,80,FALSE,TRUE
+2007-09-22,Germany,North Korea,Germany,Kerstin Garefrekes,44,FALSE,FALSE
+2007-09-22,Germany,North Korea,Germany,Renate Lingor,67,FALSE,FALSE
+2007-09-22,Germany,North Korea,Germany,Annike Krahn,72,FALSE,FALSE
+2007-09-22,United States,England,United States,Abby Wambach,48,FALSE,FALSE
+2007-09-22,United States,England,United States,Shannon Boxx,57,FALSE,FALSE
+2007-09-22,United States,England,United States,Kristine Lilly,60,FALSE,FALSE
+2007-09-23,Brazil,Australia,Brazil,Formiga,4,FALSE,FALSE
+2007-09-23,Brazil,Australia,Brazil,Marta,23,FALSE,TRUE
+2007-09-23,Brazil,Australia,Australia,Lisa De Vanna,36,FALSE,FALSE
+2007-09-23,Brazil,Australia,Australia,Lauren Colthorpe,68,FALSE,FALSE
+2007-09-23,Brazil,Australia,Brazil,Cristiane,75,FALSE,FALSE
+2007-09-23,China PR,Norway,Norway,Isabell Herlovsen,32,FALSE,FALSE
+2007-09-26,Germany,Norway,Germany,Trine Rønning,42,TRUE,FALSE
+2007-09-26,Germany,Norway,Germany,Kerstin Stegemann,72,FALSE,FALSE
+2007-09-26,Germany,Norway,Germany,Martina Müller,75,FALSE,FALSE
+2007-09-27,United States,Brazil,Brazil,Leslie Osborne,20,TRUE,FALSE
+2007-09-27,United States,Brazil,Brazil,Marta,27,FALSE,FALSE
+2007-09-27,United States,Brazil,Brazil,Cristiane,56,FALSE,FALSE
+2007-09-27,United States,Brazil,Brazil,Marta,79,FALSE,FALSE
+2007-09-30,Germany,Brazil,Germany,Birgit Prinz,52,FALSE,FALSE
+2007-09-30,Germany,Brazil,Germany,Simone Laudehr,86,FALSE,FALSE
+2007-09-30,Norway,United States,United States,Abby Wambach,30,FALSE,FALSE
+2007-09-30,Norway,United States,United States,Abby Wambach,46,FALSE,FALSE
+2007-09-30,Norway,United States,United States,Lori Chalupny,58,FALSE,FALSE
+2007-09-30,Norway,United States,United States,Heather O'Reilly,59,FALSE,FALSE
+2007-09-30,Norway,United States,Norway,Ragnhild Gulbrandsen,63,FALSE,FALSE
+2008-08-06,Argentina,Canada,Canada,Candace Chapman,27,FALSE,FALSE
+2008-08-06,Argentina,Canada,Canada,Kara Lang,72,FALSE,FALSE
+2008-08-06,Argentina,Canada,Argentina,Ludmila Manicler,85,FALSE,FALSE
+2008-08-06,China PR,Sweden,China PR,Xu Yuan,6,FALSE,FALSE
+2008-08-06,China PR,Sweden,Sweden,Lotta Schelin,38,FALSE,FALSE
+2008-08-06,China PR,Sweden,China PR,Han Duan,72,FALSE,FALSE
+2008-08-06,Japan,New Zealand,New Zealand,Kirsty Yallop,37,FALSE,FALSE
+2008-08-06,Japan,New Zealand,New Zealand,Amber Hearn,56,FALSE,TRUE
+2008-08-06,Japan,New Zealand,Japan,Aya Miyama,72,FALSE,TRUE
+2008-08-06,Japan,New Zealand,Japan,Homare Sawa,86,FALSE,FALSE
+2008-08-06,North Korea,Nigeria,North Korea,Kim Kyong-hwa,27,FALSE,FALSE
+2008-08-06,Norway,United States,Norway,Leni Larsen Kaurin,2,FALSE,FALSE
+2008-08-06,Norway,United States,Norway,Melissa Wiik,4,FALSE,FALSE
+2008-08-09,Brazil,North Korea,Brazil,Daniela,14,FALSE,FALSE
+2008-08-09,Brazil,North Korea,Brazil,Marta Vieira da Silva,23,FALSE,FALSE
+2008-08-09,Brazil,North Korea,North Korea,Ri Kum-suk,90,FALSE,FALSE
+2008-08-09,China PR,Canada,Canada,Christine Sinclair,34,FALSE,FALSE
+2008-08-09,China PR,Canada,China PR,Xu Yuan,36,FALSE,FALSE
+2008-08-09,New Zealand,Norway,Norway,Melissa Wiik,8,FALSE,FALSE
+2008-08-09,Nigeria,Germany,Germany,Kerstin Stegemann,65,FALSE,FALSE
+2008-08-09,Sweden,Argentina,Sweden,Nilla Fischer,57,FALSE,FALSE
+2008-08-09,United States,Japan,United States,Carli Lloyd,27,FALSE,FALSE
+2008-08-12,China PR,Argentina,China PR,Florencia Quiñones,52,TRUE,FALSE
+2008-08-12,China PR,Argentina,China PR,Gu Yasha,90,FALSE,FALSE
+2008-08-12,Nigeria,Brazil,Nigeria,Perpetua Nkwocha,19,FALSE,TRUE
+2008-08-12,Nigeria,Brazil,Brazil,Cristiane Rozeira de Souza Silva,34,FALSE,FALSE
+2008-08-12,Nigeria,Brazil,Brazil,Cristiane Rozeira de Souza Silva,35,FALSE,FALSE
+2008-08-12,Nigeria,Brazil,Brazil,Cristiane Rozeira de Souza Silva,45,FALSE,FALSE
+2008-08-12,North Korea,Germany,Germany,Anja Mittag,86,FALSE,FALSE
+2008-08-12,Norway,Japan,Norway,Guro Knutsen,27,FALSE,FALSE
+2008-08-12,Norway,Japan,Japan,Yukari Kinga,31,FALSE,FALSE
+2008-08-12,Norway,Japan,Japan,Gunhild Følstad,51,TRUE,FALSE
+2008-08-12,Norway,Japan,Japan,Shinobu Ohno,52,FALSE,FALSE
+2008-08-12,Norway,Japan,Japan,Homare Sawa,71,FALSE,FALSE
+2008-08-12,Norway,Japan,Japan,Ayumi Hara,83,FALSE,FALSE
+2008-08-12,Sweden,Canada,Sweden,Lotta Schelin,19,FALSE,FALSE
+2008-08-12,Sweden,Canada,Sweden,Lotta Schelin,51,FALSE,FALSE
+2008-08-12,Sweden,Canada,Canada,Melissa Tancredi,63,FALSE,FALSE
+2008-08-12,United States,New Zealand,United States,Heather O'Reilly,1,FALSE,FALSE
+2008-08-12,United States,New Zealand,United States,Amy Rodriguez,43,FALSE,FALSE
+2008-08-12,United States,New Zealand,United States,Lindsay Tarpley,56,FALSE,FALSE
+2008-08-12,United States,New Zealand,United States,Angela Hucles,60,FALSE,FALSE
+2008-08-15,Brazil,Norway,Brazil,Daniela,43,FALSE,FALSE
+2008-08-15,Brazil,Norway,Brazil,Marta Vieira da Silva,57,FALSE,FALSE
+2008-08-15,Brazil,Norway,Norway,Siri Nordby,83,FALSE,TRUE
+2008-08-15,China PR,Japan,Japan,Homare Sawa,15,FALSE,FALSE
+2008-08-15,China PR,Japan,Japan,Yuki Nagasato,80,FALSE,FALSE
+2008-08-15,Sweden,Germany,Germany,Kerstin Garefrekes,104,FALSE,FALSE
+2008-08-15,Sweden,Germany,Germany,Simone Laudehr,115,FALSE,FALSE
+2008-08-15,United States,Canada,United States,Angela Hucles,12,FALSE,FALSE
+2008-08-15,United States,Canada,Canada,Christine Sinclair,30,FALSE,FALSE
+2008-08-15,United States,Canada,United States,Natasha Kai,101,FALSE,FALSE
+2008-08-18,Brazil,Germany,Germany,Birgit Prinz,10,FALSE,FALSE
+2008-08-18,Brazil,Germany,Brazil,Miraildes Maciel Mota,43,FALSE,FALSE
+2008-08-18,Brazil,Germany,Brazil,Cristiane Rozeira de Souza Silva,49,FALSE,FALSE
+2008-08-18,Brazil,Germany,Brazil,Marta Vieira da Silva,53,FALSE,FALSE
+2008-08-18,Brazil,Germany,Brazil,Cristiane Rozeira de Souza Silva,76,FALSE,FALSE
+2008-08-18,United States,Japan,Japan,Shinobu Ohno,16,FALSE,FALSE
+2008-08-18,United States,Japan,United States,Angela Hucles,41,FALSE,FALSE
+2008-08-18,United States,Japan,United States,Lori Chalupny,44,FALSE,FALSE
+2008-08-18,United States,Japan,United States,Heather O'Reilly,70,FALSE,FALSE
+2008-08-18,United States,Japan,United States,Angela Hucles,80,FALSE,FALSE
+2008-08-18,United States,Japan,Japan,Eriko Arakawa,90,FALSE,FALSE
+2008-08-21,Brazil,United States,United States,Carli Lloyd,96,FALSE,FALSE
+2008-08-21,Germany,Japan,Germany,Fatmire Bajramaj,68,FALSE,FALSE
+2008-08-21,Germany,Japan,Germany,Fatmire Bajramaj,87,FALSE,FALSE
+2009-08-23,Finland,Denmark,Finland,Maija Saari,49,FALSE,FALSE
+2009-08-23,Ukraine,Netherlands,Netherlands,Kirsten van de Ven,4,FALSE,FALSE
+2009-08-23,Ukraine,Netherlands,Netherlands,Karin Stevens,9,FALSE,FALSE
+2009-08-24,Germany,Norway,Germany,Linda Bresonik,33,FALSE,TRUE
+2009-08-24,Germany,Norway,Germany,Fatmire Bajramaj,90,FALSE,FALSE
+2009-08-24,Germany,Norway,Germany,Fatmire Bajramaj,90,FALSE,FALSE
+2009-08-24,Germany,Norway,Germany,Anja Mittag,90,FALSE,FALSE
+2009-08-24,Iceland,France,Iceland,Hólmfríður Magnúsdóttir,6,FALSE,FALSE
+2009-08-24,Iceland,France,France,Camille Abily,18,FALSE,TRUE
+2009-08-24,Iceland,France,France,Sonia Bompastor,53,FALSE,TRUE
+2009-08-24,Iceland,France,France,Louisa Cadamuro,67,FALSE,FALSE
+2009-08-25,Italy,England,England,Fara Williams,38,FALSE,TRUE
+2009-08-25,Italy,England,Italy,Patrizia Panico,56,FALSE,FALSE
+2009-08-25,Italy,England,Italy,Alessia Tuttino,82,FALSE,FALSE
+2009-08-25,Sweden,Russia,Sweden,Charlotte Rohlin,5,FALSE,FALSE
+2009-08-25,Sweden,Russia,Sweden,Victoria Sandell Svensson,15,FALSE,FALSE
+2009-08-25,Sweden,Russia,Sweden,Caroline Seger,82,FALSE,FALSE
+2009-08-26,Finland,Netherlands,Finland,Laura Österberg Kalmari,7,FALSE,FALSE
+2009-08-26,Finland,Netherlands,Netherlands,Kirsten van de Ven,25,FALSE,FALSE
+2009-08-26,Finland,Netherlands,Finland,Laura Österberg Kalmari,69,FALSE,FALSE
+2009-08-26,Ukraine,Denmark,Denmark,Camilla Sand,49,FALSE,FALSE
+2009-08-26,Ukraine,Denmark,Ukraine,Daryna Apanaschenko,63,FALSE,FALSE
+2009-08-26,Ukraine,Denmark,Denmark,Maiken Pape,87,FALSE,FALSE
+2009-08-27,France,Germany,Germany,Inka Grings,9,FALSE,FALSE
+2009-08-27,France,Germany,Germany,Annike Krahn,17,FALSE,FALSE
+2009-08-27,France,Germany,Germany,Melanie Behringer,45,FALSE,FALSE
+2009-08-27,France,Germany,Germany,Linda Bresonik,47,FALSE,TRUE
+2009-08-27,France,Germany,France,Gaëtane Thiney,51,FALSE,FALSE
+2009-08-27,France,Germany,Germany,Simone Laudehr,90,FALSE,FALSE
+2009-08-27,Iceland,Norway,Norway,Cecilie Pedersen,45,FALSE,FALSE
+2009-08-28,England,Russia,Russia,Ksenia Tsybutovich,2,FALSE,FALSE
+2009-08-28,England,Russia,Russia,Olesya Kurochkina,22,FALSE,FALSE
+2009-08-28,England,Russia,England,Karen Carney,24,FALSE,FALSE
+2009-08-28,England,Russia,England,Eniola Aluko,32,FALSE,FALSE
+2009-08-28,England,Russia,England,Kelly Smith,42,FALSE,FALSE
+2009-08-28,Italy,Sweden,Sweden,Lotta Schelin,9,FALSE,FALSE
+2009-08-28,Italy,Sweden,Sweden,Kosovare Asllani,19,FALSE,FALSE
+2009-08-29,Denmark,Netherlands,Netherlands,Sylvia Smit,58,FALSE,FALSE
+2009-08-29,Denmark,Netherlands,Netherlands,Manon Melis,66,FALSE,FALSE
+2009-08-29,Denmark,Netherlands,Denmark,Johanna Rasmussen,71,FALSE,FALSE
+2009-08-29,Finland,Ukraine,Ukraine,Lyudmyla Pekur,69,FALSE,FALSE
+2009-08-30,Germany,Iceland,Germany,Inka Grings,50,FALSE,FALSE
+2009-08-30,Norway,France,Norway,Lene Storløkken,4,FALSE,FALSE
+2009-08-30,Norway,France,France,Camille Abily,16,FALSE,FALSE
+2009-08-31,Russia,Italy,Italy,Melania Gabbiadini,77,FALSE,FALSE
+2009-08-31,Russia,Italy,Italy,Tatiana Zorri,90,FALSE,FALSE
+2009-08-31,Sweden,England,England,Faye White,28,FALSE,FALSE
+2009-08-31,Sweden,England,Sweden,Victoria Sandell Svensson,40,FALSE,TRUE
+2009-09-03,Finland,England,England,Eniola Aluko,15,FALSE,FALSE
+2009-09-03,Finland,England,England,Fara Williams,49,FALSE,FALSE
+2009-09-03,Finland,England,Finland,Annica Sjölund,66,FALSE,FALSE
+2009-09-03,Finland,England,England,Eniola Aluko,67,FALSE,FALSE
+2009-09-03,Finland,England,Finland,Linda Sällström,79,FALSE,FALSE
+2009-09-04,Germany,Italy,Germany,Inka Grings,4,FALSE,FALSE
+2009-09-04,Germany,Italy,Germany,Inka Grings,47,FALSE,FALSE
+2009-09-04,Germany,Italy,Italy,Patrizia Panico,63,FALSE,FALSE
+2009-09-04,Sweden,Norway,Norway,Stina Segerström,39,TRUE,FALSE
+2009-09-04,Sweden,Norway,Norway,Anneli Giske,45,FALSE,FALSE
+2009-09-04,Sweden,Norway,Norway,Cecilie Pedersen,60,FALSE,FALSE
+2009-09-04,Sweden,Norway,Sweden,Victoria Sandell Svensson,80,FALSE,FALSE
+2009-09-06,England,Netherlands,England,Kelly Smith,61,FALSE,FALSE
+2009-09-06,England,Netherlands,Netherlands,Marlous Pieëte,64,FALSE,FALSE
+2009-09-06,England,Netherlands,England,Jill Scott,116,FALSE,FALSE
+2009-09-07,Germany,Norway,Norway,Isabell Herlovsen,10,FALSE,FALSE
+2009-09-07,Germany,Norway,Germany,Simone Laudehr,59,FALSE,FALSE
+2009-09-07,Germany,Norway,Germany,Célia Okoyino da Mbabi,61,FALSE,FALSE
+2009-09-07,Germany,Norway,Germany,Fatmire Bajramaj,90,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Birgit Prinz,20,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Melanie Behringer,22,FALSE,FALSE
+2009-09-10,England,Germany,England,Karen Carney,24,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Kim Kulig,50,FALSE,FALSE
+2009-09-10,England,Germany,England,Kelly Smith,55,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Inka Grings,62,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Inka Grings,73,FALSE,FALSE
+2009-09-10,England,Germany,Germany,Birgit Prinz,76,FALSE,FALSE
+2011-06-26,Germany,Canada,Germany,Kerstin Garefrekes,10,FALSE,FALSE
+2011-06-26,Germany,Canada,Germany,Célia Šašić,42,FALSE,FALSE
+2011-06-26,Germany,Canada,Canada,Christine Sinclair,82,FALSE,FALSE
+2011-06-26,Nigeria,France,France,Marie-Laure Delie,56,FALSE,FALSE
+2011-06-27,Japan,New Zealand,Japan,Yūki Nagasato,6,FALSE,FALSE
+2011-06-27,Japan,New Zealand,New Zealand,Amber Hearn,12,FALSE,FALSE
+2011-06-27,Japan,New Zealand,Japan,Aya Miyama,68,FALSE,FALSE
+2011-06-27,Mexico,England,England,Fara Williams,21,FALSE,FALSE
+2011-06-27,Mexico,England,Mexico,Mónica Ocampo,33,FALSE,FALSE
+2011-06-28,Colombia,Sweden,Sweden,Jessica Landström,57,FALSE,FALSE
+2011-06-28,United States,North Korea,United States,Lauren Holiday,54,FALSE,FALSE
+2011-06-28,United States,North Korea,United States,Rachel Van Hollebeke,76,FALSE,FALSE
+2011-06-29,Brazil,Australia,Brazil,Rosana dos Santos Augusto,54,FALSE,FALSE
+2011-06-29,Norway,Equatorial Guinea,Norway,Emilie Haavi,84,FALSE,FALSE
+2011-06-30,Canada,France,France,Gaëtane Thiney,24,FALSE,FALSE
+2011-06-30,Canada,France,France,Gaëtane Thiney,60,FALSE,FALSE
+2011-06-30,Canada,France,France,Camille Abily,66,FALSE,FALSE
+2011-06-30,Canada,France,France,Élodie Thomis,83,FALSE,FALSE
+2011-06-30,Germany,Nigeria,Germany,Simone Laudehr,54,FALSE,FALSE
+2011-07-01,Japan,Mexico,Japan,Homare Sawa,13,FALSE,FALSE
+2011-07-01,Japan,Mexico,Japan,Shinobu Ohno,15,FALSE,FALSE
+2011-07-01,Japan,Mexico,Japan,Homare Sawa,39,FALSE,FALSE
+2011-07-01,Japan,Mexico,Japan,Homare Sawa,80,FALSE,FALSE
+2011-07-01,New Zealand,England,New Zealand,Sarah Gregorius,18,FALSE,FALSE
+2011-07-01,New Zealand,England,England,Jill Scott,63,FALSE,FALSE
+2011-07-01,New Zealand,England,England,Jessica Clarke,81,FALSE,FALSE
+2011-07-02,North Korea,Sweden,Sweden,Lisa Dahlkvist,64,FALSE,FALSE
+2011-07-02,United States,Colombia,United States,Heather O'Reilly,12,FALSE,FALSE
+2011-07-02,United States,Colombia,United States,Megan Rapinoe,50,FALSE,FALSE
+2011-07-02,United States,Colombia,United States,Carli Lloyd,57,FALSE,FALSE
+2011-07-03,Australia,Equatorial Guinea,Australia,Leena Khamis,8,FALSE,FALSE
+2011-07-03,Australia,Equatorial Guinea,Equatorial Guinea,Genoveva Añonman,21,FALSE,FALSE
+2011-07-03,Australia,Equatorial Guinea,Australia,Emily van Egmond,48,FALSE,FALSE
+2011-07-03,Australia,Equatorial Guinea,Australia,Lisa De Vanna,51,FALSE,FALSE
+2011-07-03,Australia,Equatorial Guinea,Equatorial Guinea,Genoveva Añonman,83,FALSE,FALSE
+2011-07-03,Brazil,Norway,Brazil,Marta,22,FALSE,FALSE
+2011-07-03,Brazil,Norway,Brazil,Rosana dos Santos Augusto,46,FALSE,FALSE
+2011-07-03,Brazil,Norway,Brazil,Marta,48,FALSE,FALSE
+2011-07-05,Canada,Nigeria,Nigeria,Perpetua Nkwocha,73,FALSE,FALSE
+2011-07-05,England,Japan,England,Ellen White,15,FALSE,FALSE
+2011-07-05,England,Japan,England,Rachel Yankey,66,FALSE,FALSE
+2011-07-05,Germany,France,Germany,Kerstin Garefrekes,25,FALSE,FALSE
+2011-07-05,Germany,France,Germany,Inka Grings,32,FALSE,FALSE
+2011-07-05,Germany,France,France,Marie-Laure Delie,56,FALSE,FALSE
+2011-07-05,Germany,France,Germany,Inka Grings,68,FALSE,TRUE
+2011-07-05,Germany,France,France,Laura Georges,72,FALSE,FALSE
+2011-07-05,Germany,France,Germany,Célia Šašić,89,FALSE,FALSE
+2011-07-05,New Zealand,Mexico,Mexico,Stephany Mayor,2,FALSE,FALSE
+2011-07-05,New Zealand,Mexico,Mexico,Maribel Domínguez,29,FALSE,FALSE
+2011-07-05,New Zealand,Mexico,New Zealand,Rebecca Smith,90,FALSE,FALSE
+2011-07-05,New Zealand,Mexico,New Zealand,Hannah Wilkinson,90,FALSE,FALSE
+2011-07-06,Australia,Norway,Norway,Elise Thorsnes,56,FALSE,FALSE
+2011-07-06,Australia,Norway,Australia,Kyah Simon,57,FALSE,FALSE
+2011-07-06,Australia,Norway,Australia,Kyah Simon,87,FALSE,FALSE
+2011-07-06,Equatorial Guinea,Brazil,Brazil,Érika,49,FALSE,FALSE
+2011-07-06,Equatorial Guinea,Brazil,Brazil,Cristiane,54,FALSE,FALSE
+2011-07-06,Equatorial Guinea,Brazil,Brazil,Cristiane,90,FALSE,TRUE
+2011-07-06,Sweden,United States,Sweden,Lisa Dahlkvist,16,FALSE,TRUE
+2011-07-06,Sweden,United States,Sweden,Amy LePeilbet,35,TRUE,FALSE
+2011-07-06,Sweden,United States,United States,Abby Wambach,67,FALSE,FALSE
+2011-07-09,England,France,England,Jill Scott,59,FALSE,FALSE
+2011-07-09,England,France,France,Élise Bussaglia,88,FALSE,FALSE
+2011-07-09,Germany,Japan,Japan,Karina Maruyama,108,FALSE,FALSE
+2011-07-10,Brazil,United States,United States,Daiane Rodrigues,2,TRUE,FALSE
+2011-07-10,Brazil,United States,Brazil,Marta,68,FALSE,TRUE
+2011-07-10,Brazil,United States,Brazil,Marta,92,FALSE,FALSE
+2011-07-10,Brazil,United States,United States,Abby Wambach,120,FALSE,FALSE
+2011-07-10,Sweden,Australia,Sweden,Therese Sjögran,11,FALSE,FALSE
+2011-07-10,Sweden,Australia,Sweden,Lisa Dahlkvist,16,FALSE,FALSE
+2011-07-10,Sweden,Australia,Australia,Ellyse Perry,40,FALSE,FALSE
+2011-07-10,Sweden,Australia,Sweden,Lotta Schelin,52,FALSE,FALSE
+2011-07-13,France,United States,United States,Lauren Holiday,9,FALSE,FALSE
+2011-07-13,France,United States,France,Sonia Bompastor,55,FALSE,FALSE
+2011-07-13,France,United States,United States,Abby Wambach,79,FALSE,FALSE
+2011-07-13,France,United States,United States,Alex Morgan,82,FALSE,FALSE
+2011-07-13,Japan,Sweden,Sweden,Josefine Öqvist,10,FALSE,FALSE
+2011-07-13,Japan,Sweden,Japan,Nahomi Kawasumi,19,FALSE,FALSE
+2011-07-13,Japan,Sweden,Japan,Homare Sawa,60,FALSE,FALSE
+2011-07-13,Japan,Sweden,Japan,Nahomi Kawasumi,64,FALSE,FALSE
+2011-07-16,Sweden,France,Sweden,Lotta Schelin,29,FALSE,FALSE
+2011-07-16,Sweden,France,France,Élodie Thomis,56,FALSE,FALSE
+2011-07-16,Sweden,France,Sweden,Marie Hammarström,82,FALSE,FALSE
+2011-07-17,Japan,United States,United States,Alex Morgan,69,FALSE,FALSE
+2011-07-17,Japan,United States,Japan,Aya Miyama,81,FALSE,FALSE
+2011-07-17,Japan,United States,United States,Abby Wambach,104,FALSE,FALSE
+2011-07-17,Japan,United States,Japan,Homare Sawa,117,FALSE,FALSE
+2012-07-25,Cameroon,Brazil,Brazil,Francielle,7,FALSE,FALSE
+2012-07-25,Cameroon,Brazil,Brazil,Renata Costa,10,FALSE,FALSE
+2012-07-25,Cameroon,Brazil,Brazil,Marta,73,FALSE,TRUE
+2012-07-25,Cameroon,Brazil,Brazil,Cristiane,78,FALSE,FALSE
+2012-07-25,Cameroon,Brazil,Brazil,Marta,88,FALSE,FALSE
+2012-07-25,Colombia,North Korea,North Korea,Kim Song-hui,39,FALSE,FALSE
+2012-07-25,Colombia,North Korea,North Korea,Kim Song-hui,85,FALSE,FALSE
+2012-07-25,Great Britain,New Zealand,Great Britain,Steph Houghton,64,FALSE,FALSE
+2012-07-25,Japan,Canada,Japan,Nahomi Kawasumi,33,FALSE,FALSE
+2012-07-25,Japan,Canada,Japan,Aya Miyama,44,FALSE,FALSE
+2012-07-25,Japan,Canada,Canada,Melissa Tancredi,55,FALSE,FALSE
+2012-07-25,Sweden,South Africa,Sweden,Nilla Fischer,7,FALSE,FALSE
+2012-07-25,Sweden,South Africa,Sweden,Lisa Dahlkvist,20,FALSE,FALSE
+2012-07-25,Sweden,South Africa,Sweden,Lotta Schelin,21,FALSE,FALSE
+2012-07-25,Sweden,South Africa,South Africa,Portia Modise,60,FALSE,FALSE
+2012-07-25,Sweden,South Africa,Sweden,Lotta Schelin,63,FALSE,FALSE
+2012-07-25,United States,France,France,Gaëtane Thiney,12,FALSE,FALSE
+2012-07-25,United States,France,France,Marie-Laure Delie,14,FALSE,FALSE
+2012-07-25,United States,France,United States,Abby Wambach,19,FALSE,FALSE
+2012-07-25,United States,France,United States,Alex Morgan,32,FALSE,FALSE
+2012-07-25,United States,France,United States,Carli Lloyd,56,FALSE,FALSE
+2012-07-25,United States,France,United States,Alex Morgan,66,FALSE,FALSE
+2012-07-28,Canada,South Africa,Canada,Melissa Tancredi,7,FALSE,FALSE
+2012-07-28,Canada,South Africa,Canada,Christine Sinclair,58,FALSE,FALSE
+2012-07-28,Canada,South Africa,Canada,Christine Sinclair,86,FALSE,FALSE
+2012-07-28,France,North Korea,France,Laura Georges,45,FALSE,FALSE
+2012-07-28,France,North Korea,France,Élodie Thomis,70,FALSE,FALSE
+2012-07-28,France,North Korea,France,Marie-Laure Delie,71,FALSE,FALSE
+2012-07-28,France,North Korea,France,Wendie Renard,81,FALSE,FALSE
+2012-07-28,France,North Korea,France,Camille Catala,87,FALSE,FALSE
+2012-07-28,Great Britain,Cameroon,Great Britain,Casey Stoney,18,FALSE,FALSE
+2012-07-28,Great Britain,Cameroon,Great Britain,Jill Scott,23,FALSE,FALSE
+2012-07-28,Great Britain,Cameroon,Great Britain,Steph Houghton,82,FALSE,FALSE
+2012-07-28,New Zealand,Brazil,Brazil,Cristiane,86,FALSE,FALSE
+2012-07-28,United States,Colombia,United States,Megan Rapinoe,33,FALSE,FALSE
+2012-07-28,United States,Colombia,United States,Abby Wambach,74,FALSE,FALSE
+2012-07-28,United States,Colombia,United States,Carli Lloyd,77,FALSE,FALSE
+2012-07-31,Canada,Sweden,Sweden,Marie Hammarström,14,FALSE,FALSE
+2012-07-31,Canada,Sweden,Sweden,Sofia Jakobsson,16,FALSE,FALSE
+2012-07-31,Canada,Sweden,Canada,Melissa Tancredi,43,FALSE,FALSE
+2012-07-31,Canada,Sweden,Canada,Melissa Tancredi,84,FALSE,FALSE
+2012-07-31,France,Colombia,France,Élodie Thomis,5,FALSE,FALSE
+2012-07-31,Great Britain,Brazil,Great Britain,Steph Houghton,2,FALSE,FALSE
+2012-07-31,New Zealand,Cameroon,New Zealand,Rebecca Smith,43,FALSE,FALSE
+2012-07-31,New Zealand,Cameroon,New Zealand,Ysis Sonkeng,49,TRUE,FALSE
+2012-07-31,New Zealand,Cameroon,New Zealand,Sarah Gregorius,62,FALSE,FALSE
+2012-07-31,New Zealand,Cameroon,Cameroon,Gabrielle Onguéné,75,FALSE,FALSE
+2012-07-31,United States,North Korea,United States,Abby Wambach,25,FALSE,FALSE
+2012-08-03,Brazil,Japan,Japan,Yūki Ōgimi,27,FALSE,FALSE
+2012-08-03,Brazil,Japan,Japan,Shinobu Ohno,73,FALSE,FALSE
+2012-08-03,Great Britain,Canada,Canada,Jonelle Filigno,12,FALSE,FALSE
+2012-08-03,Great Britain,Canada,Canada,Christine Sinclair,26,FALSE,FALSE
+2012-08-03,Sweden,France,Sweden,Nilla Fischer,18,FALSE,FALSE
+2012-08-03,Sweden,France,France,Laura Georges,29,FALSE,FALSE
+2012-08-03,Sweden,France,France,Wendie Renard,39,FALSE,FALSE
+2012-08-03,United States,New Zealand,United States,Abby Wambach,27,FALSE,FALSE
+2012-08-03,United States,New Zealand,United States,Sydney Leroux,87,FALSE,FALSE
+2012-08-06,Canada,United States,Canada,Christine Sinclair,22,FALSE,FALSE
+2012-08-06,Canada,United States,United States,Megan Rapinoe,54,FALSE,FALSE
+2012-08-06,Canada,United States,Canada,Christine Sinclair,67,FALSE,FALSE
+2012-08-06,Canada,United States,United States,Megan Rapinoe,70,FALSE,FALSE
+2012-08-06,Canada,United States,Canada,Christine Sinclair,73,FALSE,FALSE
+2012-08-06,Canada,United States,United States,Abby Wambach,80,FALSE,TRUE
+2012-08-06,Canada,United States,United States,Alex Morgan,120,FALSE,FALSE
+2012-08-06,France,Japan,Japan,Yūki Ōgimi,32,FALSE,FALSE
+2012-08-06,France,Japan,Japan,Mizuho Sakaguchi,49,FALSE,FALSE
+2012-08-06,France,Japan,France,Eugénie Le Sommer,76,FALSE,FALSE
+2012-08-09,Canada,France,Canada,Diana Matheson,90,FALSE,FALSE
+2012-08-09,United States,Japan,United States,Carli Lloyd,8,FALSE,FALSE
+2012-08-09,United States,Japan,United States,Carli Lloyd,54,FALSE,FALSE
+2012-08-09,United States,Japan,Japan,Yūki Ōgimi,63,FALSE,FALSE
+2013-07-10,Sweden,Denmark,Denmark,Mariann Gajhede Knudsen,26,FALSE,FALSE
+2013-07-10,Sweden,Denmark,Sweden,Nilla Fischer,36,FALSE,FALSE
+2013-07-11,Norway,Iceland,Norway,Kristine Wigdahl Hegland,26,FALSE,FALSE
+2013-07-11,Norway,Iceland,Iceland,Margrét Lára Viðarsdóttir,87,FALSE,TRUE
+2013-07-12,England,Spain,Spain,Verónica Boquete,4,FALSE,FALSE
+2013-07-12,England,Spain,England,Eniola Aluko,8,FALSE,FALSE
+2013-07-12,England,Spain,Spain,Jennifer Hermoso,85,FALSE,FALSE
+2013-07-12,England,Spain,England,Laura Bassett,89,FALSE,FALSE
+2013-07-12,England,Spain,Spain,Alexia Putellas,90,FALSE,FALSE
+2013-07-12,France,Russia,France,Marie-Laure Delie,21,FALSE,FALSE
+2013-07-12,France,Russia,France,Marie-Laure Delie,33,FALSE,FALSE
+2013-07-12,France,Russia,France,Eugénie Le Sommer,67,FALSE,FALSE
+2013-07-12,France,Russia,Russia,Elena Morozova,84,FALSE,FALSE
+2013-07-13,Italy,Denmark,Italy,Melania Gabbiadini,55,FALSE,FALSE
+2013-07-13,Italy,Denmark,Italy,Ilaria Mauro,60,FALSE,FALSE
+2013-07-13,Italy,Denmark,Denmark,Mia Brogaard,66,FALSE,FALSE
+2013-07-13,Sweden,Finland,Sweden,Nilla Fischer,15,FALSE,FALSE
+2013-07-13,Sweden,Finland,Sweden,Nilla Fischer,36,FALSE,FALSE
+2013-07-13,Sweden,Finland,Sweden,Kosovare Asllani,38,FALSE,FALSE
+2013-07-13,Sweden,Finland,Sweden,Lotta Schelin,60,FALSE,FALSE
+2013-07-13,Sweden,Finland,Sweden,Lotta Schelin,87,FALSE,FALSE
+2013-07-14,Iceland,Germany,Germany,Lena Lotzen,24,FALSE,FALSE
+2013-07-14,Iceland,Germany,Germany,Célia Okoyino da Mbabi,55,FALSE,FALSE
+2013-07-14,Iceland,Germany,Germany,Célia Okoyino da Mbabi,84,FALSE,FALSE
+2013-07-14,Norway,Netherlands,Norway,Solveig Gulbrandsen,54,FALSE,FALSE
+2013-07-15,England,Russia,Russia,Nelli Korovkina,38,FALSE,FALSE
+2013-07-15,England,Russia,England,Toni Duggan,90,FALSE,FALSE
+2013-07-15,Spain,France,France,Wendie Renard,5,FALSE,FALSE
+2013-07-16,Denmark,Finland,Denmark,Mia Brogaard,29,FALSE,FALSE
+2013-07-16,Denmark,Finland,Finland,Annica Sjölund,87,FALSE,FALSE
+2013-07-16,Sweden,Italy,Sweden,Raffaella Manieri,47,TRUE,FALSE
+2013-07-16,Sweden,Italy,Sweden,Lotta Schelin,49,FALSE,FALSE
+2013-07-16,Sweden,Italy,Sweden,Josefine Öqvist,57,FALSE,FALSE
+2013-07-16,Sweden,Italy,Italy,Melania Gabbiadini,78,FALSE,FALSE
+2013-07-17,Germany,Norway,Norway,Ingvild Isaksen,45,FALSE,FALSE
+2013-07-17,Netherlands,Iceland,Iceland,Dagný Brynjarsdóttir,30,FALSE,FALSE
+2013-07-18,France,England,France,Eugénie Le Sommer,9,FALSE,FALSE
+2013-07-18,France,England,France,Louisa Nécib,62,FALSE,FALSE
+2013-07-18,France,England,France,Wendie Renard,64,FALSE,FALSE
+2013-07-18,Russia,Spain,Spain,Verónica Boquete,14,FALSE,FALSE
+2013-07-18,Russia,Spain,Russia,Elena Terekhova,44,FALSE,FALSE
+2013-07-21,Italy,Germany,Germany,Simone Laudehr,26,FALSE,FALSE
+2013-07-21,Sweden,Iceland,Sweden,Marie Hammarström,3,FALSE,FALSE
+2013-07-21,Sweden,Iceland,Sweden,Josefine Öqvist,14,FALSE,FALSE
+2013-07-21,Sweden,Iceland,Sweden,Lotta Schelin,19,FALSE,FALSE
+2013-07-21,Sweden,Iceland,Sweden,Lotta Schelin,59,FALSE,FALSE
+2013-07-22,France,Denmark,Denmark,Johanna Rasmussen,28,FALSE,FALSE
+2013-07-22,France,Denmark,France,Louisa Nécib,71,FALSE,TRUE
+2013-07-22,Norway,Spain,Norway,Solveig Gulbrandsen,24,FALSE,FALSE
+2013-07-22,Norway,Spain,Norway,Irene Paredes,43,TRUE,FALSE
+2013-07-22,Norway,Spain,Norway,Ada Hegerberg,64,FALSE,FALSE
+2013-07-22,Norway,Spain,Spain,Jennifer Hermoso,90,FALSE,FALSE
+2013-07-24,Sweden,Germany,Germany,Dzsenifer Marozsán,33,FALSE,FALSE
+2013-07-25,Norway,Denmark,Norway,Marit Fiane Christensen,3,FALSE,FALSE
+2013-07-25,Norway,Denmark,Denmark,Mariann Gajhede Knudsen,87,FALSE,FALSE
+2013-07-28,Germany,Norway,Germany,Anja Mittag,49,FALSE,FALSE
+2015-06-06,Canada,China PR,Canada,Christine Sinclair,90,FALSE,TRUE
+2015-06-06,New Zealand,Netherlands,Netherlands,Lieke Martens,33,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Célia Šašić,3,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Célia Šašić,14,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Anja Mittag,29,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Célia Šašić,31,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Anja Mittag,35,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Anja Mittag,64,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Simone Laudehr,71,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Sara Däbritz,75,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Melanie Behringer,79,FALSE,FALSE
+2015-06-07,Germany,Ivory Coast,Germany,Alexandra Popp,85,FALSE,FALSE
+2015-06-07,Norway,Thailand,Norway,Trine Rønning,15,FALSE,FALSE
+2015-06-07,Norway,Thailand,Norway,Isabell Herlovsen,29,FALSE,FALSE
+2015-06-07,Norway,Thailand,Norway,Isabell Herlovsen,34,FALSE,FALSE
+2015-06-07,Norway,Thailand,Norway,Ada Hegerberg,68,FALSE,FALSE
+2015-06-08,Cameroon,Ecuador,Cameroon,Madeleine Ngono Mani,34,FALSE,FALSE
+2015-06-08,Cameroon,Ecuador,Cameroon,Gaëlle Enganamouit,36,FALSE,FALSE
+2015-06-08,Cameroon,Ecuador,Cameroon,Christine Manie,44,FALSE,TRUE
+2015-06-08,Cameroon,Ecuador,Cameroon,Gaëlle Enganamouit,73,FALSE,FALSE
+2015-06-08,Cameroon,Ecuador,Cameroon,Gabrielle Onguéné,79,FALSE,TRUE
+2015-06-08,Cameroon,Ecuador,Cameroon,Gaëlle Enganamouit,90,FALSE,TRUE
+2015-06-08,Japan,Switzerland,Japan,Aya Miyama,29,FALSE,TRUE
+2015-06-08,Sweden,Nigeria,Sweden,Desire Oparanozie,21,TRUE,FALSE
+2015-06-08,Sweden,Nigeria,Sweden,Nilla Fischer,31,FALSE,FALSE
+2015-06-08,Sweden,Nigeria,Nigeria,Ngozi Okobi-Okeoghene,50,FALSE,FALSE
+2015-06-08,Sweden,Nigeria,Nigeria,Asisat Oshoala,53,FALSE,FALSE
+2015-06-08,Sweden,Nigeria,Sweden,Linda Sembrant,60,FALSE,FALSE
+2015-06-08,Sweden,Nigeria,Nigeria,Francisca Ordega,87,FALSE,FALSE
+2015-06-08,United States,Australia,United States,Megan Rapinoe,12,FALSE,FALSE
+2015-06-08,United States,Australia,Australia,Lisa De Vanna,27,FALSE,FALSE
+2015-06-08,United States,Australia,United States,Christen Press,61,FALSE,FALSE
+2015-06-08,United States,Australia,United States,Megan Rapinoe,78,FALSE,FALSE
+2015-06-09,Brazil,South Korea,Brazil,Formiga,33,FALSE,FALSE
+2015-06-09,Brazil,South Korea,Brazil,Marta,53,FALSE,TRUE
+2015-06-09,Colombia,Mexico,Mexico,Verónica Pérez,36,FALSE,FALSE
+2015-06-09,Colombia,Mexico,Colombia,Daniela Montoya,82,FALSE,FALSE
+2015-06-09,France,England,France,Eugénie Le Sommer,29,FALSE,FALSE
+2015-06-09,Spain,Costa Rica,Spain,Vicky Losada,13,FALSE,FALSE
+2015-06-09,Spain,Costa Rica,Costa Rica,Raquel Rodríguez,14,FALSE,FALSE
+2015-06-11,China PR,Netherlands,China PR,Wang Lisi,90,FALSE,FALSE
+2015-06-11,Germany,Norway,Germany,Anja Mittag,6,FALSE,FALSE
+2015-06-11,Germany,Norway,Norway,Maren Mjelde,61,FALSE,FALSE
+2015-06-11,Ivory Coast,Thailand,Ivory Coast,Ange N'Guessan,4,FALSE,FALSE
+2015-06-11,Ivory Coast,Thailand,Thailand,Orathai Srimanee,26,FALSE,FALSE
+2015-06-11,Ivory Coast,Thailand,Thailand,Orathai Srimanee,45,FALSE,FALSE
+2015-06-11,Ivory Coast,Thailand,Thailand,Thanatta Chawong,75,FALSE,FALSE
+2015-06-11,Ivory Coast,Thailand,Ivory Coast,Josée Nahi,88,FALSE,FALSE
+2015-06-12,Australia,Nigeria,Australia,Kyah Simon,29,FALSE,FALSE
+2015-06-12,Australia,Nigeria,Australia,Kyah Simon,68,FALSE,FALSE
+2015-06-12,Japan,Cameroon,Japan,Aya Sameshima,6,FALSE,FALSE
+2015-06-12,Japan,Cameroon,Japan,Yuika Sugasawa,17,FALSE,FALSE
+2015-06-12,Japan,Cameroon,Cameroon,Ajara Nchout,90,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Angie Ponce,24,TRUE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Eseosa Aigbogun,45,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Fabienne Humm,47,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Fabienne Humm,49,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Fabienne Humm,52,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Ramona Bachmann,60,FALSE,TRUE
+2015-06-12,Switzerland,Ecuador,Switzerland,Ramona Bachmann,61,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Ecuador,Angie Ponce,64,FALSE,TRUE
+2015-06-12,Switzerland,Ecuador,Switzerland,Angie Ponce,71,TRUE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Martina Moser,76,FALSE,FALSE
+2015-06-12,Switzerland,Ecuador,Switzerland,Ramona Bachmann,81,FALSE,FALSE
+2015-06-13,Brazil,Spain,Brazil,Andressa Alves da Silva,44,FALSE,FALSE
+2015-06-13,England,Mexico,England,Fran Kirby,71,FALSE,FALSE
+2015-06-13,England,Mexico,England,Karen Carney,82,FALSE,FALSE
+2015-06-13,England,Mexico,Mexico,Fabiola Ibarra,90,FALSE,FALSE
+2015-06-13,France,Colombia,Colombia,Lady Andrade,19,FALSE,FALSE
+2015-06-13,France,Colombia,Colombia,Catalina Usme,90,FALSE,FALSE
+2015-06-13,South Korea,Costa Rica,Costa Rica,Melissa Herrera,17,FALSE,FALSE
+2015-06-13,South Korea,Costa Rica,South Korea,Ji So-yun,21,FALSE,TRUE
+2015-06-13,South Korea,Costa Rica,South Korea,Jeon Ga-eul,25,FALSE,FALSE
+2015-06-13,South Korea,Costa Rica,Costa Rica,Karla Villalobos,89,FALSE,FALSE
+2015-06-15,Canada,Netherlands,Canada,Ashley Lawrence,10,FALSE,FALSE
+2015-06-15,Canada,Netherlands,Netherlands,Kirsten van de Ven,87,FALSE,FALSE
+2015-06-15,China PR,New Zealand,New Zealand,Rebekah Stott,28,FALSE,FALSE
+2015-06-15,China PR,New Zealand,China PR,Wang Lisi,41,FALSE,TRUE
+2015-06-15,China PR,New Zealand,China PR,Wang Shanshan,60,FALSE,FALSE
+2015-06-15,China PR,New Zealand,New Zealand,Hannah Wilkinson,64,FALSE,FALSE
+2015-06-15,Ivory Coast,Norway,Norway,Ada Hegerberg,6,FALSE,FALSE
+2015-06-15,Ivory Coast,Norway,Norway,Ada Hegerberg,62,FALSE,FALSE
+2015-06-15,Ivory Coast,Norway,Norway,Solveig Gulbrandsen,67,FALSE,FALSE
+2015-06-15,Ivory Coast,Norway,Ivory Coast,Ange N'Guessan,71,FALSE,FALSE
+2015-06-15,Thailand,Germany,Germany,Melanie Leupolz,24,FALSE,FALSE
+2015-06-15,Thailand,Germany,Germany,Lena Petermann,56,FALSE,FALSE
+2015-06-15,Thailand,Germany,Germany,Lena Petermann,58,FALSE,FALSE
+2015-06-15,Thailand,Germany,Germany,Sara Däbritz,73,FALSE,FALSE
+2015-06-16,Australia,Sweden,Australia,Lisa De Vanna,5,FALSE,FALSE
+2015-06-16,Australia,Sweden,Sweden,Sofia Jakobsson,15,FALSE,FALSE
+2015-06-16,Ecuador,Japan,Japan,Yūki Nagasato,5,FALSE,FALSE
+2015-06-16,Nigeria,United States,United States,Abby Wambach,45,FALSE,FALSE
+2015-06-16,Switzerland,Cameroon,Switzerland,Ana-Maria Crnogorčević,24,FALSE,FALSE
+2015-06-16,Switzerland,Cameroon,Cameroon,Gabrielle Onguéné,47,FALSE,FALSE
+2015-06-16,Switzerland,Cameroon,Cameroon,Madeleine Ngono Mani,62,FALSE,FALSE
+2015-06-17,Costa Rica,Brazil,Brazil,Raquel Fernandes,83,FALSE,FALSE
+2015-06-17,England,Colombia,England,Karen Carney,15,FALSE,FALSE
+2015-06-17,England,Colombia,England,Fara Williams,38,FALSE,TRUE
+2015-06-17,England,Colombia,Colombia,Lady Andrade,90,FALSE,FALSE
+2015-06-17,Mexico,France,France,Marie-Laure Delie,1,FALSE,FALSE
+2015-06-17,Mexico,France,France,Jennifer Ruiz,9,TRUE,FALSE
+2015-06-17,Mexico,France,France,Eugénie Le Sommer,13,FALSE,FALSE
+2015-06-17,Mexico,France,France,Eugénie Le Sommer,36,FALSE,FALSE
+2015-06-17,Mexico,France,France,Amandine Henry,80,FALSE,FALSE
+2015-06-17,South Korea,Spain,Spain,Verónica Boquete,29,FALSE,FALSE
+2015-06-17,South Korea,Spain,South Korea,Cho So-hyun,53,FALSE,FALSE
+2015-06-17,South Korea,Spain,South Korea,Kim Soo-yun,78,FALSE,FALSE
+2015-06-20,China PR,Cameroon,China PR,Wang Shanshan,12,FALSE,FALSE
+2015-06-20,Germany,Sweden,Germany,Anja Mittag,24,FALSE,FALSE
+2015-06-20,Germany,Sweden,Germany,Célia Šašić,36,FALSE,TRUE
+2015-06-20,Germany,Sweden,Germany,Célia Šašić,78,FALSE,FALSE
+2015-06-20,Germany,Sweden,Sweden,Linda Sembrant,82,FALSE,FALSE
+2015-06-20,Germany,Sweden,Germany,Dzsenifer Marozsán,88,FALSE,FALSE
+2015-06-21,Brazil,Australia,Australia,Kyah Simon,80,FALSE,FALSE
+2015-06-21,Canada,Switzerland,Canada,Josée Bélanger,52,FALSE,FALSE
+2015-06-21,France,South Korea,France,Marie-Laure Delie,4,FALSE,FALSE
+2015-06-21,France,South Korea,France,Élodie Thomis,8,FALSE,FALSE
+2015-06-21,France,South Korea,France,Marie-Laure Delie,48,FALSE,FALSE
+2015-06-22,Norway,England,Norway,Solveig Gulbrandsen,54,FALSE,FALSE
+2015-06-22,Norway,England,England,Steph Houghton,61,FALSE,FALSE
+2015-06-22,Norway,England,England,Lucy Bronze,76,FALSE,FALSE
+2015-06-22,United States,Colombia,United States,Alex Morgan,53,FALSE,FALSE
+2015-06-22,United States,Colombia,United States,Carli Lloyd,66,FALSE,TRUE
+2015-06-23,Japan,Netherlands,Japan,Saori Ariyoshi,10,FALSE,FALSE
+2015-06-23,Japan,Netherlands,Japan,Mizuho Sakaguchi,78,FALSE,FALSE
+2015-06-23,Japan,Netherlands,Netherlands,Kirsten van de Ven,90,FALSE,FALSE
+2015-06-26,China PR,United States,United States,Carli Lloyd,51,FALSE,FALSE
+2015-06-26,Germany,France,France,Louisa Cadamuro,64,FALSE,FALSE
+2015-06-26,Germany,France,Germany,Célia Šašić,84,FALSE,TRUE
+2015-06-27,Australia,Japan,Japan,Mana Iwabuchi,87,FALSE,FALSE
+2015-06-27,Canada,England,England,Jodie Taylor,11,FALSE,FALSE
+2015-06-27,Canada,England,England,Lucy Bronze,14,FALSE,FALSE
+2015-06-27,Canada,England,Canada,Christine Sinclair,42,FALSE,FALSE
+2015-06-30,United States,Germany,United States,Carli Lloyd,69,FALSE,TRUE
+2015-06-30,United States,Germany,United States,Kelley O'Hara,84,FALSE,FALSE
+2015-07-01,Japan,England,Japan,Aya Miyama,33,FALSE,TRUE
+2015-07-01,Japan,England,England,Fara Williams,40,FALSE,TRUE
+2015-07-01,Japan,England,Japan,Laura Bassett,90,TRUE,FALSE
+2015-07-04,Germany,England,England,Fara Williams,108,FALSE,TRUE
+2015-07-05,United States,Japan,United States,Carli Lloyd,3,FALSE,FALSE
+2015-07-05,United States,Japan,United States,Carli Lloyd,5,FALSE,FALSE
+2015-07-05,United States,Japan,United States,Lauren Holiday,14,FALSE,FALSE
+2015-07-05,United States,Japan,United States,Carli Lloyd,16,FALSE,FALSE
+2015-07-05,United States,Japan,Japan,Yūki Nagasato,27,FALSE,FALSE
+2015-07-05,United States,Japan,Japan,Julie Ertz,52,TRUE,FALSE
+2015-07-05,United States,Japan,United States,Tobin Heath,54,FALSE,FALSE
+2016-08-03,Brazil,China PR,Brazil,Mônica,36,FALSE,FALSE
+2016-08-03,Brazil,China PR,Brazil,Andressa Alves,59,FALSE,FALSE
+2016-08-03,Brazil,China PR,Brazil,Cristiane Rozeira,90,FALSE,FALSE
+2016-08-03,Canada,Australia,Canada,Janine Beckie,1,FALSE,FALSE
+2016-08-03,Canada,Australia,Canada,Christine Sinclair,80,FALSE,FALSE
+2016-08-03,France,Colombia,France,Carolina Arias,2,TRUE,FALSE
+2016-08-03,France,Colombia,France,Eugénie Le Sommer,14,FALSE,FALSE
+2016-08-03,France,Colombia,France,Camille Abily,42,FALSE,FALSE
+2016-08-03,France,Colombia,France,Amel Majri,82,FALSE,FALSE
+2016-08-03,Sweden,South Africa,Sweden,Nilla Fischer,76,FALSE,FALSE
+2016-08-03,United States,New Zealand,United States,Carli Lloyd,9,FALSE,FALSE
+2016-08-03,United States,New Zealand,United States,Alex Morgan,46,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Sara Däbritz,22,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Alexandra Popp,36,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Zimbabwe,Kudakwashe Basopo,50,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Melanie Behringer,53,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Melanie Behringer,78,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Melanie Leupolz,83,FALSE,FALSE
+2016-08-03,Zimbabwe,Germany,Germany,Eunice Chibanda,90,TRUE,FALSE
+2016-08-06,Brazil,Sweden,Brazil,Beatriz Zaneratto João,21,FALSE,FALSE
+2016-08-06,Brazil,Sweden,Brazil,Cristiane Rozeira,24,FALSE,FALSE
+2016-08-06,Brazil,Sweden,Brazil,Marta,44,FALSE,TRUE
+2016-08-06,Brazil,Sweden,Brazil,Marta,80,FALSE,FALSE
+2016-08-06,Brazil,Sweden,Brazil,Beatriz Zaneratto João,86,FALSE,FALSE
+2016-08-06,Brazil,Sweden,Sweden,Lotta Schelin,89,FALSE,FALSE
+2016-08-06,Canada,Zimbabwe,Canada,Janine Beckie,7,FALSE,FALSE
+2016-08-06,Canada,Zimbabwe,Canada,Christine Sinclair,19,FALSE,TRUE
+2016-08-06,Canada,Zimbabwe,Canada,Janine Beckie,35,FALSE,FALSE
+2016-08-06,Canada,Zimbabwe,Zimbabwe,Mavis Chirandu,86,FALSE,FALSE
+2016-08-06,Colombia,New Zealand,New Zealand,Amber Hearn,31,FALSE,FALSE
+2016-08-06,Germany,Australia,Australia,Sam Kerr,6,FALSE,FALSE
+2016-08-06,Germany,Australia,Germany,Sara Däbritz,45,FALSE,FALSE
+2016-08-06,Germany,Australia,Australia,Caitlin Foord,45,FALSE,FALSE
+2016-08-06,Germany,Australia,Germany,Saskia Bartusiak,88,FALSE,FALSE
+2016-08-06,South Africa,China PR,China PR,Gu Yasha,45,FALSE,FALSE
+2016-08-06,South Africa,China PR,China PR,Tan Ruyin,87,FALSE,FALSE
+2016-08-06,United States,France,United States,Carli Lloyd,64,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Lisa De Vanna,2,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Clare Polkinghorne,15,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Alanna Kennedy,37,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Kyah Simon,50,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Michelle Heyman,55,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Australia,Michelle Heyman,66,FALSE,FALSE
+2016-08-09,Australia,Zimbabwe,Zimbabwe,Emmaculate Msipa,90,FALSE,FALSE
+2016-08-09,Colombia,United States,Colombia,Catalina Usme,26,FALSE,FALSE
+2016-08-09,Colombia,United States,United States,Crystal Dunn,41,FALSE,FALSE
+2016-08-09,Colombia,United States,United States,Mallory Pugh,59,FALSE,FALSE
+2016-08-09,Colombia,United States,Colombia,Catalina Usme,90,FALSE,FALSE
+2016-08-09,Germany,Canada,Germany,Melanie Behringer,13,FALSE,TRUE
+2016-08-09,Germany,Canada,Canada,Melissa Tancredi,26,FALSE,FALSE
+2016-08-09,Germany,Canada,Canada,Melissa Tancredi,60,FALSE,FALSE
+2016-08-09,New Zealand,France,France,Eugénie Le Sommer,38,FALSE,FALSE
+2016-08-09,New Zealand,France,France,Louisa Cadamuro,63,FALSE,FALSE
+2016-08-09,New Zealand,France,France,Louisa Cadamuro,90,FALSE,TRUE
+2016-08-12,Canada,France,Canada,Sophie Schmidt,56,FALSE,FALSE
+2016-08-12,China PR,Germany,Germany,Melanie Behringer,76,FALSE,FALSE
+2016-08-12,United States,Sweden,Sweden,Stina Blackstenius,61,FALSE,FALSE
+2016-08-12,United States,Sweden,United States,Alex Morgan,77,FALSE,FALSE
+2016-08-16,Canada,Germany,Germany,Melanie Behringer,21,FALSE,TRUE
+2016-08-16,Canada,Germany,Germany,Sara Däbritz,59,FALSE,FALSE
+2016-08-19,Brazil,Canada,Canada,Deanne Rose,25,FALSE,FALSE
+2016-08-19,Brazil,Canada,Canada,Christine Sinclair,52,FALSE,FALSE
+2016-08-19,Brazil,Canada,Brazil,Beatriz Zaneratto João,79,FALSE,FALSE
+2016-08-19,Sweden,Germany,Germany,Dzsenifer Marozsán,48,FALSE,FALSE
+2016-08-19,Sweden,Germany,Germany,Linda Sembrant,62,TRUE,FALSE
+2016-08-19,Sweden,Germany,Sweden,Stina Blackstenius,67,FALSE,FALSE
+2017-07-16,Denmark,Belgium,Denmark,Sanne Troelsgaard Nielsen,6,FALSE,FALSE
+2017-07-16,Netherlands,Norway,Netherlands,Shanice van de Sanden,66,FALSE,FALSE
+2017-07-17,Italy,Russia,Russia,Elena Danilova,9,FALSE,FALSE
+2017-07-17,Italy,Russia,Russia,Elena Morozova,26,FALSE,FALSE
+2017-07-17,Italy,Russia,Italy,Ilaria Mauro,88,FALSE,FALSE
+2017-07-18,Austria,Switzerland,Austria,Nina Burger,15,FALSE,FALSE
+2017-07-18,France,Iceland,France,Eugénie Le Sommer,86,FALSE,TRUE
+2017-07-19,England,Scotland,England,Jodie Taylor,11,FALSE,FALSE
+2017-07-19,England,Scotland,England,Jodie Taylor,26,FALSE,FALSE
+2017-07-19,England,Scotland,England,Ellen White,32,FALSE,FALSE
+2017-07-19,England,Scotland,England,Jodie Taylor,53,FALSE,FALSE
+2017-07-19,England,Scotland,England,Jordan Nobbs,87,FALSE,FALSE
+2017-07-19,England,Scotland,England,Toni Duggan,90,FALSE,FALSE
+2017-07-19,Spain,Portugal,Spain,Vicky Losada,23,FALSE,FALSE
+2017-07-19,Spain,Portugal,Spain,Amanda Sampedro,42,FALSE,FALSE
+2017-07-20,Netherlands,Denmark,Netherlands,Sherida Spitse,20,FALSE,TRUE
+2017-07-20,Norway,Belgium,Belgium,Elke Van Gorp,59,FALSE,FALSE
+2017-07-20,Norway,Belgium,Belgium,Janice Cayman,67,FALSE,FALSE
+2017-07-21,Germany,Italy,Germany,Josephine Henning,19,FALSE,FALSE
+2017-07-21,Germany,Italy,Italy,Ilaria Mauro,29,FALSE,FALSE
+2017-07-21,Germany,Italy,Germany,Babett Peter,67,FALSE,TRUE
+2017-07-21,Sweden,Russia,Sweden,Lotta Schelin,22,FALSE,FALSE
+2017-07-21,Sweden,Russia,Sweden,Stina Blackstenius,51,FALSE,FALSE
+2017-07-22,France,Austria,Austria,Lisa Makas,27,FALSE,FALSE
+2017-07-22,France,Austria,France,Amandine Henry,51,FALSE,FALSE
+2017-07-22,Iceland,Switzerland,Iceland,Fanndís Friðriksdóttir,33,FALSE,FALSE
+2017-07-22,Iceland,Switzerland,Switzerland,Lara Dickenmann,43,FALSE,FALSE
+2017-07-22,Iceland,Switzerland,Switzerland,Ramona Bachmann,52,FALSE,FALSE
+2017-07-23,England,Spain,England,Fran Kirby,2,FALSE,FALSE
+2017-07-23,England,Spain,England,Jodie Taylor,85,FALSE,FALSE
+2017-07-23,Scotland,Portugal,Portugal,Carolina Mendes,27,FALSE,FALSE
+2017-07-23,Scotland,Portugal,Scotland,Erin Cuthbert,68,FALSE,FALSE
+2017-07-23,Scotland,Portugal,Portugal,Ana Cristina Oliveira Leite,72,FALSE,FALSE
+2017-07-24,Netherlands,Belgium,Netherlands,Sherida Spitse,27,FALSE,TRUE
+2017-07-24,Netherlands,Belgium,Belgium,Tessa Wullaert,59,FALSE,FALSE
+2017-07-24,Netherlands,Belgium,Netherlands,Lieke Martens,74,FALSE,FALSE
+2017-07-24,Norway,Denmark,Denmark,Katrine Veje,5,FALSE,FALSE
+2017-07-25,Russia,Germany,Germany,Babett Peter,10,FALSE,TRUE
+2017-07-25,Russia,Germany,Germany,Dzsenifer Marozsán,56,FALSE,TRUE
+2017-07-25,Sweden,Italy,Italy,Daniela Sabatino,4,FALSE,FALSE
+2017-07-25,Sweden,Italy,Sweden,Lotta Schelin,14,FALSE,TRUE
+2017-07-25,Sweden,Italy,Italy,Daniela Sabatino,37,FALSE,FALSE
+2017-07-25,Sweden,Italy,Sweden,Stina Blackstenius,47,FALSE,FALSE
+2017-07-25,Sweden,Italy,Italy,Cristiana Girelli,85,FALSE,FALSE
+2017-07-26,Iceland,Austria,Austria,Sarah Zadrazil,36,FALSE,FALSE
+2017-07-26,Iceland,Austria,Austria,Nina Burger,44,FALSE,FALSE
+2017-07-26,Iceland,Austria,Austria,Stefanie Enzinger,89,FALSE,FALSE
+2017-07-26,Switzerland,France,Switzerland,Ana-Maria Crnogorčević,19,FALSE,FALSE
+2017-07-26,Switzerland,France,France,Camille Abily,76,FALSE,FALSE
+2017-07-27,Portugal,England,England,Toni Duggan,7,FALSE,FALSE
+2017-07-27,Portugal,England,Portugal,Carolina Mendes,17,FALSE,FALSE
+2017-07-27,Portugal,England,England,Nikita Parris,48,FALSE,FALSE
+2017-07-27,Scotland,Spain,Scotland,Caroline Weir,42,FALSE,FALSE
+2017-07-29,Netherlands,Sweden,Netherlands,Lieke Martens,33,FALSE,FALSE
+2017-07-29,Netherlands,Sweden,Netherlands,Vivianne Miedema,64,FALSE,FALSE
+2017-07-30,England,France,England,Jodie Taylor,60,FALSE,FALSE
+2017-07-30,Germany,Denmark,Germany,Isabel Kerschowski,3,FALSE,FALSE
+2017-07-30,Germany,Denmark,Denmark,Nadia Nadim,49,FALSE,FALSE
+2017-07-30,Germany,Denmark,Denmark,Theresa Nielsen,83,FALSE,FALSE
+2017-08-03,Netherlands,England,Netherlands,Vivianne Miedema,22,FALSE,FALSE
+2017-08-03,Netherlands,England,Netherlands,Daniëlle van de Donk,62,FALSE,FALSE
+2017-08-03,Netherlands,England,Netherlands,Millie Bright,90,TRUE,FALSE
+2017-08-06,Netherlands,Denmark,Denmark,Nadia Nadim,6,FALSE,TRUE
+2017-08-06,Netherlands,Denmark,Netherlands,Vivianne Miedema,10,FALSE,FALSE
+2017-08-06,Netherlands,Denmark,Netherlands,Lieke Martens,28,FALSE,FALSE
+2017-08-06,Netherlands,Denmark,Denmark,Pernille Harder,33,FALSE,FALSE
+2017-08-06,Netherlands,Denmark,Netherlands,Sherida Spitse,51,FALSE,FALSE
+2017-08-06,Netherlands,Denmark,Netherlands,Vivianne Miedema,89,FALSE,FALSE
+2019-06-07,France,South Korea,France,Eugénie Le Sommer,9,FALSE,FALSE
+2019-06-07,France,South Korea,France,Wendie Renard,35,FALSE,FALSE
+2019-06-07,France,South Korea,France,Wendie Renard,45,FALSE,FALSE
+2019-06-07,France,South Korea,France,Amandine Henry,85,FALSE,FALSE
+2019-06-08,Germany,China PR,Germany,Giulia Gwinn,66,FALSE,FALSE
+2019-06-08,Norway,Nigeria,Norway,Guro Reiten,17,FALSE,FALSE
+2019-06-08,Norway,Nigeria,Norway,Lisa-Marie Karlseng Utland,34,FALSE,FALSE
+2019-06-08,Norway,Nigeria,Norway,Osinachi Ohale,37,TRUE,FALSE
+2019-06-08,Spain,South Africa,South Africa,Thembi Kgatlana,25,FALSE,FALSE
+2019-06-08,Spain,South Africa,Spain,Jennifer Hermoso,69,FALSE,TRUE
+2019-06-08,Spain,South Africa,Spain,Jennifer Hermoso,82,FALSE,TRUE
+2019-06-08,Spain,South Africa,Spain,Lucía García,89,FALSE,FALSE
+2019-06-09,Australia,Italy,Australia,Sam Kerr,22,FALSE,FALSE
+2019-06-09,Australia,Italy,Italy,Barbara Bonansea,56,FALSE,FALSE
+2019-06-09,Australia,Italy,Italy,Barbara Bonansea,90,FALSE,FALSE
+2019-06-09,Brazil,Jamaica,Brazil,Cristiane,15,FALSE,FALSE
+2019-06-09,Brazil,Jamaica,Brazil,Cristiane,50,FALSE,FALSE
+2019-06-09,Brazil,Jamaica,Brazil,Cristiane,64,FALSE,FALSE
+2019-06-09,England,Scotland,England,Nikita Parris,14,FALSE,TRUE
+2019-06-09,England,Scotland,England,Ellen White,40,FALSE,FALSE
+2019-06-09,England,Scotland,Scotland,Claire Emslie,79,FALSE,FALSE
+2019-06-10,Canada,Cameroon,Canada,Kadeisha Buchanan,45,FALSE,FALSE
+2019-06-11,Chile,Sweden,Sweden,Kosovare Asllani,83,FALSE,FALSE
+2019-06-11,Chile,Sweden,Sweden,Madelen Janogy,90,FALSE,FALSE
+2019-06-11,New Zealand,Netherlands,Netherlands,Jill Roord,90,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Alex Morgan,12,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Rose Lavelle,20,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Lindsey Horan,32,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Sam Mewis,50,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Alex Morgan,53,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Sam Mewis,54,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Rose Lavelle,56,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Alex Morgan,74,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Megan Rapinoe,79,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Alex Morgan,81,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Mallory Pugh,85,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Alex Morgan,87,FALSE,FALSE
+2019-06-11,United States,Thailand,United States,Carli Lloyd,90,FALSE,FALSE
+2019-06-12,France,Norway,France,Valérie Gauvin,46,FALSE,FALSE
+2019-06-12,France,Norway,Norway,Wendie Renard,54,TRUE,FALSE
+2019-06-12,France,Norway,France,Eugénie Le Sommer,72,FALSE,TRUE
+2019-06-12,Germany,Spain,Germany,Sara Däbritz,42,FALSE,FALSE
+2019-06-12,Nigeria,South Korea,Nigeria,Kim Do-yeon,29,TRUE,FALSE
+2019-06-12,Nigeria,South Korea,Nigeria,Asisat Oshoala,75,FALSE,FALSE
+2019-06-13,Australia,Brazil,Brazil,Marta,27,FALSE,TRUE
+2019-06-13,Australia,Brazil,Brazil,Cristiane,38,FALSE,FALSE
+2019-06-13,Australia,Brazil,Australia,Caitlin Foord,45,FALSE,FALSE
+2019-06-13,Australia,Brazil,Australia,Chloe Logarzo,58,FALSE,FALSE
+2019-06-13,Australia,Brazil,Australia,Mônica,66,TRUE,FALSE
+2019-06-13,South Africa,China PR,China PR,Li Ying,40,FALSE,FALSE
+2019-06-14,England,Argentina,England,Jodie Taylor,62,FALSE,FALSE
+2019-06-14,Jamaica,Italy,Italy,Cristiana Girelli,12,FALSE,TRUE
+2019-06-14,Jamaica,Italy,Italy,Cristiana Girelli,25,FALSE,FALSE
+2019-06-14,Jamaica,Italy,Italy,Cristiana Girelli,46,FALSE,FALSE
+2019-06-14,Jamaica,Italy,Italy,Aurora Galli,71,FALSE,FALSE
+2019-06-14,Jamaica,Italy,Italy,Aurora Galli,81,FALSE,FALSE
+2019-06-14,Japan,Scotland,Japan,Mana Iwabuchi,23,FALSE,FALSE
+2019-06-14,Japan,Scotland,Japan,Yuika Sugasawa,37,FALSE,TRUE
+2019-06-14,Japan,Scotland,Scotland,Lana Clelland,88,FALSE,FALSE
+2019-06-15,Canada,New Zealand,Canada,Jessie Fleming,48,FALSE,FALSE
+2019-06-15,Canada,New Zealand,Canada,Nichelle Prince,79,FALSE,FALSE
+2019-06-15,Netherlands,Cameroon,Netherlands,Vivianne Miedema,41,FALSE,FALSE
+2019-06-15,Netherlands,Cameroon,Cameroon,Gabrielle Onguéné,43,FALSE,FALSE
+2019-06-15,Netherlands,Cameroon,Netherlands,Dominique Bloodworth,48,FALSE,FALSE
+2019-06-15,Netherlands,Cameroon,Netherlands,Vivianne Miedema,85,FALSE,FALSE
+2019-06-16,Sweden,Thailand,Sweden,Linda Sembrant,6,FALSE,FALSE
+2019-06-16,Sweden,Thailand,Sweden,Kosovare Asllani,19,FALSE,FALSE
+2019-06-16,Sweden,Thailand,Sweden,Fridolina Rolfö,42,FALSE,FALSE
+2019-06-16,Sweden,Thailand,Sweden,Lina Hurtig,81,FALSE,FALSE
+2019-06-16,Sweden,Thailand,Sweden,Elin Rubensson,90,FALSE,TRUE
+2019-06-16,Sweden,Thailand,Thailand,Kanjana Sungngoen,90,FALSE,FALSE
+2019-06-16,United States,Chile,United States,Carli Lloyd,11,FALSE,FALSE
+2019-06-16,United States,Chile,United States,Julie Ertz,26,FALSE,FALSE
+2019-06-16,United States,Chile,United States,Carli Lloyd,35,FALSE,FALSE
+2019-06-17,France,Nigeria,France,Wendie Renard,79,FALSE,TRUE
+2019-06-17,South Africa,Germany,Germany,Melanie Leupolz,14,FALSE,FALSE
+2019-06-17,South Africa,Germany,Germany,Sara Däbritz,29,FALSE,FALSE
+2019-06-17,South Africa,Germany,Germany,Alexandra Popp,40,FALSE,FALSE
+2019-06-17,South Africa,Germany,Germany,Lina Magull,58,FALSE,FALSE
+2019-06-17,South Korea,Norway,Norway,Caroline Graham Hansen,4,FALSE,TRUE
+2019-06-17,South Korea,Norway,Norway,Isabell Herlovsen,50,FALSE,TRUE
+2019-06-17,South Korea,Norway,South Korea,Yeo Min-ji,78,FALSE,FALSE
+2019-06-18,Italy,Brazil,Brazil,Marta,74,FALSE,TRUE
+2019-06-18,Jamaica,Australia,Australia,Sam Kerr,11,FALSE,FALSE
+2019-06-18,Jamaica,Australia,Australia,Sam Kerr,42,FALSE,FALSE
+2019-06-18,Jamaica,Australia,Jamaica,Havana Solaun,49,FALSE,FALSE
+2019-06-18,Jamaica,Australia,Australia,Sam Kerr,69,FALSE,FALSE
+2019-06-18,Jamaica,Australia,Australia,Sam Kerr,83,FALSE,FALSE
+2019-06-19,Japan,England,England,Ellen White,14,FALSE,FALSE
+2019-06-19,Japan,England,England,Ellen White,84,FALSE,FALSE
+2019-06-19,Scotland,Argentina,Scotland,Kim Little,19,FALSE,FALSE
+2019-06-19,Scotland,Argentina,Scotland,Jen Beattie,49,FALSE,FALSE
+2019-06-19,Scotland,Argentina,Scotland,Erin Cuthbert,69,FALSE,FALSE
+2019-06-19,Scotland,Argentina,Argentina,Milagros Menéndez,74,FALSE,FALSE
+2019-06-19,Scotland,Argentina,Argentina,Lee Alexander,79,TRUE,FALSE
+2019-06-19,Scotland,Argentina,Argentina,Florencia Bonsegundo,90,FALSE,TRUE
+2019-06-20,Cameroon,New Zealand,Cameroon,Ajara Nchout,57,FALSE,FALSE
+2019-06-20,Cameroon,New Zealand,New Zealand,Aurelle Awona,80,TRUE,FALSE
+2019-06-20,Cameroon,New Zealand,Cameroon,Ajara Nchout,90,FALSE,FALSE
+2019-06-20,Netherlands,Canada,Netherlands,Anouk Dekker,54,FALSE,FALSE
+2019-06-20,Netherlands,Canada,Canada,Christine Sinclair,60,FALSE,FALSE
+2019-06-20,Netherlands,Canada,Netherlands,Lineth Beerensteyn,75,FALSE,FALSE
+2019-06-20,Sweden,United States,United States,Lindsey Horan,3,FALSE,FALSE
+2019-06-20,Sweden,United States,United States,Jonna Andersson,50,TRUE,FALSE
+2019-06-20,Thailand,Chile,Chile,Waraporn Boonsing,48,TRUE,FALSE
+2019-06-20,Thailand,Chile,Chile,María José Urrutia,80,FALSE,FALSE
+2019-06-22,Germany,Nigeria,Germany,Alexandra Popp,20,FALSE,FALSE
+2019-06-22,Germany,Nigeria,Germany,Sara Däbritz,27,FALSE,TRUE
+2019-06-22,Germany,Nigeria,Germany,Lea Schüller,82,FALSE,FALSE
+2019-06-22,Norway,Australia,Norway,Isabell Herlovsen,31,FALSE,FALSE
+2019-06-22,Norway,Australia,Australia,Elise Kellond-Knight,83,FALSE,FALSE
+2019-06-23,England,Cameroon,England,Steph Houghton,14,FALSE,FALSE
+2019-06-23,England,Cameroon,England,Ellen White,45,FALSE,FALSE
+2019-06-23,England,Cameroon,England,Alex Greenwood,58,FALSE,FALSE
+2019-06-23,France,Brazil,France,Valérie Gauvin,52,FALSE,FALSE
+2019-06-23,France,Brazil,Brazil,Thaisa,63,FALSE,FALSE
+2019-06-23,France,Brazil,France,Amandine Henry,107,FALSE,FALSE
+2019-06-24,Spain,United States,United States,Megan Rapinoe,7,FALSE,TRUE
+2019-06-24,Spain,United States,Spain,Jennifer Hermoso,9,FALSE,FALSE
+2019-06-24,Spain,United States,United States,Megan Rapinoe,75,FALSE,TRUE
+2019-06-24,Sweden,Canada,Sweden,Stina Blackstenius,55,FALSE,FALSE
+2019-06-25,Italy,China PR,Italy,Valentina Giacinti,15,FALSE,FALSE
+2019-06-25,Italy,China PR,Italy,Aurora Galli,49,FALSE,FALSE
+2019-06-25,Netherlands,Japan,Netherlands,Lieke Martens,17,FALSE,FALSE
+2019-06-25,Netherlands,Japan,Japan,Yui Hasegawa,43,FALSE,FALSE
+2019-06-25,Netherlands,Japan,Netherlands,Lieke Martens,90,FALSE,TRUE
+2019-06-27,Norway,England,England,Jill Scott,3,FALSE,FALSE
+2019-06-27,Norway,England,England,Ellen White,40,FALSE,FALSE
+2019-06-27,Norway,England,England,Lucy Bronze,57,FALSE,FALSE
+2019-06-28,France,United States,United States,Megan Rapinoe,5,FALSE,FALSE
+2019-06-28,France,United States,United States,Megan Rapinoe,65,FALSE,FALSE
+2019-06-28,France,United States,France,Wendie Renard,81,FALSE,FALSE
+2019-06-29,Germany,Sweden,Germany,Lina Magull,16,FALSE,FALSE
+2019-06-29,Germany,Sweden,Sweden,Sofia Jakobsson,22,FALSE,FALSE
+2019-06-29,Germany,Sweden,Sweden,Stina Blackstenius,48,FALSE,FALSE
+2019-06-29,Italy,Netherlands,Netherlands,Vivianne Miedema,70,FALSE,FALSE
+2019-06-29,Italy,Netherlands,Netherlands,Stefanie van der Gragt,80,FALSE,FALSE
+2019-07-02,England,United States,United States,Christen Press,10,FALSE,FALSE
+2019-07-02,England,United States,England,Ellen White,19,FALSE,FALSE
+2019-07-02,England,United States,United States,Alex Morgan,31,FALSE,FALSE
+2019-07-03,Netherlands,Sweden,Netherlands,Jackie Groenen,99,FALSE,FALSE
+2019-07-06,England,Sweden,Sweden,Kosovare Asllani,11,FALSE,FALSE
+2019-07-06,England,Sweden,Sweden,Sofia Jakobsson,22,FALSE,FALSE
+2019-07-06,England,Sweden,England,Fran Kirby,31,FALSE,FALSE
+2019-07-07,United States,Netherlands,United States,Megan Rapinoe,61,FALSE,TRUE
+2019-07-07,United States,Netherlands,United States,Rose Lavelle,69,FALSE,FALSE
+2021-07-21,Australia,New Zealand,Australia,Tameka Yallop,20,FALSE,FALSE
+2021-07-21,Australia,New Zealand,Australia,Sam Kerr,33,FALSE,FALSE
+2021-07-21,Australia,New Zealand,New Zealand,Gabi Rennie,90,FALSE,FALSE
+2021-07-21,China PR,Brazil,Brazil,Marta,9,FALSE,FALSE
+2021-07-21,China PR,Brazil,Brazil,Debinha,22,FALSE,FALSE
+2021-07-21,China PR,Brazil,Brazil,Marta,74,FALSE,FALSE
+2021-07-21,China PR,Brazil,Brazil,Andressa Alves,82,FALSE,TRUE
+2021-07-21,China PR,Brazil,Brazil,Bia Zaneratto,89,FALSE,FALSE
+2021-07-21,Great Britain,Chile,Great Britain,Ellen White,18,FALSE,FALSE
+2021-07-21,Great Britain,Chile,Great Britain,Ellen White,73,FALSE,FALSE
+2021-07-21,Japan,Canada,Canada,Christine Sinclair,6,FALSE,FALSE
+2021-07-21,Japan,Canada,Japan,Mana Iwabuchi,84,FALSE,FALSE
+2021-07-21,Sweden,United States,Sweden,Stina Blackstenius,25,FALSE,FALSE
+2021-07-21,Sweden,United States,Sweden,Stina Blackstenius,54,FALSE,FALSE
+2021-07-21,Sweden,United States,Sweden,Lina Hurtig,72,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Vivianne Miedema,9,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Lieke Martens,14,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Vivianne Miedema,15,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Zambia,Barbra Banda,19,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Vivianne Miedema,29,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Lieke Martens,38,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Shanice van de Sanden,44,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Vivianne Miedema,59,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Jill Roord,64,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Lineth Beerensteyn,75,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Netherlands,Victoria Pelova,80,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Zambia,Barbra Banda,82,FALSE,FALSE
+2021-07-21,Zambia,Netherlands,Zambia,Barbra Banda,83,FALSE,FALSE
+2021-07-24,Chile,Canada,Canada,Janine Beckie,39,FALSE,FALSE
+2021-07-24,Chile,Canada,Canada,Janine Beckie,47,FALSE,FALSE
+2021-07-24,Chile,Canada,Chile,Karen Araya,57,FALSE,TRUE
+2021-07-24,China PR,Zambia,China PR,Wang Shuang,6,FALSE,FALSE
+2021-07-24,China PR,Zambia,Zambia,Racheal Kundananji,15,FALSE,FALSE
+2021-07-24,China PR,Zambia,China PR,Wang Shuang,22,FALSE,FALSE
+2021-07-24,China PR,Zambia,China PR,Wang Shuang,23,FALSE,FALSE
+2021-07-24,China PR,Zambia,Zambia,Barbra Banda,43,FALSE,TRUE
+2021-07-24,China PR,Zambia,Zambia,Barbra Banda,46,FALSE,FALSE
+2021-07-24,China PR,Zambia,Zambia,Barbra Banda,69,FALSE,FALSE
+2021-07-24,China PR,Zambia,China PR,Wang Shuang,84,FALSE,TRUE
+2021-07-24,Japan,Great Britain,Great Britain,Ellen White,74,FALSE,FALSE
+2021-07-24,Netherlands,Brazil,Netherlands,Vivianne Miedema,3,FALSE,FALSE
+2021-07-24,Netherlands,Brazil,Brazil,Debinha,16,FALSE,FALSE
+2021-07-24,Netherlands,Brazil,Netherlands,Vivianne Miedema,59,FALSE,FALSE
+2021-07-24,Netherlands,Brazil,Brazil,Marta,65,FALSE,TRUE
+2021-07-24,Netherlands,Brazil,Brazil,Ludmila,68,FALSE,FALSE
+2021-07-24,Netherlands,Brazil,Netherlands,Dominique Janssen,79,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,Rose Lavelle,9,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,Lindsey Horan,45,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,Abby Erceg,63,TRUE,FALSE
+2021-07-24,New Zealand,United States,New Zealand,Betsy Hassett,72,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,Christen Press,80,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,Alex Morgan,88,FALSE,FALSE
+2021-07-24,New Zealand,United States,United States,C. J. Bott,90,TRUE,FALSE
+2021-07-24,Sweden,Australia,Sweden,Fridolina Rolfö,20,FALSE,FALSE
+2021-07-24,Sweden,Australia,Australia,Sam Kerr,36,FALSE,FALSE
+2021-07-24,Sweden,Australia,Australia,Sam Kerr,48,FALSE,FALSE
+2021-07-24,Sweden,Australia,Sweden,Lina Hurtig,52,FALSE,FALSE
+2021-07-24,Sweden,Australia,Sweden,Fridolina Rolfö,63,FALSE,FALSE
+2021-07-24,Sweden,Australia,Sweden,Stina Blackstenius,82,FALSE,FALSE
+2021-07-27,Brazil,Zambia,Brazil,Andressa Alves,19,FALSE,FALSE
+2021-07-27,Canada,Great Britain,Canada,Adriana Leon,55,FALSE,FALSE
+2021-07-27,Canada,Great Britain,Great Britain,Nichelle Prince,85,TRUE,FALSE
+2021-07-27,Japan,Chile,Japan,Mina Tanaka,77,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Shanice van de Sanden,12,FALSE,FALSE
+2021-07-27,Netherlands,China PR,China PR,Wang Shanshan,28,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Lineth Beerensteyn,37,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Lineth Beerensteyn,45,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Lieke Martens,47,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Vivianne Miedema,65,FALSE,FALSE
+2021-07-27,Netherlands,China PR,China PR,Wang Yanwen,69,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Lieke Martens,70,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Victoria Pelova,71,FALSE,FALSE
+2021-07-27,Netherlands,China PR,Netherlands,Vivianne Miedema,76,FALSE,FALSE
+2021-07-27,New Zealand,Sweden,Sweden,Anna Anvegård,17,FALSE,FALSE
+2021-07-27,New Zealand,Sweden,Sweden,Madelen Janogy,29,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Australia,Alanna Kennedy,35,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Great Britain,Ellen White,57,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Great Britain,Ellen White,66,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Australia,Sam Kerr,89,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Australia,Mary Fowler,103,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Australia,Sam Kerr,106,FALSE,FALSE
+2021-07-30,Great Britain,Australia,Great Britain,Ellen White,115,FALSE,FALSE
+2021-07-30,Japan,Sweden,Sweden,Magdalena Eriksson,7,FALSE,FALSE
+2021-07-30,Japan,Sweden,Japan,Mina Tanaka,23,FALSE,FALSE
+2021-07-30,Japan,Sweden,Sweden,Stina Blackstenius,53,FALSE,FALSE
+2021-07-30,Japan,Sweden,Sweden,Kosovare Asllani,68,FALSE,TRUE
+2021-07-30,Netherlands,United States,Netherlands,Vivianne Miedema,18,FALSE,FALSE
+2021-07-30,Netherlands,United States,United States,Sam Mewis,28,FALSE,FALSE
+2021-07-30,Netherlands,United States,United States,Lynn Williams,31,FALSE,FALSE
+2021-07-30,Netherlands,United States,Netherlands,Vivianne Miedema,54,FALSE,FALSE
+2021-08-02,Australia,Sweden,Sweden,Fridolina Rolfö,46,FALSE,FALSE
+2021-08-02,United States,Canada,Canada,Jessie Fleming,75,FALSE,TRUE
+2021-08-05,Australia,United States,United States,Megan Rapinoe,8,FALSE,FALSE
+2021-08-05,Australia,United States,Australia,Sam Kerr,17,FALSE,FALSE
+2021-08-05,Australia,United States,United States,Megan Rapinoe,21,FALSE,FALSE
+2021-08-05,Australia,United States,United States,Carli Lloyd,45,FALSE,FALSE
+2021-08-05,Australia,United States,United States,Carli Lloyd,51,FALSE,FALSE
+2021-08-05,Australia,United States,Australia,Caitlin Foord,54,FALSE,FALSE
+2021-08-05,Australia,United States,Australia,Emily Gielnik,90,FALSE,FALSE
+2021-08-06,Sweden,Canada,Sweden,Stina Blackstenius,34,FALSE,FALSE
+2021-08-06,Sweden,Canada,Canada,Jessie Fleming,67,FALSE,TRUE
+2022-07-06,England,Austria,England,Beth Mead,16,FALSE,FALSE
+2022-07-07,Norway,Northern Ireland,Norway,Julie Blakstad,10,FALSE,FALSE
+2022-07-07,Norway,Northern Ireland,Norway,Frida Maanum,13,FALSE,FALSE
+2022-07-07,Norway,Northern Ireland,Norway,Caroline Graham Hansen,31,FALSE,TRUE
+2022-07-07,Norway,Northern Ireland,Northern Ireland,Julie Nelson,49,FALSE,FALSE
+2022-07-07,Norway,Northern Ireland,Norway,Guro Reiten,54,FALSE,FALSE
+2022-07-08,Germany,Denmark,Germany,Lina Magull,21,FALSE,FALSE
+2022-07-08,Germany,Denmark,Germany,Lea Schüller,57,FALSE,FALSE
+2022-07-08,Germany,Denmark,Germany,Lena Lattwein,78,FALSE,FALSE
+2022-07-08,Germany,Denmark,Germany,Alexandra Popp,86,FALSE,FALSE
+2022-07-08,Spain,Finland,Finland,Linda Sällström,1,FALSE,FALSE
+2022-07-08,Spain,Finland,Spain,Irene Paredes,26,FALSE,FALSE
+2022-07-08,Spain,Finland,Spain,Aitana Bonmatí,41,FALSE,FALSE
+2022-07-08,Spain,Finland,Spain,Lucía García,75,FALSE,FALSE
+2022-07-08,Spain,Finland,Spain,Mariona Caldentey,90,FALSE,TRUE
+2022-07-09,Netherlands,Sweden,Sweden,Jonna Andersson,35,FALSE,FALSE
+2022-07-09,Netherlands,Sweden,Netherlands,Jill Roord,52,FALSE,FALSE
+2022-07-09,Portugal,Switzerland,Switzerland,Coumba Sow,2,FALSE,FALSE
+2022-07-09,Portugal,Switzerland,Switzerland,Rahel Kiwic,5,FALSE,FALSE
+2022-07-09,Portugal,Switzerland,Portugal,Diana Gomes,58,FALSE,FALSE
+2022-07-09,Portugal,Switzerland,Portugal,Jéssica Silva,65,FALSE,FALSE
+2022-07-10,Belgium,Iceland,Iceland,Berglind Björg Þorvaldsdóttir,50,FALSE,FALSE
+2022-07-10,Belgium,Iceland,Belgium,Justine Vanhaevermaet,67,FALSE,TRUE
+2022-07-10,France,Italy,France,Grace Geyoro,9,FALSE,FALSE
+2022-07-10,France,Italy,France,Marie-Antoinette Katoto,12,FALSE,FALSE
+2022-07-10,France,Italy,France,Delphine Cascarino,38,FALSE,FALSE
+2022-07-10,France,Italy,France,Grace Geyoro,40,FALSE,FALSE
+2022-07-10,France,Italy,France,Grace Geyoro,45,FALSE,FALSE
+2022-07-10,France,Italy,Italy,Martina Piemonte,76,FALSE,FALSE
+2022-07-11,Austria,Northern Ireland,Austria,Katharina Schiechtl,19,FALSE,FALSE
+2022-07-11,Austria,Northern Ireland,Austria,Katharina Naschenweng,88,FALSE,FALSE
+2022-07-11,England,Norway,England,Georgia Stanway,12,FALSE,TRUE
+2022-07-11,England,Norway,England,Lauren Hemp,15,FALSE,FALSE
+2022-07-11,England,Norway,England,Ellen White,29,FALSE,FALSE
+2022-07-11,England,Norway,England,Beth Mead,34,FALSE,FALSE
+2022-07-11,England,Norway,England,Beth Mead,38,FALSE,FALSE
+2022-07-11,England,Norway,England,Ellen White,41,FALSE,FALSE
+2022-07-11,England,Norway,England,Alessia Russo,66,FALSE,FALSE
+2022-07-11,England,Norway,England,Beth Mead,81,FALSE,FALSE
+2022-07-12,Denmark,Finland,Denmark,Pernille Harder,72,FALSE,FALSE
+2022-07-12,Germany,Spain,Germany,Klara Bühl,3,FALSE,FALSE
+2022-07-12,Germany,Spain,Germany,Alexandra Popp,37,FALSE,FALSE
+2022-07-13,Netherlands,Portugal,Netherlands,Damaris Egurrola,7,FALSE,FALSE
+2022-07-13,Netherlands,Portugal,Netherlands,Stefanie van der Gragt,16,FALSE,FALSE
+2022-07-13,Netherlands,Portugal,Portugal,Carole Costa,38,FALSE,TRUE
+2022-07-13,Netherlands,Portugal,Portugal,Diana Silva,47,FALSE,FALSE
+2022-07-13,Netherlands,Portugal,Netherlands,Daniëlle van de Donk,62,FALSE,FALSE
+2022-07-13,Sweden,Switzerland,Sweden,Fridolina Rolfö,53,FALSE,FALSE
+2022-07-13,Sweden,Switzerland,Switzerland,Ramona Bachmann,55,FALSE,FALSE
+2022-07-13,Sweden,Switzerland,Sweden,Hanna Bennison,79,FALSE,FALSE
+2022-07-14,France,Belgium,France,Kadidiatou Diani,6,FALSE,FALSE
+2022-07-14,France,Belgium,Belgium,Janice Cayman,36,FALSE,FALSE
+2022-07-14,France,Belgium,France,Griedge Mbock Bathy,41,FALSE,FALSE
+2022-07-14,Italy,Iceland,Iceland,Karólína Lea Vilhjálmsdóttir,3,FALSE,FALSE
+2022-07-14,Italy,Iceland,Italy,Valentina Bergamaschi,62,FALSE,FALSE
+2022-07-15,Austria,Norway,Austria,Nicole Billa,37,FALSE,FALSE
+2022-07-15,England,Northern Ireland,England,Fran Kirby,40,FALSE,FALSE
+2022-07-15,England,Northern Ireland,England,Beth Mead,44,FALSE,FALSE
+2022-07-15,England,Northern Ireland,England,Alessia Russo,48,FALSE,FALSE
+2022-07-15,England,Northern Ireland,England,Alessia Russo,53,FALSE,FALSE
+2022-07-15,England,Northern Ireland,England,Kelsie Burrows,76,TRUE,FALSE
+2022-07-16,Denmark,Spain,Spain,Marta Cardona,90,FALSE,FALSE
+2022-07-16,Finland,Germany,Germany,Sophia Kleinherne,40,FALSE,FALSE
+2022-07-16,Finland,Germany,Germany,Alexandra Popp,48,FALSE,FALSE
+2022-07-16,Finland,Germany,Germany,Nicole Anyomi,63,FALSE,FALSE
+2022-07-17,Sweden,Portugal,Sweden,Filippa Angeldahl,21,FALSE,FALSE
+2022-07-17,Sweden,Portugal,Sweden,Filippa Angeldahl,45,FALSE,FALSE
+2022-07-17,Sweden,Portugal,Sweden,Carole Costa,45,TRUE,FALSE
+2022-07-17,Sweden,Portugal,Sweden,Kosovare Asllani,54,FALSE,TRUE
+2022-07-17,Sweden,Portugal,Sweden,Stina Blackstenius,90,FALSE,FALSE
+2022-07-17,Switzerland,Netherlands,Netherlands,Ana-Maria Crnogorčević,49,TRUE,FALSE
+2022-07-17,Switzerland,Netherlands,Switzerland,Géraldine Reuteler,53,FALSE,FALSE
+2022-07-17,Switzerland,Netherlands,Netherlands,Romée Leuchter,84,FALSE,FALSE
+2022-07-17,Switzerland,Netherlands,Netherlands,Victoria Pelova,89,FALSE,FALSE
+2022-07-17,Switzerland,Netherlands,Netherlands,Romée Leuchter,90,FALSE,FALSE
+2022-07-18,Iceland,France,France,Melvine Malard,1,FALSE,FALSE
+2022-07-18,Iceland,France,Iceland,Dagný Brynjarsdóttir,90,FALSE,TRUE
+2022-07-18,Italy,Belgium,Belgium,Tine De Caigny,49,FALSE,FALSE
+2022-07-20,England,Spain,Spain,Esther González,54,FALSE,FALSE
+2022-07-20,England,Spain,England,Ella Toone,84,FALSE,FALSE
+2022-07-20,England,Spain,England,Georgia Stanway,96,FALSE,FALSE
+2022-07-21,Germany,Austria,Germany,Lina Magull,25,FALSE,FALSE
+2022-07-21,Germany,Austria,Germany,Alexandra Popp,90,FALSE,FALSE
+2022-07-22,Sweden,Belgium,Sweden,Linda Sembrant,90,FALSE,FALSE
+2022-07-23,France,Netherlands,France,Ève Périsset,102,FALSE,TRUE
+2022-07-26,England,Sweden,England,Beth Mead,34,FALSE,FALSE
+2022-07-26,England,Sweden,England,Lucy Bronze,48,FALSE,FALSE
+2022-07-26,England,Sweden,England,Alessia Russo,68,FALSE,FALSE
+2022-07-26,England,Sweden,England,Fran Kirby,76,FALSE,FALSE
+2022-07-27,Germany,France,Germany,Alexandra Popp,40,FALSE,FALSE
+2022-07-27,Germany,France,France,Merle Frohms,44,TRUE,FALSE
+2022-07-27,Germany,France,Germany,Alexandra Popp,76,FALSE,FALSE
+2022-07-31,England,Germany,England,Ella Toone,62,FALSE,FALSE
+2022-07-31,England,Germany,Germany,Lina Magull,79,FALSE,FALSE
+2022-07-31,England,Germany,England,Chloe Kelly,110,FALSE,FALSE
+2023-07-20,Australia,Republic of Ireland,Australia,Steph Catley,52,FALSE,TRUE
+2023-07-20,New Zealand,Norway,New Zealand,Hannah Wilkinson,48,FALSE,FALSE
+2023-07-21,Philippines,Switzerland,Switzerland,Ramona Bachmann,45,FALSE,TRUE
+2023-07-21,Philippines,Switzerland,Switzerland,Seraina Piubel,64,FALSE,FALSE
+2023-07-21,Spain,Costa Rica,Spain,Valeria del Campo,21,TRUE,FALSE
+2023-07-21,Spain,Costa Rica,Spain,Aitana Bonmatí,23,FALSE,FALSE
+2023-07-21,Spain,Costa Rica,Spain,Esther González,27,FALSE,FALSE
+2023-07-22,Denmark,China PR,Denmark,Amalie Vangsgaard,90,FALSE,FALSE
+2023-07-22,England,Haiti,England,Georgia Stanway,29,FALSE,TRUE
+2023-07-22,United States,Vietnam,United States,Sophia Smith,14,FALSE,FALSE
+2023-07-22,United States,Vietnam,United States,Sophia Smith,45,FALSE,FALSE
+2023-07-22,United States,Vietnam,United States,Lindsey Horan,77,FALSE,FALSE
+2023-07-22,Zambia,Japan,Japan,Hinata Miyazawa,43,FALSE,FALSE
+2023-07-22,Zambia,Japan,Japan,Mina Tanaka,55,FALSE,FALSE
+2023-07-22,Zambia,Japan,Japan,Hinata Miyazawa,62,FALSE,FALSE
+2023-07-22,Zambia,Japan,Japan,Jun Endō,71,FALSE,FALSE
+2023-07-22,Zambia,Japan,Japan,Riko Ueki,90,FALSE,TRUE
+2023-07-23,Netherlands,Portugal,Netherlands,Stefanie van der Gragt,13,FALSE,FALSE
+2023-07-23,Sweden,South Africa,South Africa,Hildah Magaia,48,FALSE,FALSE
+2023-07-23,Sweden,South Africa,Sweden,Fridolina Rolfö,65,FALSE,FALSE
+2023-07-23,Sweden,South Africa,Sweden,Amanda Ilestedt,90,FALSE,FALSE
+2023-07-24,Brazil,Panama,Brazil,Ary Borges,19,FALSE,FALSE
+2023-07-24,Brazil,Panama,Brazil,Ary Borges,39,FALSE,FALSE
+2023-07-24,Brazil,Panama,Brazil,Bia Zaneratto,48,FALSE,FALSE
+2023-07-24,Brazil,Panama,Brazil,Ary Borges,70,FALSE,FALSE
+2023-07-24,Germany,Morocco,Germany,Alexandra Popp,11,FALSE,FALSE
+2023-07-24,Germany,Morocco,Germany,Alexandra Popp,39,FALSE,FALSE
+2023-07-24,Germany,Morocco,Germany,Klara Bühl,46,FALSE,FALSE
+2023-07-24,Germany,Morocco,Germany,Hanane Aït El Haj,54,TRUE,FALSE
+2023-07-24,Germany,Morocco,Germany,Zineb Redouani,79,TRUE,FALSE
+2023-07-24,Germany,Morocco,Germany,Lea Schüller,90,FALSE,FALSE
+2023-07-24,Italy,Argentina,Italy,Cristiana Girelli,87,FALSE,FALSE
+2023-07-25,Colombia,South Korea,Colombia,Catalina Usme,30,FALSE,TRUE
+2023-07-25,Colombia,South Korea,Colombia,Linda Caicedo,39,FALSE,FALSE
+2023-07-25,New Zealand,Philippines,Philippines,Sarina Bolden,24,FALSE,FALSE
+2023-07-26,Canada,Republic of Ireland,Republic of Ireland,Katie McCabe,4,FALSE,FALSE
+2023-07-26,Canada,Republic of Ireland,Canada,Megan Connolly,45,TRUE,FALSE
+2023-07-26,Canada,Republic of Ireland,Canada,Adriana Leon,53,FALSE,FALSE
+2023-07-26,Japan,Costa Rica,Japan,Hikaru Naomoto,25,FALSE,FALSE
+2023-07-26,Japan,Costa Rica,Japan,Aoba Fujino,27,FALSE,FALSE
+2023-07-26,Spain,Zambia,Spain,Teresa Abelleira,9,FALSE,FALSE
+2023-07-26,Spain,Zambia,Spain,Jennifer Hermoso,13,FALSE,FALSE
+2023-07-26,Spain,Zambia,Spain,Alba Redondo,69,FALSE,FALSE
+2023-07-26,Spain,Zambia,Spain,Jennifer Hermoso,70,FALSE,FALSE
+2023-07-26,Spain,Zambia,Spain,Alba Redondo,85,FALSE,FALSE
+2023-07-27,Australia,Nigeria,Australia,Emily van Egmond,45,FALSE,FALSE
+2023-07-27,Australia,Nigeria,Nigeria,Uchenna Kanu,45,FALSE,FALSE
+2023-07-27,Australia,Nigeria,Nigeria,Osinachi Ohale,65,FALSE,FALSE
+2023-07-27,Australia,Nigeria,Nigeria,Asisat Oshoala,72,FALSE,FALSE
+2023-07-27,Australia,Nigeria,Australia,Alanna Kennedy,90,FALSE,FALSE
+2023-07-27,Portugal,Vietnam,Portugal,Telma Encarnação,7,FALSE,FALSE
+2023-07-27,Portugal,Vietnam,Portugal,Francisca Nazareth,21,FALSE,FALSE
+2023-07-27,United States,Netherlands,Netherlands,Jill Roord,17,FALSE,FALSE
+2023-07-27,United States,Netherlands,United States,Lindsey Horan,62,FALSE,FALSE
+2023-07-28,Argentina,South Africa,South Africa,Linda Motlhalo,30,FALSE,FALSE
+2023-07-28,Argentina,South Africa,South Africa,Thembi Kgatlana,66,FALSE,FALSE
+2023-07-28,Argentina,South Africa,Argentina,Sophia Braun,74,FALSE,FALSE
+2023-07-28,Argentina,South Africa,Argentina,Romina Núñez,79,FALSE,FALSE
+2023-07-28,China PR,Haiti,China PR,Wang Shuang,74,FALSE,TRUE
+2023-07-28,England,Denmark,England,Lauren James,6,FALSE,FALSE
+2023-07-29,France,Brazil,France,Eugénie Le Sommer,17,FALSE,FALSE
+2023-07-29,France,Brazil,Brazil,Debinha,58,FALSE,FALSE
+2023-07-29,France,Brazil,France,Wendie Renard,83,FALSE,FALSE
+2023-07-29,Panama,Jamaica,Jamaica,Allyson Swaby,56,FALSE,FALSE
+2023-07-29,Sweden,Italy,Sweden,Amanda Ilestedt,39,FALSE,FALSE
+2023-07-29,Sweden,Italy,Sweden,Fridolina Rolfö,44,FALSE,FALSE
+2023-07-29,Sweden,Italy,Sweden,Stina Blackstenius,45,FALSE,FALSE
+2023-07-29,Sweden,Italy,Sweden,Amanda Ilestedt,50,FALSE,FALSE
+2023-07-29,Sweden,Italy,Sweden,Rebecka Blomqvist,90,FALSE,FALSE
+2023-07-30,Germany,Colombia,Colombia,Linda Caicedo,52,FALSE,FALSE
+2023-07-30,Germany,Colombia,Germany,Alexandra Popp,89,FALSE,TRUE
+2023-07-30,Germany,Colombia,Colombia,Manuela Vanegas,90,FALSE,FALSE
+2023-07-30,Norway,Philippines,Norway,Sophie Román Haug,6,FALSE,FALSE
+2023-07-30,Norway,Philippines,Norway,Sophie Román Haug,17,FALSE,FALSE
+2023-07-30,Norway,Philippines,Norway,Caroline Graham Hansen,31,FALSE,FALSE
+2023-07-30,Norway,Philippines,Norway,Alicia Barker,48,TRUE,FALSE
+2023-07-30,Norway,Philippines,Norway,Guro Reiten,53,FALSE,TRUE
+2023-07-30,Norway,Philippines,Norway,Sophie Román Haug,90,FALSE,FALSE
+2023-07-30,South Korea,Morocco,Morocco,Ibtissam Jraïdi,6,FALSE,FALSE
+2023-07-31,Australia,Canada,Australia,Hayley Raso,9,FALSE,FALSE
+2023-07-31,Australia,Canada,Australia,Hayley Raso,39,FALSE,FALSE
+2023-07-31,Australia,Canada,Australia,Mary Fowler,58,FALSE,FALSE
+2023-07-31,Australia,Canada,Australia,Steph Catley,90,FALSE,TRUE
+2023-07-31,Costa Rica,Zambia,Zambia,Lushomo Mweemba,3,FALSE,FALSE
+2023-07-31,Costa Rica,Zambia,Zambia,Barbra Banda,31,FALSE,TRUE
+2023-07-31,Costa Rica,Zambia,Costa Rica,Melissa Herrera,47,FALSE,FALSE
+2023-07-31,Costa Rica,Zambia,Zambia,Racheal Kundananji,90,FALSE,FALSE
+2023-07-31,Japan,Spain,Japan,Hinata Miyazawa,12,FALSE,FALSE
+2023-07-31,Japan,Spain,Japan,Riko Ueki,29,FALSE,FALSE
+2023-07-31,Japan,Spain,Japan,Hinata Miyazawa,40,FALSE,FALSE
+2023-07-31,Japan,Spain,Japan,Mina Tanaka,82,FALSE,FALSE
+2023-08-01,China PR,England,England,Alessia Russo,4,FALSE,FALSE
+2023-08-01,China PR,England,England,Lauren Hemp,26,FALSE,FALSE
+2023-08-01,China PR,England,England,Lauren James,41,FALSE,FALSE
+2023-08-01,China PR,England,China PR,Wang Shuang,57,FALSE,TRUE
+2023-08-01,China PR,England,England,Lauren James,65,FALSE,FALSE
+2023-08-01,China PR,England,England,Chloe Kelly,77,FALSE,FALSE
+2023-08-01,China PR,England,England,Rachel Daly,84,FALSE,FALSE
+2023-08-01,Haiti,Denmark,Denmark,Pernille Harder,21,FALSE,TRUE
+2023-08-01,Haiti,Denmark,Denmark,Sanne Troelsgaard Nielsen,90,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Lieke Martens,8,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Katja Snoeijs,11,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Esmee Brugts,18,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Jill Roord,23,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Daniëlle van de Donk,45,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Esmee Brugts,57,FALSE,FALSE
+2023-08-01,Vietnam,Netherlands,Netherlands,Jill Roord,83,FALSE,FALSE
+2023-08-02,Argentina,Sweden,Sweden,Rebecka Blomqvist,66,FALSE,FALSE
+2023-08-02,Argentina,Sweden,Sweden,Elin Rubensson,90,FALSE,TRUE
+2023-08-02,Panama,France,Panama,Marta Cox,2,FALSE,FALSE
+2023-08-02,Panama,France,France,Maëlle Lakrar,21,FALSE,FALSE
+2023-08-02,Panama,France,France,Kadidiatou Diani,28,FALSE,FALSE
+2023-08-02,Panama,France,France,Kadidiatou Diani,37,FALSE,TRUE
+2023-08-02,Panama,France,France,Léa Le Garrec,45,FALSE,FALSE
+2023-08-02,Panama,France,France,Kadidiatou Diani,52,FALSE,TRUE
+2023-08-02,Panama,France,Panama,Yomira Pinzón,64,FALSE,TRUE
+2023-08-02,Panama,France,Panama,Lineth Cedeño,87,FALSE,FALSE
+2023-08-02,Panama,France,France,Vicki Bècho,90,FALSE,FALSE
+2023-08-02,South Africa,Italy,Italy,Arianna Caruso,11,FALSE,TRUE
+2023-08-02,South Africa,Italy,South Africa,Benedetta Orsi,32,TRUE,FALSE
+2023-08-02,South Africa,Italy,South Africa,Hildah Magaia,67,FALSE,FALSE
+2023-08-02,South Africa,Italy,Italy,Arianna Caruso,74,FALSE,FALSE
+2023-08-02,South Africa,Italy,South Africa,Thembi Kgatlana,90,FALSE,FALSE
+2023-08-03,Morocco,Colombia,Morocco,Anissa Lahmari,45,FALSE,FALSE
+2023-08-03,South Korea,Germany,South Korea,Cho So-hyun,6,FALSE,FALSE
+2023-08-03,South Korea,Germany,Germany,Alexandra Popp,42,FALSE,FALSE
+2023-08-05,Japan,Norway,Japan,Ingrid Syrstad Engen,15,TRUE,FALSE
+2023-08-05,Japan,Norway,Norway,Guro Reiten,20,FALSE,FALSE
+2023-08-05,Japan,Norway,Japan,Risa Shimizu,50,FALSE,FALSE
+2023-08-05,Japan,Norway,Japan,Hinata Miyazawa,81,FALSE,FALSE
+2023-08-05,Switzerland,Spain,Spain,Aitana Bonmatí,5,FALSE,FALSE
+2023-08-05,Switzerland,Spain,Switzerland,Laia Codina,11,TRUE,FALSE
+2023-08-05,Switzerland,Spain,Spain,Alba Redondo,17,FALSE,FALSE
+2023-08-05,Switzerland,Spain,Spain,Aitana Bonmatí,36,FALSE,FALSE
+2023-08-05,Switzerland,Spain,Spain,Laia Codina,45,FALSE,FALSE
+2023-08-05,Switzerland,Spain,Spain,Jennifer Hermoso,70,FALSE,FALSE
+2023-08-06,Netherlands,South Africa,Netherlands,Jill Roord,9,FALSE,FALSE
+2023-08-06,Netherlands,South Africa,Netherlands,Lineth Beerensteyn,68,FALSE,FALSE
+2023-08-07,Australia,Denmark,Australia,Caitlin Foord,29,FALSE,FALSE
+2023-08-07,Australia,Denmark,Australia,Hayley Raso,70,FALSE,FALSE
+2023-08-08,Colombia,Jamaica,Colombia,Catalina Usme,51,FALSE,FALSE
+2023-08-08,France,Morocco,France,Kadidiatou Diani,15,FALSE,FALSE
+2023-08-08,France,Morocco,France,Kenza Dali,20,FALSE,FALSE
+2023-08-08,France,Morocco,France,Eugénie Le Sommer,23,FALSE,FALSE
+2023-08-08,France,Morocco,France,Eugénie Le Sommer,70,FALSE,FALSE
+2023-08-11,Japan,Sweden,Sweden,Amanda Ilestedt,32,FALSE,FALSE
+2023-08-11,Japan,Sweden,Sweden,Filippa Angeldahl,51,FALSE,TRUE
+2023-08-11,Japan,Sweden,Japan,Honoka Hayashi,87,FALSE,FALSE
+2023-08-11,Spain,Netherlands,Spain,Mariona Caldentey,81,FALSE,TRUE
+2023-08-11,Spain,Netherlands,Netherlands,Stefanie van der Gragt,90,FALSE,FALSE
+2023-08-11,Spain,Netherlands,Spain,Salma Paralluelo,111,FALSE,FALSE
+2023-08-12,England,Colombia,Colombia,Leicy Santos,44,FALSE,FALSE
+2023-08-12,England,Colombia,England,Lauren Hemp,45,FALSE,FALSE
+2023-08-12,England,Colombia,England,Alessia Russo,63,FALSE,FALSE
+2023-08-15,Spain,Sweden,Spain,Salma Paralluelo,81,FALSE,FALSE
+2023-08-15,Spain,Sweden,Sweden,Rebecka Blomqvist,88,FALSE,FALSE
+2023-08-15,Spain,Sweden,Spain,Olga Carmona,89,FALSE,FALSE
+2023-08-16,Australia,England,England,Ella Toone,36,FALSE,FALSE
+2023-08-16,Australia,England,Australia,Sam Kerr,63,FALSE,FALSE
+2023-08-16,Australia,England,England,Lauren Hemp,71,FALSE,FALSE
+2023-08-16,Australia,England,England,Alessia Russo,86,FALSE,FALSE
+2023-08-19,Australia,Sweden,Sweden,Fridolina Rolfö,30,FALSE,TRUE
+2023-08-19,Australia,Sweden,Sweden,Kosovare Asllani,62,FALSE,FALSE
+2023-08-20,Spain,England,Spain,Olga Carmona,29,FALSE,FALSE
