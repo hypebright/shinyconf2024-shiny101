@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+$theme-darkblue: #085088;
+$theme-blue: #3c8fbc;
+$theme-white: #F2F2F2;
+$theme-pink: #C567A3;
+$theme-gray: #9BAEBC;
+$theme-oldpink: #BAA6B1;
+$theme-darkgrey: #20313a;
+
+$body-bg: $theme-white;
+$link-color: $theme-blue;
+$body-color: $theme-darkgrey;
+$presentation-heading-color: $theme-darkgrey;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$presentation-heading-font: 'Lato', serif;
+$font-family-sans-serif: 'Lato', sans-serif;
+
+.reveal .slide ul {
+  list-style-type: square;
+}
+/* changecolor of list type bullet */
+.reveal .slide ul li::marker {
+  color: $theme-pink;
+}
