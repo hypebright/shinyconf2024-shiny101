@@ -9,6 +9,7 @@ format:
 include-in-header: 
   text: |
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+highlight-style: "nord"
 ---
 
 ## Program
@@ -33,6 +34,7 @@ You will leave this workshop with:
 
 - a blueprint for a modular Shiny app
 
+# Introduction to Shiny
 
 ## Shiny app basics
 
@@ -118,16 +120,18 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-- `fluidPage()` creates a Bootstrap page
+`fluidPage()` creates a Bootstrap page
 
-- Bootstrap is a free front-end framework used in web development and it includes all the basic to build an app that will work in a web browser on any device
+## The ui part
 
-- Bootstrap is built on HTML, CSS and JavaScript
+- Bootstrap is a free front-end framework used in web development and it includes all the basic to build an app that will work in a web browser on any device. 
+- It is built on **HTML**, **CSS** and **JavaScript**
+- There are many version of Bootstrap, the latest being version 5, but Shiny uses version 3
 
 
 ## The ui part
 
-Under the hood, every UI function is translated to HTML. With HTML, you can add rich content to your user interface like text, images, and input controls.
+Under the hood, every UI function is translated to HTML:
 
 ```{r}
 library(shiny)
@@ -140,7 +144,7 @@ as.character(titlePanel("Hello, Shiny!"))
 
 <br>
 
-This HTML can also have styles attached to it, either by the `style` attribute, or by a CSS class.
+This HTML can have styles attached to it, either by the `style` attribute, or by a CSS class.
 
 ```{r}
 #| echo: true
@@ -150,12 +154,15 @@ as.character(sidebarPanel())
 
 ## The ui part
 
-To let users interact with your app, you can add **input controls**.
+To let users interact with your app, you can add **input controls**. A basic input control has:
 
-Every input control, needs an `inputId`- which is a simple string
-that needs to be **unique**.
+- an `inputId`
+- a `label`
+- a `value`
 
-Most input controls have a `label` and a `value`
+## The ui part
+
+For example:
 
 ```{.r}
 numericInput(inputId = "number", 
@@ -174,13 +181,13 @@ When the app runs, every user gets served the same HTML from the ui.
 
 When the user interacts with the UI, we want that HTML to react to the user.
 
-The server logic uses reactive programming: when an input changes, all related outputs react and are updated automatically.
+The server logic uses **reactive programming**: when an input changes, all related outputs react and are updated automatically.
 
-We need **reactive outputs**!
+That is possible because these outputs are  **reactive outputs**
 
 ## The server part
 
-Shiny has several functions that turn R objects into reactive outputs for your ui: the **Output family
+Shiny has several functions that turn R objects into reactive outputs for your ui: the *Output family
 
 Each function creates a specific type of output, for example:
 
@@ -194,21 +201,21 @@ Each function creates a specific type of output, for example:
 
 ## The server part
 
-To let users interact with your app, you can add input controls.
-
 Every output element needs a single argument: `outputId`- which is a simple string that needs to be **unique**.
 
 ```{.r}
 textOutput(outputId = "text")
 ```
 
-This textOutput tells Shiny where to display the object
+This `textOutput `tells Shiny where to display the object
+
+<br>
 
 Next step: tell Shiny how to build the object
 
 ## The server part
 
-The server function builds an object named output and this object will contain all the code needed to display the R objects in your app
+The server function builds an object named **output** and this object will contain all the code needed to display the R objects in your app
 
 This output object is **list-like**
 
@@ -241,13 +248,13 @@ server <- function(input, output, session) {
 
 ## Using inputs
 
-This works the same with inputs
+This works the same with inputs!
+
+<br>
 
 The server can access an object named `input` that will contain the value of all the objects defined in the ui
 
-This object is list like, just like the output object
-
-Each input value has its own entry in this list:
+This object is **list-like**, just like the output object. Each input value has its own entry in this list:
 
 ```{.r}
 input$number
@@ -279,7 +286,7 @@ shinyApp(ui, server)
 
 ## Connecting the dots
 
-What about the `actionButton`? We could use this button as an **event** that triggers the calculation.
+What about an `actionButton`? We could use this button as an **event** that triggers the calculation.
 
 ```{.r}
 library(shiny)
@@ -313,6 +320,7 @@ Only our app doesn't have any yet... 😢
 
 - There are many ways to make your app look instantly better
 - One of them is using `bslib` which is a package that provides a modern UI toolkit for Shiny and R Markdown based on Bootstrap
+- The cool thing: you can get around Shiny's default usage of Bootstrap version 3!
 
 ## Working with {bslib}
 
@@ -384,3 +392,329 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+## Shiny app recap
+
+We covered:
+
+- the ui part
+- the server part
+- how to connect the two
+- how to bind an event to an output
+
+What's next?
+
+- how to use data
+- reactives & reactive values
+
+# Hands-on: building a Shiny app together 💻
+
+# Shiny modules 
+
+## What are modules?
+
+You could call modules **special functions**.
+
+<br>
+
+Using functions in a Shiny app is common:
+
+- You use functions in your UI (e.g. `value_box()`)
+- You use functions in your server
+
+<br>
+
+That works well for code that is **completely on the ui or server side**.
+
+## What are modules?
+
+For code that spans both the ui and the server, you need a new technique: **modules**
+
+<br>
+
+A module consists of some **UI code** that works together with some **server code**
+
+<br>
+
+Modules are special because they create their own **namespace**: things like input and output ids are isolated from the rest of the app
+
+## Why use modules?
+
+There are two main reasons to work with modules:
+
+1. Because a module creates its own **namespace**, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module.
+
+2. Because a module is basically a **function**, it comes with all the benefits that functions have.
+
+## What does a module look like?
+
+A module has two parts, and is basically a mini-app:
+
+1. **The module UI**, which generates the UI
+
+2. **The module server**, which runs code inside the `server()` function
+
+## What does a module look like?
+
+```{.r}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number",
+               label = "Enter a number",
+               value = 0),
+
+  actionButton(inputId = "button",
+               label = "Click me"),
+
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  output$text <- renderText({
+    input$number^2
+  }) |> bindEvent(input$button)
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## What does a module look like?
+
+```{.r}
+library(shiny)
+
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Click me"),
+    textOutput(outputId = ns("text"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+  })
+}
+
+ui <- fluidPage(
+  numberModUI("numbers")
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## What does a module look like?
+
+```{.r code-line-numbers="3-13"}
+library(shiny)
+
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Click me"),
+    textOutput(outputId = ns("text"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+  })
+}
+
+ui <- fluidPage(
+  numberModUI("numbers")
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## What does a module look like?
+
+```{.r code-line-numbers="4,11"}
+library(shiny)
+
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Click me"),
+    textOutput(outputId = ns("text"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+  })
+}
+
+ui <- fluidPage(
+  numberModUI("numbers")
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## What does a module look like?
+
+```{.r code-line-numbers="15-21"}
+library(shiny)
+
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Click me"),
+    textOutput(outputId = ns("text"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+  })
+}
+
+ui <- fluidPage(
+  numberModUI("numbers")
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## What does a module look like?
+
+```{.r code-line-numbers="23-29"}
+library(shiny)
+
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Click me"),
+    textOutput(outputId = ns("text"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+  })
+}
+
+ui <- fluidPage(
+  numberModUI("numbers")
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+:::
+
+## Where do you put modules?
+
+You can simple put the module functions in the `app.R` file (you call this inline).
+
+<br>
+
+Other options:
+
+ - Put the module in a separate R script in the /R folder. **Shiny will automatically source it**.
+
+- Put the module in a separate R script in any other folder, and source it using `source(“./my_modules/random.R”)`. 
+
+## Nested modules
+
+Modules are **composable**, and it may make sense to create a module that itself contains a module: this is called **nesting**
+
+<br>
+
+This sounds complicated, but isn’t any different compared to calling a function within another function
+
+## Nested modules
+
+test
+
+:::footer
+[/templates/04_nested_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules)
+:::
+
+
