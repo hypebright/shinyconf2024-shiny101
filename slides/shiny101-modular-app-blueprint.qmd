@@ -4,20 +4,20 @@ author: "Veerle van Leemput"
 format:
   revealjs: 
     theme: [default, custom.scss]
+    footer: "[github.com/hypebright/shinyconf2024-shiny101](https://github.com/hypebright/shinyconf2024-shiny101)"
+    logo: images/logo.png
 include-in-header: 
   text: |
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 ---
 
-# Welcome Shiny dev! 👋
-
 ## Program
 
 - **19:30 - 20:00** Introduction to Shiny
-- **20:00 - 20:30** Hands-on Session: Building a Shiny App Together
+- **20:00 - 20:30** Hands-on: Building a Shiny App Together
 - **20:30 - 20:40** Break ☕️
 - **20:40 - 21:00** Introduction to Shiny modules
-- **21:00 - 21:30** Hands-on Session: Implementing Shiny modules
+- **21:00 - 21:30** Hands-on: Implementing Shiny modules
 - **21:30 - 21:45** Sharing and feedback
 - **21:45 - 22:00** Recap and Questions
 
@@ -34,7 +34,7 @@ You will leave this workshop with:
 - a blueprint for a modular Shiny app
 
 
-# Shiny app
+## Shiny app basics
 
 Two parts of a Shiny app:
 
@@ -138,6 +138,8 @@ library(shiny)
 as.character(titlePanel("Hello, Shiny!"))
 ```
 
+<br>
+
 This HTML can also have styles attached to it, either by the `style` attribute, or by a CSS class.
 
 ```{r}
@@ -148,21 +150,19 @@ as.character(sidebarPanel())
 
 ## The ui part
 
-To let users interact with your app, you can add input controls.
+To let users interact with your app, you can add **input controls**.
 
-Every input control, or widget, needs an `inputId`- which is a simple string
+Every input control, needs an `inputId`- which is a simple string
 that needs to be **unique**.
 
-Most input controls have a `label`
-
-Most input controls also have a `value`
+Most input controls have a `label` and a `value`
 
 ```{.r}
 numericInput(inputId = "number", 
              label = "Enter a number", 
              value = 0)
 ```
-
+<br>
 ```{.r}
 actionButton(inputId = "button", 
              label = "Click me")
@@ -180,7 +180,7 @@ We need **reactive outputs**!
 
 ## The server part
 
-Shiny has several functions that turn R objects into reactive outputs for your ui: the *Output family
+Shiny has several functions that turn R objects into reactive outputs for your ui: the **Output family
 
 Each function creates a specific type of output, for example:
 
@@ -220,9 +220,7 @@ output$text
 
 ## The server part
 
-Each entry in the output list should contain a render* function
-
-You must use render* functions that match the *Output functions
+Each entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:
 
 | Function | Output type | Render function |
 |----------|-------------|-----------------|

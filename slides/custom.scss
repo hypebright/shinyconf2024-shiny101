@@ -4,7 +4,7 @@ $theme-blue: #3c8fbc;
 $theme-white: #F2F2F2;
 $theme-pink: #C567A3;
 $theme-gray: #9BAEBC;
-$theme-oldpink: #BAA6B1;
+$theme-oldpink: #d1bcc8;
 $theme-darkgrey: #20313a;
 
 $body-bg: $theme-white;
@@ -17,10 +17,34 @@ $presentation-heading-color: $theme-darkgrey;
 $presentation-heading-font: 'Lato', serif;
 $font-family-sans-serif: 'Lato', sans-serif;
 
+.reveal .slide code {
+  color: $theme-darkblue;
+}
+
+.reveal h2 {
+  padding-bottom: 40px;
+}
+
 .reveal .slide ul {
   list-style-type: square;
 }
-/* changecolor of list type bullet */
 .reveal .slide ul li::marker {
-  color: $theme-pink;
+  color: $theme-blue;
+}
+
+.reveal .footer {
+  height: 10%;
+  max-height: 50px;
+  min-height: 20px;
+  bottom: 0px !important;
+  background-color: $theme-oldpink;
+  z-index: 1 !important;
+}
+
+.reveal .footer a {
+  color: $theme-white !important;
+}
+
+.reveal .footer p {
+  margin-top: 0.5em;
 }

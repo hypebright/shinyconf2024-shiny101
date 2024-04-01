@@ -402,19 +402,14 @@ Veerle van Leemput
 </div>
 
 </section>
-<section>
-<section id="welcome-shiny-dev" class="title-slide slide level1 center">
-<h1>Welcome Shiny dev! 👋</h1>
-
-</section>
 <section id="program" class="slide level2">
 <h2>Program</h2>
 <ul>
 <li><strong>19:30 - 20:00</strong> Introduction to Shiny</li>
-<li><strong>20:00 - 20:30</strong> Hands-on Session: Building a Shiny App Together</li>
+<li><strong>20:00 - 20:30</strong> Hands-on: Building a Shiny App Together</li>
 <li><strong>20:30 - 20:40</strong> Break ☕️</li>
 <li><strong>20:40 - 21:00</strong> Introduction to Shiny modules</li>
-<li><strong>21:00 - 21:30</strong> Hands-on Session: Implementing Shiny modules</li>
+<li><strong>21:00 - 21:30</strong> Hands-on: Implementing Shiny modules</li>
 <li><strong>21:30 - 21:45</strong> Sharing and feedback</li>
 <li><strong>21:45 - 22:00</strong> Recap and Questions</li>
 </ul>
@@ -431,10 +426,9 @@ Veerle van Leemput
 <ul>
 <li>a blueprint for a modular Shiny app</li>
 </ul>
-</section></section>
-<section>
-<section id="shiny-app" class="title-slide slide level1 center">
-<h1>Shiny app</h1>
+</section>
+<section id="shiny-app-basics" class="slide level2">
+<h2>Shiny app basics</h2>
 <p>Two parts of a Shiny app:</p>
 <ul>
 <li><strong>UI</strong>: User Interface</li>
@@ -521,6 +515,7 @@ Veerle van Leemput
 <pre><code>[1] "&lt;h2&gt;Hello, Shiny!&lt;/h2&gt;"</code></pre>
 </div>
 </div>
+<p><br></p>
 <p>This HTML can also have styles attached to it, either by the <code>style</code> attribute, or by a CSS class.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">as.character</span>(<span class="fu">sidebarPanel</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -531,13 +526,13 @@ Veerle van Leemput
 </section>
 <section id="the-ui-part-2" class="slide level2">
 <h2>The ui part</h2>
-<p>To let users interact with your app, you can add input controls.</p>
-<p>Every input control, or widget, needs an <code>inputId</code>- which is a simple string that needs to be <strong>unique</strong>.</p>
-<p>Most input controls have a <code>label</code></p>
-<p>Most input controls also have a <code>value</code></p>
+<p>To let users interact with your app, you can add <strong>input controls</strong>.</p>
+<p>Every input control, needs an <code>inputId</code>- which is a simple string that needs to be <strong>unique</strong>.</p>
+<p>Most input controls have a <code>label</code> and a <code>value</code></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
 <span id="cb10-2"><a href="#cb10-2"></a>             <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
 <span id="cb10-3"><a href="#cb10-3"></a>             <span class="at">value =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
 <span id="cb11-2"><a href="#cb11-2"></a>             <span class="at">label =</span> <span class="st">"Click me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -550,7 +545,7 @@ Veerle van Leemput
 </section>
 <section id="the-server-part-1" class="slide level2">
 <h2>The server part</h2>
-<p>Shiny has several functions that turn R objects into reactive outputs for your ui: the *Output family</p>
+<p>Shiny has several functions that turn R objects into reactive outputs for your ui: the **Output family</p>
 <p>Each function creates a specific type of output, for example:</p>
 <table class="table table-striped table-hover">
 <caption></caption>
@@ -691,7 +686,7 @@ Veerle van Leemput
 <span id="cb17-18"><a href="#cb17-18"></a>}</span>
 <span id="cb17-19"><a href="#cb17-19"></a></span>
 <span id="cb17-20"><a href="#cb17-20"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
+</section>
 <section>
 <section id="its-all-about-the-looks" class="title-slide slide level1 center">
 <h1>It’s all about the looks 💅</h1>
@@ -770,8 +765,9 @@ Veerle van Leemput
 <span id="cb19-35"><a href="#cb19-35"></a>}</span>
 <span id="cb19-36"><a href="#cb19-36"></a></span>
 <span id="cb19-37"><a href="#cb19-37"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer footer-default">
 
+<img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101">github.com/hypebright/shinyconf2024-shiny101</a></p>
 </div>
 </section></section>
     </div>
