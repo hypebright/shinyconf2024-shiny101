@@ -34,7 +34,13 @@ data_scorers <-
   left_join(select(countrycode::codelist, c(country.name.en, iso2c)),
             by = c("away_team" = "country.name.en")) |>
   mutate(country_flag_away = get_flag(iso2c)) |>
-  select(-iso2c)
+  select(-iso2c) |>
+  group_by(scorer, team) |>
+  summarise(goals = sum(ifelse(team == home_team, home_score, away_score)),
+            penalties = sum(penalty),
+            country_flag = first(ifelse(team == home_team, country_flag_home, country_flag_away))) |>
+  arrange(desc(goals))
+
 
 data_matches <- results |>
   filter(!is.na(home_score) | !is.na(away_score)) |>
@@ -47,5 +53,36 @@ data_matches <- results |>
   mutate(country_flag_away = get_flag(iso2c)) |>
   select(-iso2c)
 
+# construct country rank
+# Get the number of matches played by each country
+# Get the number of goals scored by each country
+# Both when the country when was in the home_team and away_team
+country_rank <- data_matches |>
+  group_by(home_team) |>
+  summarise(
+    country = first(home_team),
+    matches = n(),
+    goals = sum(home_score),
+    country_flag = first(country_flag_home)
+  ) |>
+  bind_rows(
+    data_matches |>
+      group_by(away_team) |>
+      summarise(
+        country = first(away_team),
+        matches = n(),
+        goals = sum(away_score),
+        country_flag = first(country_flag_away)
+      )
+  ) |>
+  group_by(country) |>
+  summarise(
+    matches = sum(matches),
+    goals = sum(goals),
+    country_flag = first(country_flag)
+  ) |>
+  arrange(desc(goals))
+
 saveRDS(data_scorers, "data/soccer_scorers.rds")
-saveRDS(data, "data/soccer_matches.rds")
+saveRDS(data_matches, "data/soccer_matches.rds")
+saveRDS(country_rank, "data/country_rank.rds")
