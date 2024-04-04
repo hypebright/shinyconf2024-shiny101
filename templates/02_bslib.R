@@ -3,13 +3,7 @@ library(bslib)
 
 custom_theme <- bs_theme(
   version = 5,
-  bg = "#F9F9F9",
-  fg = "#003f5c",
-  primary = "#bc5090",
-  secondary = "#58508d",
-  warning = "#ffa600",
-  danger = "#ff6361",
-  info = "#0091d5",
+  bootswatch = "quartz",
   base_font = font_google("PT Sans")
 )
 
@@ -22,8 +16,7 @@ ui <- page_navbar(
                  label = "Enter a number",
                  value = 0),
     actionButton(inputId = "button",
-                 label = "Click me",
-                 width = "100px"),
+                 label = "Calculate"),
     textOutput(outputId = "text")
   )
 )

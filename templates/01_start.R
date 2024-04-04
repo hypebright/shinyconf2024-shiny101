@@ -6,7 +6,7 @@ ui <- fluidPage(
                value = 0),
 
   actionButton(inputId = "button",
-               label = "Click me"),
+               label = "Calculate"),
 
   textOutput(outputId = "text")
 )

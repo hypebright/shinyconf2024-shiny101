@@ -14,14 +14,18 @@ numberAnalysisModUI <- function(id) {
   dataTableOutput(outputId = ns("table"))
 }
 
-numberAnalysisServer <- function(id) {
+numberAnalysisServer <- function(id, r) {
   moduleServer(id, function(input, output, session) {
     # display table of squares and highlight the number
     output$table <- renderDataTable({
-      squares <- 1:10
+      req(r$number > 0)
+      squares <- 1:(r$number + 5)
       squares <- data.frame(number = squares, square = squares^2)
-      datatable(squares, rownames = FALSE)
-    })
+      datatable(squares, rownames = FALSE, selection = "none") |>
+        formatStyle(columns = "number",
+                    target = "row",
+                    border = styleEqual(r$number, "3px"))
+    }) |> bindEvent(r$button)
   })
 }
 
@@ -39,14 +43,19 @@ numberModUI <- function(id) {
   )
 }
 
-numberModServer <- function(id) {
+numberModServer <- function(id, r) {
   moduleServer(id, function(input, output, session) {
 
     output$text <- renderText({
       input$number^2
     }) |> bindEvent(input$button)
 
-    numberAnalysisServer("analysis")
+    observe({
+      r$number <- input$number
+      r$button <- input$button
+    })
+
+    numberAnalysisServer("analysis", r = r)
 
   })
 }
@@ -62,7 +71,10 @@ ui <- page_navbar(
 )
 
 server <- function(input, output, session) {
-  numberModServer("numbers")
+
+  r <- reactiveValues(number = NULL)
+
+  numberModServer("numbers", r = r)
 }
 
 shinyApp(ui, server)
