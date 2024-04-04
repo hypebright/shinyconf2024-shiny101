@@ -7,7 +7,7 @@ goalscorers <- read.csv("data/goalscorers.csv")
 
 # Merge the two dataframes on date, home_team, away_team
 # Remove any games with no known outcome
-data <- results |>
+data_scorers <- results |>
   left_join(goalscorers,
             by = c("date", "home_team", "away_team")) |>
   filter(!is.na(home_score) | !is.na(away_score))
@@ -25,8 +25,8 @@ get_flag <- function(country_codes) {
     as.vector()
 }
 
-data <-
-  data |>
+data_scorers <-
+  data_scorers |>
   left_join(select(countrycode::codelist, c(country.name.en, iso2c)),
             by = c("home_team" = "country.name.en")) |>
   mutate(country_flag_home = get_flag(iso2c)) |>
@@ -36,4 +36,16 @@ data <-
   mutate(country_flag_away = get_flag(iso2c)) |>
   select(-iso2c)
 
-saveRDS(data, "data/.rds")
+data_matches <- results |>
+  filter(!is.na(home_score) | !is.na(away_score)) |>
+  left_join(select(countrycode::codelist, c(country.name.en, iso2c)),
+            by = c("home_team" = "country.name.en")) |>
+  mutate(country_flag_home = get_flag(iso2c)) |>
+  select(-iso2c) |>
+  left_join(select(countrycode::codelist, c(country.name.en, iso2c)),
+            by = c("away_team" = "country.name.en")) |>
+  mutate(country_flag_away = get_flag(iso2c)) |>
+  select(-iso2c)
+
+saveRDS(data_scorers, "data/soccer_scorers.rds")
+saveRDS(data, "data/soccer_matches.rds")
