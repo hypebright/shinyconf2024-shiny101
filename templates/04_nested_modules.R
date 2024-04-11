@@ -4,28 +4,23 @@ library(DT)
 
 custom_theme <- bs_theme(
   version = 5,
-  bootswatch = "quartz",
-  base_font = font_google("PT Sans")
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans"),
+  bg = NULL,
+  fg = NULL,
+  primary = NULL,
+  secondary = NULL,
+  success = NULL,
+  info = NULL,
+  warning = NULL,
+  danger = NULL,
+  code_font = NULL,
+  heading_font = NULL,
+  font_scale = NULL
 )
 
 # module 1 -------------------------------------------------------
-numberAnalysisModUI <- function(id) {
-  ns <- NS(id)
-  dataTableOutput(outputId = ns("table"))
-}
-
-numberAnalysisServer <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    # display table of squares and highlight the number
-    output$table <- renderDataTable({
-      squares <- 1:10
-      squares <- data.frame(number = squares, square = squares^2)
-      datatable(squares, rownames = FALSE)
-    })
-  })
-}
-
-# module 2 -------------------------------------------------------
 numberModUI <- function(id) {
   ns <- NS(id)
   tagList(
@@ -48,6 +43,23 @@ numberModServer <- function(id) {
 
     numberAnalysisServer("analysis")
 
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      squares <- 1:10
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE)
+    })
   })
 }
 
