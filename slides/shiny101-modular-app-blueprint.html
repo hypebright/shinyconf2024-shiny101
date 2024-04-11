@@ -402,6 +402,11 @@ Veerle van Leemput
 </div>
 
 </section>
+<section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome 👋</h1>
+
+</section>
 <section id="program" class="slide level2">
 <h2>Program</h2>
 <ul>
@@ -424,9 +429,9 @@ Veerle van Leemput
 </ul>
 <p>You will leave this workshop with:</p>
 <ul>
-<li>a blueprint for a modular Shiny app</li>
+<li>a blueprint for a modular Shiny app in the form of templates</li>
 </ul>
-</section>
+</section></section>
 <section>
 <section id="introduction-to-shiny" class="title-slide slide level1 center">
 <h1>Introduction to Shiny</h1>
@@ -557,7 +562,7 @@ Veerle van Leemput
 <p>When the app runs, every user gets served the same HTML from the ui.</p>
 <p>When the user interacts with the UI, we want that HTML to react to the user.</p>
 <p>The server logic uses <strong>reactive programming</strong>: when an input changes, all related outputs react and are updated automatically.</p>
-<p>That is possible because these outputs are <strong>reactive outputs</strong></p>
+<p>That is possible because these outputs are <strong>reactive outputs</strong>.</p>
 </section>
 <section id="the-server-part-1" class="slide level2">
 <h2>The server part</h2>
@@ -680,7 +685,13 @@ Veerle van Leemput
 </section>
 <section id="connecting-the-dots-1" class="slide level2">
 <h2>Connecting the dots</h2>
-<p>What about an <code>actionButton</code>? We could use this button as an <strong>event</strong> that triggers the calculation.</p>
+<p>An output is eager: it will update as soon as the input changes.</p>
+<p>This eagerness is handy: you don’t need to worry about updating the output when the input changes.</p>
+<p>But what if you want to trigger the calculation only when you want?</p>
+</section>
+<section id="connecting-the-dots-2" class="slide level2">
+<h2>Connecting the dots</h2>
+<p>You could use an <code>actionButton</code> as an <strong>event</strong> that triggers the calculation.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -701,10 +712,250 @@ Veerle van Leemput
 <span id="cb17-18"><a href="#cb17-18"></a>}</span>
 <span id="cb17-19"><a href="#cb17-19"></a></span>
 <span id="cb17-20"><a href="#cb17-20"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="observers" class="slide level2">
+<h2>Observers</h2>
+<p>So far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.</p>
+<p><br></p>
+<p>But sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.</p>
+<p><br></p>
+<p>We need <strong>observers</strong> for that!</p>
+</section>
+<section id="observers-1" class="slide level2">
+<h2>Observers</h2>
+<p>Observers are functions that run when their dependencies change, just like outputs.</p>
+<p><br></p>
+<p>But where <strong>outputs</strong> update the HTML in the user’s browser, observers are called for other <strong>side-effects</strong>.</p>
+<p><br></p>
+<p>For example 👉</p>
+</section>
+<section id="observers-2" class="slide level2">
+<h2>Observers</h2>
+<div class="sourceCode" id="cb18" data-code-line-numbers="19-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
+<span id="cb18-5"><a href="#cb18-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
+<span id="cb18-6"><a href="#cb18-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb18-7"><a href="#cb18-7"></a>               </span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
+<span id="cb18-9"><a href="#cb18-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb18-10"><a href="#cb18-10"></a>               </span>
+<span id="cb18-11"><a href="#cb18-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12"></a>)</span>
+<span id="cb18-13"><a href="#cb18-13"></a></span>
+<span id="cb18-14"><a href="#cb18-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb18-15"><a href="#cb18-15"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb18-16"><a href="#cb18-16"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb18-18"><a href="#cb18-18"></a>  </span>
+<span id="cb18-19"><a href="#cb18-19"></a>  <span class="fu">observe</span>({</span>
+<span id="cb18-20"><a href="#cb18-20"></a>    <span class="fu">print</span>(input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-21"><a href="#cb18-21"></a>  })</span>
+<span id="cb18-22"><a href="#cb18-22"></a>}</span>
+<span id="cb18-23"><a href="#cb18-23"></a></span>
+<span id="cb18-24"><a href="#cb18-24"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="observers-3" class="slide level2">
+<h2>Observers</h2>
+<div class="sourceCode" id="cb19" data-code-line-numbers="21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
+<span id="cb19-5"><a href="#cb19-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
+<span id="cb19-6"><a href="#cb19-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb19-7"><a href="#cb19-7"></a>               </span>
+<span id="cb19-8"><a href="#cb19-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
+<span id="cb19-9"><a href="#cb19-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb19-10"><a href="#cb19-10"></a>               </span>
+<span id="cb19-11"><a href="#cb19-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb19-12"><a href="#cb19-12"></a>)</span>
+<span id="cb19-13"><a href="#cb19-13"></a></span>
+<span id="cb19-14"><a href="#cb19-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb19-15"><a href="#cb19-15"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb19-16"><a href="#cb19-16"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb19-17"><a href="#cb19-17"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb19-18"><a href="#cb19-18"></a>  </span>
+<span id="cb19-19"><a href="#cb19-19"></a>  <span class="fu">observe</span>({</span>
+<span id="cb19-20"><a href="#cb19-20"></a>    <span class="fu">print</span>(input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb19-21"><a href="#cb19-21"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb19-22"><a href="#cb19-22"></a>}</span>
+<span id="cb19-23"><a href="#cb19-23"></a></span>
+<span id="cb19-24"><a href="#cb19-24"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="what-about-reactives" class="slide level2">
+<h2>What about reactives?</h2>
+<p>Outputs and observers <strong>do</strong> something.</p>
+<p><br></p>
+<p>If we want to <strong>create</strong> something, we need <strong>reactives</strong>.</p>
+</section>
+<section id="what-about-reactives-1" class="slide level2">
+<h2>What about reactives?</h2>
+<p>Reactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app.</p>
+<p><br></p>
+<p>You can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want.</p>
+</section>
+<section id="what-about-reactives-2" class="slide level2">
+<h2>What about reactives?</h2>
+<p>When you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.</p>
+<p><br></p>
+<p>That’s similar with a reactive. They can carry and do different things:</p>
+<ul>
+<li><strong>reactive()</strong>: takes an expression</li>
+<li><strong>reactiveVal()</strong>: takes a single value</li>
+<li><strong>reactiveValues()</strong>: takes a list of values</li>
+</ul>
+</section>
+<section id="what-about-reactives-3" class="slide level2">
+<h2>What about reactives?</h2>
+<p>You can see <code>reactive()</code> as a very fancy backpack 🎒🌟.</p>
+<p><br></p>
+<p>It can take multiple inputs, manipulate them and return something simple (a value) or complex (a plot, a table). It can even take other reactives (other backpacks) as input!</p>
+</section>
+<section id="what-about-reactives-4" class="slide level2">
+<h2>What about reactives?</h2>
+<div class="sourceCode" id="cb20" data-code-line-numbers="15-17,20,24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
+<span id="cb20-5"><a href="#cb20-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
+<span id="cb20-6"><a href="#cb20-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb20-7"><a href="#cb20-7"></a>               </span>
+<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
+<span id="cb20-9"><a href="#cb20-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb20-10"><a href="#cb20-10"></a>               </span>
+<span id="cb20-11"><a href="#cb20-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb20-12"><a href="#cb20-12"></a>)</span>
+<span id="cb20-13"><a href="#cb20-13"></a></span>
+<span id="cb20-14"><a href="#cb20-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb20-15"><a href="#cb20-15"></a>  number_squared <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb20-16"><a href="#cb20-16"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb20-18"><a href="#cb20-18"></a>  </span>
+<span id="cb20-19"><a href="#cb20-19"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb20-20"><a href="#cb20-20"></a>    <span class="fu">number_squared</span>()</span>
+<span id="cb20-21"><a href="#cb20-21"></a>  })</span>
+<span id="cb20-22"><a href="#cb20-22"></a>  </span>
+<span id="cb20-23"><a href="#cb20-23"></a>  <span class="fu">observe</span>({</span>
+<span id="cb20-24"><a href="#cb20-24"></a>    <span class="fu">print</span>(<span class="fu">number_squared</span>())</span>
+<span id="cb20-25"><a href="#cb20-25"></a>  })</span>
+<span id="cb20-26"><a href="#cb20-26"></a>}</span>
+<span id="cb20-27"><a href="#cb20-27"></a></span>
+<span id="cb20-28"><a href="#cb20-28"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="what-about-reactives-5" class="slide level2">
+<h2>What about reactives?</h2>
+<p>This fancy backpack is only opened when you ask for it. It is called <strong>lazy</strong>.</p>
+<p><br></p>
+<p>More technical: when the dependencies of a reactive change, it doesn’t re-execute right away but rather waits until it gets called by someone else.</p>
+</section>
+<section id="and-reactive-values" class="slide level2">
+<h2>And reactive values?</h2>
+<p><strong>reactive values</strong> are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.</p>
+<p><br></p>
+<p>You make a reactive value by calling <code>reactiveVal()</code> and you can update it by calling it with a new value.</p>
+<p><br></p>
+<p>You can make reactive values by calling <code>reactiveValues()</code> and you can update them by assigning a new value to them.</p>
+</section>
+<section id="and-reactive-values-1" class="slide level2">
+<h2>And reactive values?</h2>
+<div class="sourceCode" id="cb21" data-code-line-numbers="15,17-19,22,26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
+<span id="cb21-5"><a href="#cb21-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
+<span id="cb21-6"><a href="#cb21-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb21-7"><a href="#cb21-7"></a>               </span>
+<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
+<span id="cb21-9"><a href="#cb21-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb21-10"><a href="#cb21-10"></a>               </span>
+<span id="cb21-11"><a href="#cb21-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb21-12"><a href="#cb21-12"></a>)</span>
+<span id="cb21-13"><a href="#cb21-13"></a></span>
+<span id="cb21-14"><a href="#cb21-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb21-15"><a href="#cb21-15"></a>  number_squared <span class="ot">&lt;-</span> <span class="fu">reactiveVal</span>(<span class="dv">0</span>)</span>
+<span id="cb21-16"><a href="#cb21-16"></a>  </span>
+<span id="cb21-17"><a href="#cb21-17"></a>  <span class="fu">observe</span>({</span>
+<span id="cb21-18"><a href="#cb21-18"></a>    <span class="fu">number_squared</span>(input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb21-19"><a href="#cb21-19"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb21-20"><a href="#cb21-20"></a>  </span>
+<span id="cb21-21"><a href="#cb21-21"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb21-22"><a href="#cb21-22"></a>    <span class="fu">number_squared</span>()</span>
+<span id="cb21-23"><a href="#cb21-23"></a>  })</span>
+<span id="cb21-24"><a href="#cb21-24"></a>  </span>
+<span id="cb21-25"><a href="#cb21-25"></a>  <span class="fu">observe</span>({</span>
+<span id="cb21-26"><a href="#cb21-26"></a>    <span class="fu">print</span>(<span class="fu">number_squared</span>())</span>
+<span id="cb21-27"><a href="#cb21-27"></a>  })</span>
+<span id="cb21-28"><a href="#cb21-28"></a>}</span>
+<span id="cb21-29"><a href="#cb21-29"></a></span>
+<span id="cb21-30"><a href="#cb21-30"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="and-reactive-values-2" class="slide level2">
+<h2>And reactive values?</h2>
+<div class="sourceCode" id="cb22" data-code-line-numbers="15,17-19,22,26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb22-2"><a href="#cb22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
+<span id="cb22-5"><a href="#cb22-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>, </span>
+<span id="cb22-6"><a href="#cb22-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb22-7"><a href="#cb22-7"></a>               </span>
+<span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
+<span id="cb22-9"><a href="#cb22-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb22-10"><a href="#cb22-10"></a>               </span>
+<span id="cb22-11"><a href="#cb22-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb22-12"><a href="#cb22-12"></a>)</span>
+<span id="cb22-13"><a href="#cb22-13"></a></span>
+<span id="cb22-14"><a href="#cb22-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb22-15"><a href="#cb22-15"></a>  r <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(<span class="at">number_squared =</span> <span class="dv">0</span>) </span>
+<span id="cb22-16"><a href="#cb22-16"></a>  </span>
+<span id="cb22-17"><a href="#cb22-17"></a>  <span class="fu">observe</span>({</span>
+<span id="cb22-18"><a href="#cb22-18"></a>    r<span class="sc">$</span>number_squared <span class="ot">&lt;-</span> input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb22-20"><a href="#cb22-20"></a>  </span>
+<span id="cb22-21"><a href="#cb22-21"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb22-22"><a href="#cb22-22"></a>    r<span class="sc">$</span>number_squared</span>
+<span id="cb22-23"><a href="#cb22-23"></a>  })</span>
+<span id="cb22-24"><a href="#cb22-24"></a>  </span>
+<span id="cb22-25"><a href="#cb22-25"></a>  <span class="fu">observe</span>({</span>
+<span id="cb22-26"><a href="#cb22-26"></a>    <span class="fu">print</span>(r<span class="sc">$</span>number_squared)</span>
+<span id="cb22-27"><a href="#cb22-27"></a>  })</span>
+<span id="cb22-28"><a href="#cb22-28"></a>}</span>
+<span id="cb22-29"><a href="#cb22-29"></a></span>
+<span id="cb22-30"><a href="#cb22-30"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="and-reactive-values-3" class="slide level2">
+<h2>And reactive values?</h2>
+<p>You can see <code>reactiveValues()</code> as some kind of reactive mini-database. You can use it to store multiple values, retrieve them in different places, and update them.</p>
+<p><br></p>
+<p>And since it’s reactive, you can use it to <strong>trigger other parts of your app</strong> when one of its values changes.</p>
+<p><br></p>
+<p>Remember the <code>reactiveValues()</code> as we’re going to use that later.</p>
 </section></section>
 <section>
-<section id="its-all-about-the-looks" class="title-slide slide level1 center">
-<h1>It’s all about the looks 💅</h1>
+<section id="and-that-covers-the-basic-building-blocks-of-your-shiny-app" class="title-slide slide level1 center">
+<h1>And that covers the basic building blocks of your Shiny app 😮‍💨</h1>
+
+</section>
+<section id="the-hard-part-about-shiny" class="slide level2">
+<h2>The hard part about Shiny</h2>
+<p>Note that the server part doesn’t run line-by-line. It’s a reactive environment that will run the code when input changes.</p>
+<p><br></p>
+<p>Code only reacts when it needs to, which is why it’s called <strong>reactive programming</strong>.</p>
+<p><br></p>
+<p>This makes it hard to test your code. And it’s hard to understand what’s going on when you’re new to Shiny!</p>
+</section>
+<section id="the-hard-part-about-shiny-1" class="slide level2">
+<h2>The hard part about Shiny</h2>
+<p>My personal top ways ways to get more insight into what’s going on:</p>
+<ol type="1">
+<li>Use <code>print()</code> statements to see when something is happening</li>
+<li>Use <code>browser()</code> to stop the code and inspect the environment (just as you can do within functions, because that is literally what <code>server</code> is!)</li>
+</ol>
+<p>We’re going to see these in action a little bit later.</p>
+</section></section>
+<section>
+<section id="all-about-the-looks" class="title-slide slide level1 center">
+<h1>All about the looks 💅</h1>
 <p>Only our app doesn’t have any yet… 😢</p>
 </section>
 <section id="quickly-leveling-up-your-ui" class="slide level2">
@@ -717,88 +968,109 @@ Veerle van Leemput
 </section>
 <section id="working-with-bslib" class="slide level2">
 <h2>Working with {bslib}</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">library</span>(bslib)</span>
-<span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="at">theme =</span> <span class="fu">bs_theme</span>(<span class="at">version =</span> <span class="dv">5</span>),</span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
-<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">nav_panel</span>(</span>
-<span id="cb18-8"><a href="#cb18-8"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
-<span id="cb18-9"><a href="#cb18-9"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>,</span>
-<span id="cb18-10"><a href="#cb18-10"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb18-11"><a href="#cb18-11"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb18-12"><a href="#cb18-12"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>,</span>
-<span id="cb18-13"><a href="#cb18-13"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb18-14"><a href="#cb18-14"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
-<span id="cb18-15"><a href="#cb18-15"></a>  )</span>
-<span id="cb18-16"><a href="#cb18-16"></a>)</span>
-<span id="cb18-17"><a href="#cb18-17"></a></span>
-<span id="cb18-18"><a href="#cb18-18"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb18-19"><a href="#cb18-19"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb18-20"><a href="#cb18-20"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb18-21"><a href="#cb18-21"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb18-22"><a href="#cb18-22"></a>}</span>
-<span id="cb18-23"><a href="#cb18-23"></a></span>
-<span id="cb18-24"><a href="#cb18-24"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="at">theme =</span> <span class="fu">bs_theme</span>(<span class="at">version =</span> <span class="dv">5</span>),</span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb23-12"><a href="#cb23-12"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>,</span>
+<span id="cb23-13"><a href="#cb23-13"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb23-14"><a href="#cb23-14"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb23-15"><a href="#cb23-15"></a>  )</span>
+<span id="cb23-16"><a href="#cb23-16"></a>)</span>
+<span id="cb23-17"><a href="#cb23-17"></a></span>
+<span id="cb23-18"><a href="#cb23-18"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb23-19"><a href="#cb23-19"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb23-20"><a href="#cb23-20"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb23-22"><a href="#cb23-22"></a>}</span>
+<span id="cb23-23"><a href="#cb23-23"></a></span>
+<span id="cb23-24"><a href="#cb23-24"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/02_bslib.R">/templates/02_bslib</a></p>
+</div>
 </section>
 <section id="working-with-bslib-1" class="slide level2">
 <h2>Working with {bslib}</h2>
-<div class="sourceCode" id="cb19" data-code-line-numbers="4-14,17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">library</span>(bslib)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
-<span id="cb19-5"><a href="#cb19-5"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
-<span id="cb19-6"><a href="#cb19-6"></a>  <span class="at">bg =</span> <span class="st">"#F9F9F9"</span>,</span>
-<span id="cb19-7"><a href="#cb19-7"></a>  <span class="at">fg =</span> <span class="st">"#003f5c"</span>,</span>
-<span id="cb19-8"><a href="#cb19-8"></a>  <span class="at">primary =</span> <span class="st">"#bc5090"</span>,</span>
-<span id="cb19-9"><a href="#cb19-9"></a>  <span class="at">secondary =</span> <span class="st">"#58508d"</span>,</span>
-<span id="cb19-10"><a href="#cb19-10"></a>  <span class="at">warning =</span> <span class="st">"#ffa600"</span>,</span>
-<span id="cb19-11"><a href="#cb19-11"></a>  <span class="at">danger =</span> <span class="st">"#ff6361"</span>,</span>
-<span id="cb19-12"><a href="#cb19-12"></a>  <span class="at">info =</span> <span class="st">"#0091d5"</span>,</span>
-<span id="cb19-13"><a href="#cb19-13"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
-<span id="cb19-14"><a href="#cb19-14"></a>)</span>
-<span id="cb19-15"><a href="#cb19-15"></a></span>
-<span id="cb19-16"><a href="#cb19-16"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
-<span id="cb19-17"><a href="#cb19-17"></a>  <span class="at">theme =</span> custom_theme,</span>
-<span id="cb19-18"><a href="#cb19-18"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
-<span id="cb19-19"><a href="#cb19-19"></a>  <span class="fu">nav_panel</span>(</span>
-<span id="cb19-20"><a href="#cb19-20"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
-<span id="cb19-21"><a href="#cb19-21"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>,</span>
-<span id="cb19-22"><a href="#cb19-22"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb19-23"><a href="#cb19-23"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb19-24"><a href="#cb19-24"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>,</span>
-<span id="cb19-25"><a href="#cb19-25"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>,</span>
-<span id="cb19-26"><a href="#cb19-26"></a>                 <span class="at">width =</span> <span class="st">"100px"</span>),</span>
-<span id="cb19-27"><a href="#cb19-27"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
-<span id="cb19-28"><a href="#cb19-28"></a>  )</span>
-<span id="cb19-29"><a href="#cb19-29"></a>)</span>
-<span id="cb19-30"><a href="#cb19-30"></a></span>
-<span id="cb19-31"><a href="#cb19-31"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb19-32"><a href="#cb19-32"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb19-33"><a href="#cb19-33"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb19-34"><a href="#cb19-34"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb19-35"><a href="#cb19-35"></a>}</span>
-<span id="cb19-36"><a href="#cb19-36"></a></span>
-<span id="cb19-37"><a href="#cb19-37"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24" data-code-line-numbers="4-14,17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="at">bg =</span> <span class="st">"#F9F9F9"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="at">fg =</span> <span class="st">"#003f5c"</span>,</span>
+<span id="cb24-8"><a href="#cb24-8"></a>  <span class="at">primary =</span> <span class="st">"#bc5090"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="at">secondary =</span> <span class="st">"#58508d"</span>,</span>
+<span id="cb24-10"><a href="#cb24-10"></a>  <span class="at">warning =</span> <span class="st">"#ffa600"</span>,</span>
+<span id="cb24-11"><a href="#cb24-11"></a>  <span class="at">danger =</span> <span class="st">"#ff6361"</span>,</span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="at">info =</span> <span class="st">"#0091d5"</span>,</span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb24-14"><a href="#cb24-14"></a>)</span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb24-17"><a href="#cb24-17"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb24-18"><a href="#cb24-18"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb24-19"><a href="#cb24-19"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb24-20"><a href="#cb24-20"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb24-21"><a href="#cb24-21"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>,</span>
+<span id="cb24-22"><a href="#cb24-22"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb24-23"><a href="#cb24-23"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb24-24"><a href="#cb24-24"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>,</span>
+<span id="cb24-25"><a href="#cb24-25"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>,</span>
+<span id="cb24-26"><a href="#cb24-26"></a>                 <span class="at">width =</span> <span class="st">"100px"</span>),</span>
+<span id="cb24-27"><a href="#cb24-27"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb24-28"><a href="#cb24-28"></a>  )</span>
+<span id="cb24-29"><a href="#cb24-29"></a>)</span>
+<span id="cb24-30"><a href="#cb24-30"></a></span>
+<span id="cb24-31"><a href="#cb24-31"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb24-32"><a href="#cb24-32"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb24-33"><a href="#cb24-33"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb24-34"><a href="#cb24-34"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb24-35"><a href="#cb24-35"></a>}</span>
+<span id="cb24-36"><a href="#cb24-36"></a></span>
+<span id="cb24-37"><a href="#cb24-37"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/02_bslib.R">/templates/02_bslib</a></p>
+</div>
 </section>
 <section id="shiny-app-recap" class="slide level2">
 <h2>Shiny app recap</h2>
 <p>We covered:</p>
 <ul>
-<li>the ui part</li>
-<li>the server part</li>
+<li>the ui &amp; server part</li>
 <li>how to connect the two</li>
-<li>how to bind an event to an output</li>
+<li>observers, reactives, reactive values, events</li>
 </ul>
 <p>What’s next?</p>
 <ul>
-<li>how to use data</li>
-<li>reactives &amp; reactive values</li>
+<li>how to use some real data</li>
+<li>building your first Shiny app! 🚀</li>
 </ul>
 </section></section>
+<section>
 <section id="hands-on-building-a-shiny-app-together" class="title-slide slide level1 center">
 <h1>Hands-on: building a Shiny app together 💻</h1>
+
+</section>
+<section id="steps" class="slide level2">
+<h2>Steps</h2>
+<ol type="1">
+<li>Head over to <a href="https://github.com/hypebright/shinyconf2024-shiny101">github.com/hypebright/shinyconf2024-shiny101</a></li>
+<li>Clone the repository to your computer</li>
+<li>Open <strong>/templates/02_bslib.R</strong></li>
+<li>Follow along!</li>
+</ol>
+<p><br></p>
+<p>Need help? David and me are here to help you out! 🚀</p>
+</section></section>
+<section id="break" class="title-slide slide level1 center">
+<h1>Break ☕️</h1>
 
 </section>
 
@@ -830,14 +1102,16 @@ Veerle van Leemput
 <section id="why-use-modules" class="slide level2">
 <h2>Why use modules?</h2>
 <p>There are two main reasons to work with modules:</p>
+<p><br></p>
 <ol type="1">
-<li><p>Because a module creates its own <strong>namespace</strong>, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module.</p></li>
+<li><p>Because a module creates its own <strong>namespace</strong>, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module. And remember, ids needed to be unique!</p></li>
 <li><p>Because a module is basically a <strong>function</strong>, it comes with all the benefits that functions have.</p></li>
 </ol>
 </section>
 <section id="what-does-a-module-look-like" class="slide level2">
 <h2>What does a module look like?</h2>
 <p>A module has two parts, and is basically a mini-app:</p>
+<p><br></p>
 <ol type="1">
 <li><p><strong>The module UI</strong>, which generates the UI</p></li>
 <li><p><strong>The module server</strong>, which runs code inside the <code>server()</code> function</p></li>
@@ -845,181 +1119,7 @@ Veerle van Leemput
 </section>
 <section id="what-does-a-module-look-like-1" class="slide level2">
 <h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5"></a>               <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb20-6"><a href="#cb20-6"></a>               <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb20-7"><a href="#cb20-7"></a></span>
-<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>,</span>
-<span id="cb20-9"><a href="#cb20-9"></a>               <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb20-10"><a href="#cb20-10"></a></span>
-<span id="cb20-11"><a href="#cb20-11"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
-<span id="cb20-12"><a href="#cb20-12"></a>)</span>
-<span id="cb20-13"><a href="#cb20-13"></a></span>
-<span id="cb20-14"><a href="#cb20-14"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb20-15"><a href="#cb20-15"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb20-16"><a href="#cb20-16"></a>    input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb20-17"><a href="#cb20-17"></a>  }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb20-18"><a href="#cb20-18"></a>}</span>
-<span id="cb20-19"><a href="#cb20-19"></a></span>
-<span id="cb20-20"><a href="#cb20-20"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
-</div>
-</section>
-<section id="what-does-a-module-look-like-2" class="slide level2">
-<h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb21-4"><a href="#cb21-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">tagList</span>(</span>
-<span id="cb21-6"><a href="#cb21-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
-<span id="cb21-7"><a href="#cb21-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb21-8"><a href="#cb21-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
-<span id="cb21-10"><a href="#cb21-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb21-11"><a href="#cb21-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
-<span id="cb21-12"><a href="#cb21-12"></a>  )</span>
-<span id="cb21-13"><a href="#cb21-13"></a>}</span>
-<span id="cb21-14"><a href="#cb21-14"></a></span>
-<span id="cb21-15"><a href="#cb21-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb21-16"><a href="#cb21-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb21-17"><a href="#cb21-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb21-18"><a href="#cb21-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb21-19"><a href="#cb21-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb21-20"><a href="#cb21-20"></a>  })</span>
-<span id="cb21-21"><a href="#cb21-21"></a>}</span>
-<span id="cb21-22"><a href="#cb21-22"></a></span>
-<span id="cb21-23"><a href="#cb21-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb21-24"><a href="#cb21-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb21-25"><a href="#cb21-25"></a>)</span>
-<span id="cb21-26"><a href="#cb21-26"></a></span>
-<span id="cb21-27"><a href="#cb21-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb21-28"><a href="#cb21-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb21-29"><a href="#cb21-29"></a>}</span>
-<span id="cb21-30"><a href="#cb21-30"></a></span>
-<span id="cb21-31"><a href="#cb21-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
-</div>
-</section>
-<section id="what-does-a-module-look-like-3" class="slide level2">
-<h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb22" data-code-line-numbers="3-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb22-4"><a href="#cb22-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">tagList</span>(</span>
-<span id="cb22-6"><a href="#cb22-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
-<span id="cb22-7"><a href="#cb22-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb22-8"><a href="#cb22-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb22-9"><a href="#cb22-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
-<span id="cb22-10"><a href="#cb22-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb22-11"><a href="#cb22-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
-<span id="cb22-12"><a href="#cb22-12"></a>  )</span>
-<span id="cb22-13"><a href="#cb22-13"></a>}</span>
-<span id="cb22-14"><a href="#cb22-14"></a></span>
-<span id="cb22-15"><a href="#cb22-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb22-16"><a href="#cb22-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb22-17"><a href="#cb22-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb22-18"><a href="#cb22-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb22-19"><a href="#cb22-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb22-20"><a href="#cb22-20"></a>  })</span>
-<span id="cb22-21"><a href="#cb22-21"></a>}</span>
-<span id="cb22-22"><a href="#cb22-22"></a></span>
-<span id="cb22-23"><a href="#cb22-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb22-24"><a href="#cb22-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb22-25"><a href="#cb22-25"></a>)</span>
-<span id="cb22-26"><a href="#cb22-26"></a></span>
-<span id="cb22-27"><a href="#cb22-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb22-28"><a href="#cb22-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb22-29"><a href="#cb22-29"></a>}</span>
-<span id="cb22-30"><a href="#cb22-30"></a></span>
-<span id="cb22-31"><a href="#cb22-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
-</div>
-</section>
-<section id="what-does-a-module-look-like-4" class="slide level2">
-<h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb23" data-code-line-numbers="4,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb23-2"><a href="#cb23-2"></a></span>
-<span id="cb23-3"><a href="#cb23-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb23-4"><a href="#cb23-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">tagList</span>(</span>
-<span id="cb23-6"><a href="#cb23-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
-<span id="cb23-7"><a href="#cb23-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb23-9"><a href="#cb23-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
-<span id="cb23-10"><a href="#cb23-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb23-11"><a href="#cb23-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
-<span id="cb23-12"><a href="#cb23-12"></a>  )</span>
-<span id="cb23-13"><a href="#cb23-13"></a>}</span>
-<span id="cb23-14"><a href="#cb23-14"></a></span>
-<span id="cb23-15"><a href="#cb23-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb23-16"><a href="#cb23-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb23-17"><a href="#cb23-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb23-18"><a href="#cb23-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb23-19"><a href="#cb23-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb23-20"><a href="#cb23-20"></a>  })</span>
-<span id="cb23-21"><a href="#cb23-21"></a>}</span>
-<span id="cb23-22"><a href="#cb23-22"></a></span>
-<span id="cb23-23"><a href="#cb23-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb23-24"><a href="#cb23-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb23-25"><a href="#cb23-25"></a>)</span>
-<span id="cb23-26"><a href="#cb23-26"></a></span>
-<span id="cb23-27"><a href="#cb23-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb23-28"><a href="#cb23-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb23-29"><a href="#cb23-29"></a>}</span>
-<span id="cb23-30"><a href="#cb23-30"></a></span>
-<span id="cb23-31"><a href="#cb23-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
-</div>
-</section>
-<section id="what-does-a-module-look-like-5" class="slide level2">
-<h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb24" data-code-line-numbers="15-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb24-4"><a href="#cb24-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">tagList</span>(</span>
-<span id="cb24-6"><a href="#cb24-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
-<span id="cb24-7"><a href="#cb24-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
-<span id="cb24-8"><a href="#cb24-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
-<span id="cb24-9"><a href="#cb24-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
-<span id="cb24-10"><a href="#cb24-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
-<span id="cb24-11"><a href="#cb24-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
-<span id="cb24-12"><a href="#cb24-12"></a>  )</span>
-<span id="cb24-13"><a href="#cb24-13"></a>}</span>
-<span id="cb24-14"><a href="#cb24-14"></a></span>
-<span id="cb24-15"><a href="#cb24-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb24-16"><a href="#cb24-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb24-17"><a href="#cb24-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb24-18"><a href="#cb24-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb24-19"><a href="#cb24-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
-<span id="cb24-20"><a href="#cb24-20"></a>  })</span>
-<span id="cb24-21"><a href="#cb24-21"></a>}</span>
-<span id="cb24-22"><a href="#cb24-22"></a></span>
-<span id="cb24-23"><a href="#cb24-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb24-24"><a href="#cb24-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb24-25"><a href="#cb24-25"></a>)</span>
-<span id="cb24-26"><a href="#cb24-26"></a></span>
-<span id="cb24-27"><a href="#cb24-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb24-28"><a href="#cb24-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
-<span id="cb24-29"><a href="#cb24-29"></a>}</span>
-<span id="cb24-30"><a href="#cb24-30"></a></span>
-<span id="cb24-31"><a href="#cb24-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
-</div>
-</section>
-<section id="what-does-a-module-look-like-6" class="slide level2">
-<h2>What does a module look like?</h2>
-<div class="sourceCode" id="cb25" data-code-line-numbers="23-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(shiny)</span>
+<div class="sourceCode" id="cb25" data-code-line-numbers="3-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb25-4"><a href="#cb25-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
@@ -1051,12 +1151,123 @@ Veerle van Leemput
 <span id="cb25-30"><a href="#cb25-30"></a></span>
 <span id="cb25-31"><a href="#cb25-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules">/templates/03_modules</a></p>
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R">/templates/03_modules</a></p>
+</div>
+</section>
+<section id="what-does-a-module-look-like-2" class="slide level2">
+<h2>What does a module look like?</h2>
+<div class="sourceCode" id="cb26" data-code-line-numbers="4,6,9,11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb26-2"><a href="#cb26-2"></a></span>
+<span id="cb26-3"><a href="#cb26-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb26-4"><a href="#cb26-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb26-6"><a href="#cb26-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb26-7"><a href="#cb26-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb26-8"><a href="#cb26-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb26-10"><a href="#cb26-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb26-11"><a href="#cb26-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
+<span id="cb26-12"><a href="#cb26-12"></a>  )</span>
+<span id="cb26-13"><a href="#cb26-13"></a>}</span>
+<span id="cb26-14"><a href="#cb26-14"></a></span>
+<span id="cb26-15"><a href="#cb26-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb26-16"><a href="#cb26-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb26-17"><a href="#cb26-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb26-18"><a href="#cb26-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb26-19"><a href="#cb26-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb26-20"><a href="#cb26-20"></a>  })</span>
+<span id="cb26-21"><a href="#cb26-21"></a>}</span>
+<span id="cb26-22"><a href="#cb26-22"></a></span>
+<span id="cb26-23"><a href="#cb26-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb26-24"><a href="#cb26-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb26-25"><a href="#cb26-25"></a>)</span>
+<span id="cb26-26"><a href="#cb26-26"></a></span>
+<span id="cb26-27"><a href="#cb26-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb26-28"><a href="#cb26-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb26-29"><a href="#cb26-29"></a>}</span>
+<span id="cb26-30"><a href="#cb26-30"></a></span>
+<span id="cb26-31"><a href="#cb26-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R">/templates/03_modules</a></p>
+</div>
+</section>
+<section id="what-does-a-module-look-like-3" class="slide level2">
+<h2>What does a module look like?</h2>
+<div class="sourceCode" id="cb27" data-code-line-numbers="15-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb27-2"><a href="#cb27-2"></a></span>
+<span id="cb27-3"><a href="#cb27-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb27-4"><a href="#cb27-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb27-6"><a href="#cb27-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb27-7"><a href="#cb27-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb27-8"><a href="#cb27-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb27-9"><a href="#cb27-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb27-10"><a href="#cb27-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb27-11"><a href="#cb27-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
+<span id="cb27-12"><a href="#cb27-12"></a>  )</span>
+<span id="cb27-13"><a href="#cb27-13"></a>}</span>
+<span id="cb27-14"><a href="#cb27-14"></a></span>
+<span id="cb27-15"><a href="#cb27-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb27-16"><a href="#cb27-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb27-17"><a href="#cb27-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb27-18"><a href="#cb27-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb27-19"><a href="#cb27-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb27-20"><a href="#cb27-20"></a>  })</span>
+<span id="cb27-21"><a href="#cb27-21"></a>}</span>
+<span id="cb27-22"><a href="#cb27-22"></a></span>
+<span id="cb27-23"><a href="#cb27-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb27-24"><a href="#cb27-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb27-25"><a href="#cb27-25"></a>)</span>
+<span id="cb27-26"><a href="#cb27-26"></a></span>
+<span id="cb27-27"><a href="#cb27-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb27-28"><a href="#cb27-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb27-29"><a href="#cb27-29"></a>}</span>
+<span id="cb27-30"><a href="#cb27-30"></a></span>
+<span id="cb27-31"><a href="#cb27-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R">/templates/03_modules</a></p>
+</div>
+</section>
+<section id="what-does-a-module-look-like-4" class="slide level2">
+<h2>What does a module look like?</h2>
+<div class="sourceCode" id="cb28" data-code-line-numbers="23-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb28-4"><a href="#cb28-4"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb28-5"><a href="#cb28-5"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb28-6"><a href="#cb28-6"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb28-7"><a href="#cb28-7"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb28-8"><a href="#cb28-8"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb28-9"><a href="#cb28-9"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb28-10"><a href="#cb28-10"></a>                 <span class="at">label =</span> <span class="st">"Click me"</span>),</span>
+<span id="cb28-11"><a href="#cb28-11"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>))</span>
+<span id="cb28-12"><a href="#cb28-12"></a>  )</span>
+<span id="cb28-13"><a href="#cb28-13"></a>}</span>
+<span id="cb28-14"><a href="#cb28-14"></a></span>
+<span id="cb28-15"><a href="#cb28-15"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb28-17"><a href="#cb28-17"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb28-18"><a href="#cb28-18"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb28-19"><a href="#cb28-19"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb28-20"><a href="#cb28-20"></a>  })</span>
+<span id="cb28-21"><a href="#cb28-21"></a>}</span>
+<span id="cb28-22"><a href="#cb28-22"></a></span>
+<span id="cb28-23"><a href="#cb28-23"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb28-24"><a href="#cb28-24"></a>  <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb28-25"><a href="#cb28-25"></a>)</span>
+<span id="cb28-26"><a href="#cb28-26"></a></span>
+<span id="cb28-27"><a href="#cb28-27"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb28-28"><a href="#cb28-28"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb28-29"><a href="#cb28-29"></a>}</span>
+<span id="cb28-30"><a href="#cb28-30"></a></span>
+<span id="cb28-31"><a href="#cb28-31"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R">/templates/03_modules</a></p>
 </div>
 </section>
 <section id="where-do-you-put-modules" class="slide level2">
 <h2>Where do you put modules?</h2>
-<p>You can simple put the module functions in the <code>app.R</code> file (you call this inline).</p>
+<p>You can simple put the module functions in the <code>app.R</code> file (you call this <strong>inline</strong>).</p>
 <p><br></p>
 <p>Other options:</p>
 <ul>
@@ -1072,15 +1283,650 @@ Veerle van Leemput
 </section>
 <section id="nested-modules-1" class="slide level2">
 <h2>Nested modules</h2>
-<p>test</p>
+<div class="sourceCode" id="cb29" data-code-line-numbers="38-53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb29-10"><a href="#cb29-10"></a>)</span>
+<span id="cb29-11"><a href="#cb29-11"></a></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb29-14"><a href="#cb29-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb29-15"><a href="#cb29-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb29-16"><a href="#cb29-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb29-17"><a href="#cb29-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb29-18"><a href="#cb29-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb29-19"><a href="#cb29-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb29-20"><a href="#cb29-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb29-21"><a href="#cb29-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb29-22"><a href="#cb29-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb29-23"><a href="#cb29-23"></a>  )</span>
+<span id="cb29-24"><a href="#cb29-24"></a>}</span>
+<span id="cb29-25"><a href="#cb29-25"></a></span>
+<span id="cb29-26"><a href="#cb29-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb29-27"><a href="#cb29-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb29-28"><a href="#cb29-28"></a></span>
+<span id="cb29-29"><a href="#cb29-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb29-30"><a href="#cb29-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb29-31"><a href="#cb29-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb29-32"><a href="#cb29-32"></a></span>
+<span id="cb29-33"><a href="#cb29-33"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>)</span>
+<span id="cb29-34"><a href="#cb29-34"></a></span>
+<span id="cb29-35"><a href="#cb29-35"></a>  })</span>
+<span id="cb29-36"><a href="#cb29-36"></a>}</span>
+<span id="cb29-37"><a href="#cb29-37"></a></span>
+<span id="cb29-38"><a href="#cb29-38"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb29-39"><a href="#cb29-39"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb29-40"><a href="#cb29-40"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb29-41"><a href="#cb29-41"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb29-42"><a href="#cb29-42"></a>}</span>
+<span id="cb29-43"><a href="#cb29-43"></a></span>
+<span id="cb29-44"><a href="#cb29-44"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb29-45"><a href="#cb29-45"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb29-46"><a href="#cb29-46"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb29-47"><a href="#cb29-47"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb29-48"><a href="#cb29-48"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb29-49"><a href="#cb29-49"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb29-50"><a href="#cb29-50"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb29-51"><a href="#cb29-51"></a>    })</span>
+<span id="cb29-52"><a href="#cb29-52"></a>  })</span>
+<span id="cb29-53"><a href="#cb29-53"></a>}</span>
+<span id="cb29-54"><a href="#cb29-54"></a></span>
+<span id="cb29-55"><a href="#cb29-55"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb29-56"><a href="#cb29-56"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb29-57"><a href="#cb29-57"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb29-58"><a href="#cb29-58"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb29-59"><a href="#cb29-59"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb29-60"><a href="#cb29-60"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb29-61"><a href="#cb29-61"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb29-62"><a href="#cb29-62"></a>  )</span>
+<span id="cb29-63"><a href="#cb29-63"></a>)</span>
+<span id="cb29-64"><a href="#cb29-64"></a></span>
+<span id="cb29-65"><a href="#cb29-65"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb29-66"><a href="#cb29-66"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb29-67"><a href="#cb29-67"></a>}</span>
+<span id="cb29-68"><a href="#cb29-68"></a></span>
+<span id="cb29-69"><a href="#cb29-69"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
-<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules">/templates/04_nested_modules</a></p>
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R">/templates/04_nested_modules</a></p>
+</div>
+</section>
+<section id="nested-modules-2" class="slide level2">
+<h2>Nested modules</h2>
+<div class="sourceCode" id="cb30" data-code-line-numbers="22,33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb30-9"><a href="#cb30-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb30-10"><a href="#cb30-10"></a>)</span>
+<span id="cb30-11"><a href="#cb30-11"></a></span>
+<span id="cb30-12"><a href="#cb30-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb30-13"><a href="#cb30-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb30-14"><a href="#cb30-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb30-15"><a href="#cb30-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb30-16"><a href="#cb30-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb30-17"><a href="#cb30-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb30-18"><a href="#cb30-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb30-19"><a href="#cb30-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb30-20"><a href="#cb30-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb30-21"><a href="#cb30-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb30-22"><a href="#cb30-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb30-23"><a href="#cb30-23"></a>  )</span>
+<span id="cb30-24"><a href="#cb30-24"></a>}</span>
+<span id="cb30-25"><a href="#cb30-25"></a></span>
+<span id="cb30-26"><a href="#cb30-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb30-27"><a href="#cb30-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb30-28"><a href="#cb30-28"></a></span>
+<span id="cb30-29"><a href="#cb30-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb30-30"><a href="#cb30-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb30-31"><a href="#cb30-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb30-32"><a href="#cb30-32"></a></span>
+<span id="cb30-33"><a href="#cb30-33"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>)</span>
+<span id="cb30-34"><a href="#cb30-34"></a></span>
+<span id="cb30-35"><a href="#cb30-35"></a>  })</span>
+<span id="cb30-36"><a href="#cb30-36"></a>}</span>
+<span id="cb30-37"><a href="#cb30-37"></a></span>
+<span id="cb30-38"><a href="#cb30-38"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb30-39"><a href="#cb30-39"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb30-40"><a href="#cb30-40"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb30-41"><a href="#cb30-41"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb30-42"><a href="#cb30-42"></a>}</span>
+<span id="cb30-43"><a href="#cb30-43"></a></span>
+<span id="cb30-44"><a href="#cb30-44"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb30-45"><a href="#cb30-45"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb30-46"><a href="#cb30-46"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb30-47"><a href="#cb30-47"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb30-48"><a href="#cb30-48"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb30-49"><a href="#cb30-49"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb30-50"><a href="#cb30-50"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-51"><a href="#cb30-51"></a>    })</span>
+<span id="cb30-52"><a href="#cb30-52"></a>  })</span>
+<span id="cb30-53"><a href="#cb30-53"></a>}</span>
+<span id="cb30-54"><a href="#cb30-54"></a></span>
+<span id="cb30-55"><a href="#cb30-55"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb30-56"><a href="#cb30-56"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb30-57"><a href="#cb30-57"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb30-58"><a href="#cb30-58"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb30-59"><a href="#cb30-59"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb30-60"><a href="#cb30-60"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb30-61"><a href="#cb30-61"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb30-62"><a href="#cb30-62"></a>  )</span>
+<span id="cb30-63"><a href="#cb30-63"></a>)</span>
+<span id="cb30-64"><a href="#cb30-64"></a></span>
+<span id="cb30-65"><a href="#cb30-65"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb30-66"><a href="#cb30-66"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb30-67"><a href="#cb30-67"></a>}</span>
+<span id="cb30-68"><a href="#cb30-68"></a></span>
+<span id="cb30-69"><a href="#cb30-69"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R">/templates/04_nested_modules</a></p>
+</div>
+</section>
+<section id="nested-modules-3" class="slide level2">
+<h2>Nested modules</h2>
+<div class="sourceCode" id="cb31" data-code-line-numbers="61,66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb31-9"><a href="#cb31-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb31-10"><a href="#cb31-10"></a>)</span>
+<span id="cb31-11"><a href="#cb31-11"></a></span>
+<span id="cb31-12"><a href="#cb31-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb31-13"><a href="#cb31-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb31-14"><a href="#cb31-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb31-15"><a href="#cb31-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb31-16"><a href="#cb31-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb31-17"><a href="#cb31-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb31-18"><a href="#cb31-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb31-19"><a href="#cb31-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb31-20"><a href="#cb31-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb31-21"><a href="#cb31-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb31-22"><a href="#cb31-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb31-23"><a href="#cb31-23"></a>  )</span>
+<span id="cb31-24"><a href="#cb31-24"></a>}</span>
+<span id="cb31-25"><a href="#cb31-25"></a></span>
+<span id="cb31-26"><a href="#cb31-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb31-27"><a href="#cb31-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb31-28"><a href="#cb31-28"></a></span>
+<span id="cb31-29"><a href="#cb31-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb31-30"><a href="#cb31-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb31-31"><a href="#cb31-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb31-32"><a href="#cb31-32"></a></span>
+<span id="cb31-33"><a href="#cb31-33"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>)</span>
+<span id="cb31-34"><a href="#cb31-34"></a></span>
+<span id="cb31-35"><a href="#cb31-35"></a>  })</span>
+<span id="cb31-36"><a href="#cb31-36"></a>}</span>
+<span id="cb31-37"><a href="#cb31-37"></a></span>
+<span id="cb31-38"><a href="#cb31-38"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb31-39"><a href="#cb31-39"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb31-40"><a href="#cb31-40"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb31-41"><a href="#cb31-41"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb31-42"><a href="#cb31-42"></a>}</span>
+<span id="cb31-43"><a href="#cb31-43"></a></span>
+<span id="cb31-44"><a href="#cb31-44"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb31-45"><a href="#cb31-45"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb31-46"><a href="#cb31-46"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb31-47"><a href="#cb31-47"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb31-48"><a href="#cb31-48"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb31-49"><a href="#cb31-49"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb31-50"><a href="#cb31-50"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-51"><a href="#cb31-51"></a>    })</span>
+<span id="cb31-52"><a href="#cb31-52"></a>  })</span>
+<span id="cb31-53"><a href="#cb31-53"></a>}</span>
+<span id="cb31-54"><a href="#cb31-54"></a></span>
+<span id="cb31-55"><a href="#cb31-55"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb31-56"><a href="#cb31-56"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb31-57"><a href="#cb31-57"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb31-58"><a href="#cb31-58"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb31-59"><a href="#cb31-59"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb31-60"><a href="#cb31-60"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb31-61"><a href="#cb31-61"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb31-62"><a href="#cb31-62"></a>  )</span>
+<span id="cb31-63"><a href="#cb31-63"></a>)</span>
+<span id="cb31-64"><a href="#cb31-64"></a></span>
+<span id="cb31-65"><a href="#cb31-65"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb31-66"><a href="#cb31-66"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb31-67"><a href="#cb31-67"></a>}</span>
+<span id="cb31-68"><a href="#cb31-68"></a></span>
+<span id="cb31-69"><a href="#cb31-69"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R">/templates/04_nested_modules</a></p>
+</div>
+</section>
+<section id="nested-modules-4" class="slide level2">
+<h2>Nested modules</h2>
+<p>You can take this quite far. Let’s say we build out our app to have <strong>multiple pages</strong>. A page on its own can be a module, and each page can have multiple components that are also modules!</p>
+<p><br></p>
+<p>A module inferno! 😉</p>
+</section>
+<section id="dynamically-calling-modules" class="slide level2">
+<h2>Dynamically calling modules</h2>
+<p>In our app, it would be cool if we could <strong>dynamically call</strong> the modules based on what team the user selects.</p>
+<p><br></p>
+<p>Every time the user selects a team, we want to display the corresponding team’s page. Every team page basically looks the same, but with different content: <strong>a perfect use case for modules</strong>.</p>
+</section>
+<section id="sharing-data-between-modules" class="slide level2">
+<h2>Sharing data between modules</h2>
+<p>When working with modules, the question often arises: “how do I <strong>share data</strong> between modules?” 🤔 What if you do something in one module that affects another module or other part of your app?</p>
+<p><br></p>
+<p>There are a few ways to do this, and we’ll be looking at one way to which you already got introduced: <strong>reactive values</strong>.</p>
+</section>
+<section id="sharing-data-between-modules-1" class="slide level2">
+<h2>Sharing data between modules</h2>
+<p>Remember that we talked about <code>reactiveValues</code> as a <strong>mini-database</strong> that can store values and can be accessed from anywhere in your app?</p>
+<p><br></p>
+<p>We can use this concept to store data that we want to share between modules. And we’re calling this database <code>r</code>.</p>
+<p><br></p>
+<p>This is referred to as the <strong>“stratégie du petit r”</strong> 🤓</p>
+</section>
+<section id="sharing-data-between-modules-2" class="slide level2">
+<h2>Sharing data between modules</h2>
+<div class="sourceCode" id="cb32" data-code-line-numbers="76-77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb32-4"><a href="#cb32-4"></a></span>
+<span id="cb32-5"><a href="#cb32-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb32-9"><a href="#cb32-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb32-10"><a href="#cb32-10"></a>)</span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb32-14"><a href="#cb32-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb32-15"><a href="#cb32-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb32-16"><a href="#cb32-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb32-17"><a href="#cb32-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb32-18"><a href="#cb32-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb32-19"><a href="#cb32-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb32-20"><a href="#cb32-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb32-21"><a href="#cb32-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb32-22"><a href="#cb32-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb32-23"><a href="#cb32-23"></a>  )</span>
+<span id="cb32-24"><a href="#cb32-24"></a>}</span>
+<span id="cb32-25"><a href="#cb32-25"></a></span>
+<span id="cb32-26"><a href="#cb32-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb32-27"><a href="#cb32-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb32-28"><a href="#cb32-28"></a></span>
+<span id="cb32-29"><a href="#cb32-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb32-30"><a href="#cb32-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb32-31"><a href="#cb32-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb32-32"><a href="#cb32-32"></a></span>
+<span id="cb32-33"><a href="#cb32-33"></a>    <span class="fu">observe</span>({</span>
+<span id="cb32-34"><a href="#cb32-34"></a>      r<span class="sc">$</span>number <span class="ot">&lt;-</span> input<span class="sc">$</span>number</span>
+<span id="cb32-35"><a href="#cb32-35"></a>      r<span class="sc">$</span>button <span class="ot">&lt;-</span> input<span class="sc">$</span>button</span>
+<span id="cb32-36"><a href="#cb32-36"></a>    })</span>
+<span id="cb32-37"><a href="#cb32-37"></a></span>
+<span id="cb32-38"><a href="#cb32-38"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>, <span class="at">r =</span> r)</span>
+<span id="cb32-39"><a href="#cb32-39"></a></span>
+<span id="cb32-40"><a href="#cb32-40"></a>  })</span>
+<span id="cb32-41"><a href="#cb32-41"></a>}</span>
+<span id="cb32-42"><a href="#cb32-42"></a></span>
+<span id="cb32-43"><a href="#cb32-43"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb32-44"><a href="#cb32-44"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb32-45"><a href="#cb32-45"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb32-46"><a href="#cb32-46"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb32-47"><a href="#cb32-47"></a>}</span>
+<span id="cb32-48"><a href="#cb32-48"></a></span>
+<span id="cb32-49"><a href="#cb32-49"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb32-50"><a href="#cb32-50"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb32-51"><a href="#cb32-51"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb32-52"><a href="#cb32-52"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb32-53"><a href="#cb32-53"></a>      <span class="fu">req</span>(r<span class="sc">$</span>number <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb32-54"><a href="#cb32-54"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(r<span class="sc">$</span>number <span class="sc">+</span> <span class="dv">5</span>)</span>
+<span id="cb32-55"><a href="#cb32-55"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-56"><a href="#cb32-56"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-57"><a href="#cb32-57"></a>        <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="st">"number"</span>,</span>
+<span id="cb32-58"><a href="#cb32-58"></a>                    <span class="at">target =</span> <span class="st">"row"</span>,</span>
+<span id="cb32-59"><a href="#cb32-59"></a>                    <span class="at">border =</span> <span class="fu">styleEqual</span>(r<span class="sc">$</span>number, <span class="st">"3px"</span>))</span>
+<span id="cb32-60"><a href="#cb32-60"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(r<span class="sc">$</span>button)</span>
+<span id="cb32-61"><a href="#cb32-61"></a>  })</span>
+<span id="cb32-62"><a href="#cb32-62"></a>}</span>
+<span id="cb32-63"><a href="#cb32-63"></a></span>
+<span id="cb32-64"><a href="#cb32-64"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb32-65"><a href="#cb32-65"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb32-66"><a href="#cb32-66"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb32-67"><a href="#cb32-67"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb32-68"><a href="#cb32-68"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb32-69"><a href="#cb32-69"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb32-70"><a href="#cb32-70"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb32-71"><a href="#cb32-71"></a>  )</span>
+<span id="cb32-72"><a href="#cb32-72"></a>)</span>
+<span id="cb32-73"><a href="#cb32-73"></a></span>
+<span id="cb32-74"><a href="#cb32-74"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb32-75"><a href="#cb32-75"></a></span>
+<span id="cb32-76"><a href="#cb32-76"></a>    r <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(<span class="at">number =</span> <span class="cn">NULL</span>,</span>
+<span id="cb32-77"><a href="#cb32-77"></a>                        <span class="at">button =</span> <span class="cn">NULL</span>)</span>
+<span id="cb32-78"><a href="#cb32-78"></a></span>
+<span id="cb32-79"><a href="#cb32-79"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>, <span class="at">r =</span> r)</span>
+<span id="cb32-80"><a href="#cb32-80"></a>}</span>
+<span id="cb32-81"><a href="#cb32-81"></a></span>
+<span id="cb32-82"><a href="#cb32-82"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R">/templates/05_sharing_data</a></p>
+</div>
+</section>
+<section id="sharing-data-between-modules-3" class="slide level2">
+<h2>Sharing data between modules</h2>
+<div class="sourceCode" id="cb33" data-code-line-numbers="79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb33-8"><a href="#cb33-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb33-9"><a href="#cb33-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10"></a>)</span>
+<span id="cb33-11"><a href="#cb33-11"></a></span>
+<span id="cb33-12"><a href="#cb33-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb33-13"><a href="#cb33-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb33-14"><a href="#cb33-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb33-15"><a href="#cb33-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb33-16"><a href="#cb33-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb33-17"><a href="#cb33-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb33-18"><a href="#cb33-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb33-19"><a href="#cb33-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb33-20"><a href="#cb33-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb33-21"><a href="#cb33-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb33-22"><a href="#cb33-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb33-23"><a href="#cb33-23"></a>  )</span>
+<span id="cb33-24"><a href="#cb33-24"></a>}</span>
+<span id="cb33-25"><a href="#cb33-25"></a></span>
+<span id="cb33-26"><a href="#cb33-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb33-27"><a href="#cb33-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb33-28"><a href="#cb33-28"></a></span>
+<span id="cb33-29"><a href="#cb33-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb33-30"><a href="#cb33-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb33-31"><a href="#cb33-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb33-32"><a href="#cb33-32"></a></span>
+<span id="cb33-33"><a href="#cb33-33"></a>    <span class="fu">observe</span>({</span>
+<span id="cb33-34"><a href="#cb33-34"></a>      r<span class="sc">$</span>number <span class="ot">&lt;-</span> input<span class="sc">$</span>number</span>
+<span id="cb33-35"><a href="#cb33-35"></a>      r<span class="sc">$</span>button <span class="ot">&lt;-</span> input<span class="sc">$</span>button</span>
+<span id="cb33-36"><a href="#cb33-36"></a>    })</span>
+<span id="cb33-37"><a href="#cb33-37"></a></span>
+<span id="cb33-38"><a href="#cb33-38"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>, <span class="at">r =</span> r)</span>
+<span id="cb33-39"><a href="#cb33-39"></a></span>
+<span id="cb33-40"><a href="#cb33-40"></a>  })</span>
+<span id="cb33-41"><a href="#cb33-41"></a>}</span>
+<span id="cb33-42"><a href="#cb33-42"></a></span>
+<span id="cb33-43"><a href="#cb33-43"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb33-44"><a href="#cb33-44"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb33-45"><a href="#cb33-45"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb33-46"><a href="#cb33-46"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb33-47"><a href="#cb33-47"></a>}</span>
+<span id="cb33-48"><a href="#cb33-48"></a></span>
+<span id="cb33-49"><a href="#cb33-49"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb33-50"><a href="#cb33-50"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb33-51"><a href="#cb33-51"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb33-52"><a href="#cb33-52"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb33-53"><a href="#cb33-53"></a>      <span class="fu">req</span>(r<span class="sc">$</span>number <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb33-54"><a href="#cb33-54"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(r<span class="sc">$</span>number <span class="sc">+</span> <span class="dv">5</span>)</span>
+<span id="cb33-55"><a href="#cb33-55"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb33-56"><a href="#cb33-56"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb33-57"><a href="#cb33-57"></a>        <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="st">"number"</span>,</span>
+<span id="cb33-58"><a href="#cb33-58"></a>                    <span class="at">target =</span> <span class="st">"row"</span>,</span>
+<span id="cb33-59"><a href="#cb33-59"></a>                    <span class="at">border =</span> <span class="fu">styleEqual</span>(r<span class="sc">$</span>number, <span class="st">"3px"</span>))</span>
+<span id="cb33-60"><a href="#cb33-60"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(r<span class="sc">$</span>button)</span>
+<span id="cb33-61"><a href="#cb33-61"></a>  })</span>
+<span id="cb33-62"><a href="#cb33-62"></a>}</span>
+<span id="cb33-63"><a href="#cb33-63"></a></span>
+<span id="cb33-64"><a href="#cb33-64"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb33-65"><a href="#cb33-65"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb33-66"><a href="#cb33-66"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb33-67"><a href="#cb33-67"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb33-68"><a href="#cb33-68"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb33-69"><a href="#cb33-69"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb33-70"><a href="#cb33-70"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb33-71"><a href="#cb33-71"></a>  )</span>
+<span id="cb33-72"><a href="#cb33-72"></a>)</span>
+<span id="cb33-73"><a href="#cb33-73"></a></span>
+<span id="cb33-74"><a href="#cb33-74"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb33-75"><a href="#cb33-75"></a></span>
+<span id="cb33-76"><a href="#cb33-76"></a>    r <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(<span class="at">number =</span> <span class="cn">NULL</span>,</span>
+<span id="cb33-77"><a href="#cb33-77"></a>                        <span class="at">button =</span> <span class="cn">NULL</span>)</span>
+<span id="cb33-78"><a href="#cb33-78"></a></span>
+<span id="cb33-79"><a href="#cb33-79"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>, <span class="at">r =</span> r)</span>
+<span id="cb33-80"><a href="#cb33-80"></a>}</span>
+<span id="cb33-81"><a href="#cb33-81"></a></span>
+<span id="cb33-82"><a href="#cb33-82"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R">/templates/05_sharing_data</a></p>
+</div>
+</section>
+<section id="sharing-data-between-modules-4" class="slide level2">
+<h2>Sharing data between modules</h2>
+<div class="sourceCode" id="cb34" data-code-line-numbers="26,33-36,38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb34-9"><a href="#cb34-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb34-10"><a href="#cb34-10"></a>)</span>
+<span id="cb34-11"><a href="#cb34-11"></a></span>
+<span id="cb34-12"><a href="#cb34-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb34-13"><a href="#cb34-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb34-14"><a href="#cb34-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb34-15"><a href="#cb34-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb34-16"><a href="#cb34-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb34-17"><a href="#cb34-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb34-18"><a href="#cb34-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb34-19"><a href="#cb34-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb34-20"><a href="#cb34-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb34-21"><a href="#cb34-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb34-22"><a href="#cb34-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb34-23"><a href="#cb34-23"></a>  )</span>
+<span id="cb34-24"><a href="#cb34-24"></a>}</span>
+<span id="cb34-25"><a href="#cb34-25"></a></span>
+<span id="cb34-26"><a href="#cb34-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb34-27"><a href="#cb34-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb34-28"><a href="#cb34-28"></a></span>
+<span id="cb34-29"><a href="#cb34-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb34-30"><a href="#cb34-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb34-31"><a href="#cb34-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb34-32"><a href="#cb34-32"></a></span>
+<span id="cb34-33"><a href="#cb34-33"></a>    <span class="fu">observe</span>({</span>
+<span id="cb34-34"><a href="#cb34-34"></a>      r<span class="sc">$</span>number <span class="ot">&lt;-</span> input<span class="sc">$</span>number</span>
+<span id="cb34-35"><a href="#cb34-35"></a>      r<span class="sc">$</span>button <span class="ot">&lt;-</span> input<span class="sc">$</span>button</span>
+<span id="cb34-36"><a href="#cb34-36"></a>    })</span>
+<span id="cb34-37"><a href="#cb34-37"></a></span>
+<span id="cb34-38"><a href="#cb34-38"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>, <span class="at">r =</span> r)</span>
+<span id="cb34-39"><a href="#cb34-39"></a></span>
+<span id="cb34-40"><a href="#cb34-40"></a>  })</span>
+<span id="cb34-41"><a href="#cb34-41"></a>}</span>
+<span id="cb34-42"><a href="#cb34-42"></a></span>
+<span id="cb34-43"><a href="#cb34-43"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb34-44"><a href="#cb34-44"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb34-45"><a href="#cb34-45"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb34-46"><a href="#cb34-46"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb34-47"><a href="#cb34-47"></a>}</span>
+<span id="cb34-48"><a href="#cb34-48"></a></span>
+<span id="cb34-49"><a href="#cb34-49"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb34-50"><a href="#cb34-50"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb34-51"><a href="#cb34-51"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb34-52"><a href="#cb34-52"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb34-53"><a href="#cb34-53"></a>      <span class="fu">req</span>(r<span class="sc">$</span>number <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb34-54"><a href="#cb34-54"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(r<span class="sc">$</span>number <span class="sc">+</span> <span class="dv">5</span>)</span>
+<span id="cb34-55"><a href="#cb34-55"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb34-56"><a href="#cb34-56"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-57"><a href="#cb34-57"></a>        <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="st">"number"</span>,</span>
+<span id="cb34-58"><a href="#cb34-58"></a>                    <span class="at">target =</span> <span class="st">"row"</span>,</span>
+<span id="cb34-59"><a href="#cb34-59"></a>                    <span class="at">border =</span> <span class="fu">styleEqual</span>(r<span class="sc">$</span>number, <span class="st">"3px"</span>))</span>
+<span id="cb34-60"><a href="#cb34-60"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(r<span class="sc">$</span>button)</span>
+<span id="cb34-61"><a href="#cb34-61"></a>  })</span>
+<span id="cb34-62"><a href="#cb34-62"></a>}</span>
+<span id="cb34-63"><a href="#cb34-63"></a></span>
+<span id="cb34-64"><a href="#cb34-64"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb34-65"><a href="#cb34-65"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb34-66"><a href="#cb34-66"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb34-67"><a href="#cb34-67"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb34-68"><a href="#cb34-68"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb34-69"><a href="#cb34-69"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb34-70"><a href="#cb34-70"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb34-71"><a href="#cb34-71"></a>  )</span>
+<span id="cb34-72"><a href="#cb34-72"></a>)</span>
+<span id="cb34-73"><a href="#cb34-73"></a></span>
+<span id="cb34-74"><a href="#cb34-74"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb34-75"><a href="#cb34-75"></a></span>
+<span id="cb34-76"><a href="#cb34-76"></a>    r <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(<span class="at">number =</span> <span class="cn">NULL</span>,</span>
+<span id="cb34-77"><a href="#cb34-77"></a>                        <span class="at">button =</span> <span class="cn">NULL</span>)</span>
+<span id="cb34-78"><a href="#cb34-78"></a></span>
+<span id="cb34-79"><a href="#cb34-79"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>, <span class="at">r =</span> r)</span>
+<span id="cb34-80"><a href="#cb34-80"></a>}</span>
+<span id="cb34-81"><a href="#cb34-81"></a></span>
+<span id="cb34-82"><a href="#cb34-82"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R">/templates/05_sharing_data</a></p>
+</div>
+</section>
+<section id="sharing-data-between-modules-5" class="slide level2">
+<h2>Sharing data between modules</h2>
+<div class="sourceCode" id="cb35" data-code-line-numbers="49,53,54,57-60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(DT)</span>
+<span id="cb35-4"><a href="#cb35-4"></a></span>
+<span id="cb35-5"><a href="#cb35-5"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">bs_theme</span>(</span>
+<span id="cb35-6"><a href="#cb35-6"></a>  <span class="at">version =</span> <span class="dv">5</span>,</span>
+<span id="cb35-7"><a href="#cb35-7"></a>  <span class="co"># for themes see: https://bootswatch.com</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  <span class="at">preset =</span> <span class="st">"quartz"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9"></a>  <span class="at">base_font =</span> <span class="fu">font_google</span>(<span class="st">"PT Sans"</span>)</span>
+<span id="cb35-10"><a href="#cb35-10"></a>)</span>
+<span id="cb35-11"><a href="#cb35-11"></a></span>
+<span id="cb35-12"><a href="#cb35-12"></a><span class="co"># module 1 -------------------------------------------------------</span></span>
+<span id="cb35-13"><a href="#cb35-13"></a>numberModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb35-14"><a href="#cb35-14"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb35-15"><a href="#cb35-15"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"number"</span>),</span>
+<span id="cb35-17"><a href="#cb35-17"></a>                 <span class="at">label =</span> <span class="st">"Enter a number"</span>,</span>
+<span id="cb35-18"><a href="#cb35-18"></a>                 <span class="at">value =</span> <span class="dv">0</span>),</span>
+<span id="cb35-19"><a href="#cb35-19"></a>    <span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="fu">ns</span>(<span class="st">"button"</span>),</span>
+<span id="cb35-20"><a href="#cb35-20"></a>                 <span class="at">label =</span> <span class="st">"Calculate"</span>),</span>
+<span id="cb35-21"><a href="#cb35-21"></a>    <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"text"</span>)),</span>
+<span id="cb35-22"><a href="#cb35-22"></a>    <span class="fu">numberAnalysisModUI</span>(<span class="fu">ns</span>(<span class="st">"analysis"</span>))</span>
+<span id="cb35-23"><a href="#cb35-23"></a>  )</span>
+<span id="cb35-24"><a href="#cb35-24"></a>}</span>
+<span id="cb35-25"><a href="#cb35-25"></a></span>
+<span id="cb35-26"><a href="#cb35-26"></a>numberModServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb35-27"><a href="#cb35-27"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb35-28"><a href="#cb35-28"></a></span>
+<span id="cb35-29"><a href="#cb35-29"></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb35-30"><a href="#cb35-30"></a>      input<span class="sc">$</span>number<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb35-31"><a href="#cb35-31"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(input<span class="sc">$</span>button)</span>
+<span id="cb35-32"><a href="#cb35-32"></a></span>
+<span id="cb35-33"><a href="#cb35-33"></a>    <span class="fu">observe</span>({</span>
+<span id="cb35-34"><a href="#cb35-34"></a>      r<span class="sc">$</span>number <span class="ot">&lt;-</span> input<span class="sc">$</span>number</span>
+<span id="cb35-35"><a href="#cb35-35"></a>      r<span class="sc">$</span>button <span class="ot">&lt;-</span> input<span class="sc">$</span>button</span>
+<span id="cb35-36"><a href="#cb35-36"></a>    })</span>
+<span id="cb35-37"><a href="#cb35-37"></a></span>
+<span id="cb35-38"><a href="#cb35-38"></a>    <span class="fu">numberAnalysisServer</span>(<span class="st">"analysis"</span>, <span class="at">r =</span> r)</span>
+<span id="cb35-39"><a href="#cb35-39"></a></span>
+<span id="cb35-40"><a href="#cb35-40"></a>  })</span>
+<span id="cb35-41"><a href="#cb35-41"></a>}</span>
+<span id="cb35-42"><a href="#cb35-42"></a></span>
+<span id="cb35-43"><a href="#cb35-43"></a><span class="co"># module 2 -------------------------------------------------------</span></span>
+<span id="cb35-44"><a href="#cb35-44"></a>numberAnalysisModUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb35-45"><a href="#cb35-45"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb35-46"><a href="#cb35-46"></a>  <span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="fu">ns</span>(<span class="st">"table"</span>))</span>
+<span id="cb35-47"><a href="#cb35-47"></a>}</span>
+<span id="cb35-48"><a href="#cb35-48"></a></span>
+<span id="cb35-49"><a href="#cb35-49"></a>numberAnalysisServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, r) {</span>
+<span id="cb35-50"><a href="#cb35-50"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb35-51"><a href="#cb35-51"></a>    <span class="co"># display table of squares and highlight the number</span></span>
+<span id="cb35-52"><a href="#cb35-52"></a>    output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>({</span>
+<span id="cb35-53"><a href="#cb35-53"></a>      <span class="fu">req</span>(r<span class="sc">$</span>number <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb35-54"><a href="#cb35-54"></a>      squares <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>(r<span class="sc">$</span>number <span class="sc">+</span> <span class="dv">5</span>)</span>
+<span id="cb35-55"><a href="#cb35-55"></a>      squares <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">number =</span> squares, <span class="at">square =</span> squares<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb35-56"><a href="#cb35-56"></a>      <span class="fu">datatable</span>(squares, <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-57"><a href="#cb35-57"></a>        <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="st">"number"</span>,</span>
+<span id="cb35-58"><a href="#cb35-58"></a>                    <span class="at">target =</span> <span class="st">"row"</span>,</span>
+<span id="cb35-59"><a href="#cb35-59"></a>                    <span class="at">border =</span> <span class="fu">styleEqual</span>(r<span class="sc">$</span>number, <span class="st">"3px"</span>))</span>
+<span id="cb35-60"><a href="#cb35-60"></a>    }) <span class="sc">|&gt;</span> <span class="fu">bindEvent</span>(r<span class="sc">$</span>button)</span>
+<span id="cb35-61"><a href="#cb35-61"></a>  })</span>
+<span id="cb35-62"><a href="#cb35-62"></a>}</span>
+<span id="cb35-63"><a href="#cb35-63"></a></span>
+<span id="cb35-64"><a href="#cb35-64"></a><span class="co"># app ------------------------------------------------------------</span></span>
+<span id="cb35-65"><a href="#cb35-65"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
+<span id="cb35-66"><a href="#cb35-66"></a>  <span class="at">theme =</span> custom_theme,</span>
+<span id="cb35-67"><a href="#cb35-67"></a>  <span class="at">title =</span> <span class="st">"Modular App Blueprint"</span>,</span>
+<span id="cb35-68"><a href="#cb35-68"></a>  <span class="fu">nav_panel</span>(</span>
+<span id="cb35-69"><a href="#cb35-69"></a>    <span class="at">title =</span> <span class="st">"Numbers"</span>,</span>
+<span id="cb35-70"><a href="#cb35-70"></a>    <span class="fu">numberModUI</span>(<span class="st">"numbers"</span>)</span>
+<span id="cb35-71"><a href="#cb35-71"></a>  )</span>
+<span id="cb35-72"><a href="#cb35-72"></a>)</span>
+<span id="cb35-73"><a href="#cb35-73"></a></span>
+<span id="cb35-74"><a href="#cb35-74"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb35-75"><a href="#cb35-75"></a></span>
+<span id="cb35-76"><a href="#cb35-76"></a>  r <span class="ot">&lt;-</span> <span class="fu">reactiveValues</span>(<span class="at">number =</span> <span class="cn">NULL</span>,</span>
+<span id="cb35-77"><a href="#cb35-77"></a>                      <span class="at">button =</span> <span class="cn">NULL</span>)</span>
+<span id="cb35-78"><a href="#cb35-78"></a></span>
+<span id="cb35-79"><a href="#cb35-79"></a>  <span class="fu">numberModServer</span>(<span class="st">"numbers"</span>, <span class="at">r =</span> r)</span>
+<span id="cb35-80"><a href="#cb35-80"></a>}</span>
+<span id="cb35-81"><a href="#cb35-81"></a></span>
+<span id="cb35-82"><a href="#cb35-82"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R">/templates/05_sharing_data</a></p>
+</div>
+</section></section>
+<section>
+<section id="hands-on-modules-and-sharing-data" class="title-slide slide level1 center">
+<h1>Hands on: modules and sharing data 😎</h1>
+
+</section>
+<section id="your-shiny-journey-starts-here" class="slide level2">
+<h2>Your Shiny journey starts here</h2>
+<p>You’ve learned:</p>
+<ul>
+<li>how to create a <strong>Shiny app</strong></li>
+<li>how to use <strong>inputs, outputs, observers and reactives</strong></li>
+<li>how to use <strong>data</strong></li>
+<li>how to use <strong>modules</strong></li>
+<li>how to <strong>share data</strong> between modules</li>
+</ul>
+<div class="footer">
+<p><a href="https://www.linkedin.com/in/veerlevanleemput/">Follow me on LinkedIn 🙋🏼‍♀️</a></p>
+</div>
+</section>
+<section id="your-shiny-journey-starts-here-1" class="slide level2">
+<h2>Your Shiny journey starts here</h2>
+<p>Now it’s up to you to put this knowledge into practice. Remember to <strong>have fun</strong> and enjoy the process of learning Shiny! 🚀</p>
+<p><br></p>
+<p>Want to keep learning? Check out these resources:</p>
+<ul>
+<li><a href="https://linktr.ee/athlyticz">ProductioniZing Shiny Course</a> (launching soon)</li>
+<li><a href="https://shiny.rstudio.com/">Shiny documentation</a></li>
+<li><a href="https://mastering-shiny.org/">Mastering Shiny</a></li>
+</ul>
+<div class="footer">
+<p><a href="https://www.linkedin.com/in/veerlevanleemput/">Follow me on LinkedIn 🙋🏼‍♀️</a></p>
+</div>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank you 👋</h1>
+<div class="footer">
+<p><a href="https://www.linkedin.com/in/veerlevanleemput/">Follow me on LinkedIn 🙋🏼‍♀️</a></p>
 </div>
 
 <img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://github.com/hypebright/shinyconf2024-shiny101">github.com/hypebright/shinyconf2024-shiny101</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

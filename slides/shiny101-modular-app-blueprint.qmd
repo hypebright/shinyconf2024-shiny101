@@ -12,6 +12,8 @@ include-in-header:
 highlight-style: "nord"
 ---
 
+# Welcome 👋 
+
 ## Program
 
 - **19:30 - 20:00** Introduction to Shiny
@@ -32,7 +34,7 @@ After this workshop, you will know:
 
 You will leave this workshop with:
 
-- a blueprint for a modular Shiny app
+- a blueprint for a modular Shiny app in the form of templates
 
 # Introduction to Shiny
 
@@ -183,7 +185,7 @@ When the user interacts with the UI, we want that HTML to react to the user.
 
 The server logic uses **reactive programming**: when an input changes, all related outputs react and are updated automatically.
 
-That is possible because these outputs are  **reactive outputs**
+That is possible because these outputs are  **reactive outputs**.
 
 ## The server part
 
@@ -286,7 +288,15 @@ shinyApp(ui, server)
 
 ## Connecting the dots
 
-What about an `actionButton`? We could use this button as an **event** that triggers the calculation.
+An output is eager: it will update as soon as the input changes.
+
+This eagerness is handy: you don't need to worry about updating the output when the input changes.
+
+But what if you want to trigger the calculation only when you want?
+
+## Connecting the dots
+
+You could use an `actionButton` as an **event** that triggers the calculation.
 
 ```{.r}
 library(shiny)
@@ -312,9 +322,293 @@ shinyApp(ui, server)
 
 ```
 
-# It's all about the looks 💅
+## Observers
+
+So far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.
+
+<br>
+
+But sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.
+
+<br>
+
+We need **observers** for that!
+
+
+## Observers
+
+Observers are functions that run when their dependencies change, just like outputs.
+
+<br>
+
+But where **outputs** update the HTML in the user's browser, observers are called for other **side-effects**.
+
+<br>
+
+For example 👉
+
+## Observers
+
+```{.r code-line-numbers="19-21"}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number", 
+               label = "Enter a number", 
+               value = 0),
+               
+  actionButton(inputId = "button", 
+               label = "Click me"),
+               
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  output$text <- renderText({
+    input$number^2
+  }) |> bindEvent(input$button)
+  
+  observe({
+    print(input$number^2)
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+## Observers
+
+```{.r code-line-numbers="21"}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number", 
+               label = "Enter a number", 
+               value = 0),
+               
+  actionButton(inputId = "button", 
+               label = "Click me"),
+               
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  output$text <- renderText({
+    input$number^2
+  }) |> bindEvent(input$button)
+  
+  observe({
+    print(input$number^2)
+  }) |> bindEvent(input$button)
+}
+
+shinyApp(ui, server)
+
+```
+
+## What about reactives?
+
+Outputs and observers **do** something.
+
+<br>
+
+If we want to **create** something, we need **reactives**.
+
+## What about reactives?
+
+Reactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app. 
+
+<br>
+
+You can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want.
+
+## What about reactives?
+
+When you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.
+
+<br>
+
+That's similar with a reactive. They can carry and do different things:
+
+- **reactive()**: takes an expression
+- **reactiveVal()**: takes a single value
+- **reactiveValues()**: takes a list of values
+
+## What about reactives?
+
+You can see `reactive()` as a very fancy backpack 🎒🌟. 
+
+<br>
+
+It can take multiple inputs, manipulate them and return something simple (a value) or complex (a plot, a table). It can even take other reactives (other backpacks) as input!
+
+
+## What about reactives?
+
+```{.r code-line-numbers="15-17,20,24"}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number", 
+               label = "Enter a number", 
+               value = 0),
+               
+  actionButton(inputId = "button", 
+               label = "Click me"),
+               
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  number_squared <- reactive({
+    input$number^2
+  }) |> bindEvent(input$button)
+  
+  output$text <- renderText({
+    number_squared()
+  })
+  
+  observe({
+    print(number_squared())
+  })
+}
+
+shinyApp(ui, server)
+```
+
+## What about reactives?
+
+This fancy backpack is only opened when you ask for it. It is called **lazy**.
+
+<br>
+
+More technical: when the dependencies of a reactive change, it doesn't re-execute right away but rather waits until it gets called by someone else.
+
+## And reactive values?
+
+ **reactive values** are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.
+
+<br>
+
+You make a reactive value by calling `reactiveVal()` and you can update it by calling it with a new value.
+
+<br>
+
+You can make reactive values by calling `reactiveValues()` and you can update them by assigning a new value to them.
+
+## And reactive values?
+
+```{.r code-line-numbers="15,17-19,22,26"}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number", 
+               label = "Enter a number", 
+               value = 0),
+               
+  actionButton(inputId = "button", 
+               label = "Click me"),
+               
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  number_squared <- reactiveVal(0)
+  
+  observe({
+    number_squared(input$number^2)
+  }) |> bindEvent(input$button)
+  
+  output$text <- renderText({
+    number_squared()
+  })
+  
+  observe({
+    print(number_squared())
+  })
+}
+
+shinyApp(ui, server)
+```
+
+## And reactive values?
+
+```{.r code-line-numbers="15,17-19,22,26"}
+library(shiny)
+
+ui <- fluidPage(
+  numericInput(inputId = "number", 
+               label = "Enter a number", 
+               value = 0),
+               
+  actionButton(inputId = "button", 
+               label = "Click me"),
+               
+  textOutput(outputId = "text")
+)
+
+server <- function(input, output, session) {
+  r <- reactiveValues(number_squared = 0) 
+  
+  observe({
+    r$number_squared <- input$number^2
+  }) |> bindEvent(input$button)
+  
+  output$text <- renderText({
+    r$number_squared
+  })
+  
+  observe({
+    print(r$number_squared)
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+## And reactive values?
+
+You can see `reactiveValues()` as some kind of reactive mini-database. You can use it to store multiple values, retrieve them in different places, and update them. 
+
+<br>
+
+And since it's reactive, you can use it to **trigger other parts of your app** when one of its values changes.
+
+<br>
+
+Remember the `reactiveValues()` as we're going to use that later.
+
+# And that covers the basic building blocks of your Shiny app 😮‍💨
+
+
+## The hard part about Shiny
+
+Note that the server part doesn't run line-by-line. It's a reactive environment that will run the code when input changes.
+
+<br>
+
+Code only reacts when it needs to, which is why it's called **reactive programming**.
+
+<br>
+
+This makes it hard to test your code. And it's hard to understand what's going on when you're new to Shiny!
+
+## The hard part about Shiny
+
+My personal top ways ways to get more insight into what's going on:
+
+1. Use `print()` statements to see when something is happening
+2. Use `browser()` to stop the code and inspect the environment (just as you can do within functions, because that is literally what `server` is!)
+
+We're going to see these in action a little bit later.
+
+
+# All about the looks 💅
 
 Only our app doesn't have any yet... 😢
+
 
 ## Quickly leveling up your UI
 
@@ -350,6 +644,10 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+:::footer
+[/templates/02_bslib](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/02_bslib.R)
+:::
 
 ## Working with {bslib}
 
@@ -393,21 +691,37 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+:::footer
+[/templates/02_bslib](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/02_bslib.R)
+:::
+
 ## Shiny app recap
 
 We covered:
 
-- the ui part
-- the server part
+- the ui & server part
 - how to connect the two
-- how to bind an event to an output
+- observers, reactives, reactive values, events
 
 What's next?
 
-- how to use data
-- reactives & reactive values
+- how to use some real data
+- building your first Shiny app! 🚀 
 
 # Hands-on: building a Shiny app together 💻
+
+## Steps
+
+1. Head over to [github.com/hypebright/shinyconf2024-shiny101](https://github.com/hypebright/shinyconf2024-shiny101)
+2. Clone the repository to your computer
+3. Open **/templates/02_bslib.R**
+4. Follow along!
+
+<br>
+
+Need help? David and me are here to help you out! 🚀
+
+# Break ☕️
 
 # Shiny modules 
 
@@ -442,7 +756,9 @@ Modules are special because they create their own **namespace**: things like inp
 
 There are two main reasons to work with modules:
 
-1. Because a module creates its own **namespace**, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module.
+<br>
+
+1. Because a module creates its own **namespace**, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module. And remember, ids needed to be unique!
 
 2. Because a module is basically a **function**, it comes with all the benefits that functions have.
 
@@ -450,80 +766,11 @@ There are two main reasons to work with modules:
 
 A module has two parts, and is basically a mini-app:
 
+<br>
+
 1. **The module UI**, which generates the UI
 
 2. **The module server**, which runs code inside the `server()` function
-
-## What does a module look like?
-
-```{.r}
-library(shiny)
-
-ui <- fluidPage(
-  numericInput(inputId = "number",
-               label = "Enter a number",
-               value = 0),
-
-  actionButton(inputId = "button",
-               label = "Click me"),
-
-  textOutput(outputId = "text")
-)
-
-server <- function(input, output, session) {
-  output$text <- renderText({
-    input$number^2
-  }) |> bindEvent(input$button)
-}
-
-shinyApp(ui, server)
-
-```
-
-:::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
-:::
-
-## What does a module look like?
-
-```{.r}
-library(shiny)
-
-numberModUI <- function(id) {
-  ns <- NS(id)
-  tagList(
-    numericInput(inputId = ns("number"),
-                 label = "Enter a number",
-                 value = 0),
-    actionButton(inputId = ns("button"),
-                 label = "Click me"),
-    textOutput(outputId = ns("text"))
-  )
-}
-
-numberModServer <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    output$text <- renderText({
-      input$number^2
-    }) |> bindEvent(input$button)
-  })
-}
-
-ui <- fluidPage(
-  numberModUI("numbers")
-)
-
-server <- function(input, output, session) {
-  numberModServer("numbers")
-}
-
-shinyApp(ui, server)
-
-```
-
-:::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
-:::
 
 ## What does a module look like?
 
@@ -563,12 +810,12 @@ shinyApp(ui, server)
 ```
 
 :::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R)
 :::
 
 ## What does a module look like?
 
-```{.r code-line-numbers="4,11"}
+```{.r code-line-numbers="4,6,9,11"}
 library(shiny)
 
 numberModUI <- function(id) {
@@ -604,7 +851,7 @@ shinyApp(ui, server)
 ```
 
 :::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R)
 :::
 
 ## What does a module look like?
@@ -645,7 +892,7 @@ shinyApp(ui, server)
 ```
 
 :::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R)
 :::
 
 ## What does a module look like?
@@ -686,12 +933,12 @@ shinyApp(ui, server)
 ```
 
 :::footer
-[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules)
+[/templates/03_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/03_modules.R)
 :::
 
 ## Where do you put modules?
 
-You can simple put the module functions in the `app.R` file (you call this inline).
+You can simple put the module functions in the `app.R` file (you call this **inline**).
 
 <br>
 
@@ -711,10 +958,680 @@ This sounds complicated, but isn’t any different compared to calling a functio
 
 ## Nested modules
 
-test
+```{.r code-line-numbers="38-53"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    numberAnalysisServer("analysis")
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      squares <- 1:10
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE)
+    })
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
 
 :::footer
-[/templates/04_nested_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules)
+[/templates/04_nested_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R)
 :::
 
+## Nested modules
 
+```{.r code-line-numbers="22,33"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    numberAnalysisServer("analysis")
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      squares <- 1:10
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE)
+    })
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/04_nested_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R)
+:::
+
+## Nested modules
+
+```{.r code-line-numbers="61,66"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    numberAnalysisServer("analysis")
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      squares <- 1:10
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE)
+    })
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+  numberModServer("numbers")
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/04_nested_modules](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/04_nested_modules.R)
+:::
+
+## Nested modules
+
+You can take this quite far. Let's say we build out our app to have **multiple pages**. A page on its own can be a module, and each page can have multiple components that are also modules!
+
+<br>
+
+A module inferno! 😉
+
+## Dynamically calling modules
+
+In our app, it would be cool if we could **dynamically call** the modules based on what team the user selects.
+
+<br>
+
+Every time the user selects a team, we want to display the corresponding team's page. Every team page basically looks the same, but with different content: **a perfect use case for modules**.
+
+## Sharing data between modules
+
+When working with modules, the question often arises: "how do I **share data** between modules?" 🤔 What if you do something in one module that affects another module or other part of your app?
+
+<br>
+
+There are a few ways to do this, and we'll be looking at one way to which you already got introduced: **reactive values**.
+
+## Sharing data between modules
+
+Remember that we talked about `reactiveValues` as a **mini-database** that can store values and can be accessed from anywhere in your app?
+
+<br>
+
+We can use this concept to store data that we want to share between modules. And we're calling this database `r`.
+
+<br>
+
+This is referred to as the **"stratégie du petit r"** 🤓
+
+## Sharing data between modules
+
+```{.r code-line-numbers="76-77"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    observe({
+      r$number <- input$number
+      r$button <- input$button
+    })
+
+    numberAnalysisServer("analysis", r = r)
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      req(r$number > 0)
+      squares <- 1:(r$number + 5)
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE, selection = "none") |>
+        formatStyle(columns = "number",
+                    target = "row",
+                    border = styleEqual(r$number, "3px"))
+    }) |> bindEvent(r$button)
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+
+    r <- reactiveValues(number = NULL,
+                        button = NULL)
+
+  numberModServer("numbers", r = r)
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/05_sharing_data](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R)
+:::
+
+## Sharing data between modules
+
+```{.r code-line-numbers="79"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    observe({
+      r$number <- input$number
+      r$button <- input$button
+    })
+
+    numberAnalysisServer("analysis", r = r)
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      req(r$number > 0)
+      squares <- 1:(r$number + 5)
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE, selection = "none") |>
+        formatStyle(columns = "number",
+                    target = "row",
+                    border = styleEqual(r$number, "3px"))
+    }) |> bindEvent(r$button)
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+
+    r <- reactiveValues(number = NULL,
+                        button = NULL)
+
+  numberModServer("numbers", r = r)
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/05_sharing_data](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R)
+:::
+
+## Sharing data between modules
+
+```{.r code-line-numbers="26,33-36,38"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    observe({
+      r$number <- input$number
+      r$button <- input$button
+    })
+
+    numberAnalysisServer("analysis", r = r)
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      req(r$number > 0)
+      squares <- 1:(r$number + 5)
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE, selection = "none") |>
+        formatStyle(columns = "number",
+                    target = "row",
+                    border = styleEqual(r$number, "3px"))
+    }) |> bindEvent(r$button)
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+
+    r <- reactiveValues(number = NULL,
+                        button = NULL)
+
+  numberModServer("numbers", r = r)
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/05_sharing_data](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R)
+:::
+
+## Sharing data between modules
+
+```{.r code-line-numbers="49,53,54,57-60"}
+library(shiny)
+library(bslib)
+library(DT)
+
+custom_theme <- bs_theme(
+  version = 5,
+  # for themes see: https://bootswatch.com
+  preset = "quartz",
+  base_font = font_google("PT Sans")
+)
+
+# module 1 -------------------------------------------------------
+numberModUI <- function(id) {
+  ns <- NS(id)
+  tagList(
+    numericInput(inputId = ns("number"),
+                 label = "Enter a number",
+                 value = 0),
+    actionButton(inputId = ns("button"),
+                 label = "Calculate"),
+    textOutput(outputId = ns("text")),
+    numberAnalysisModUI(ns("analysis"))
+  )
+}
+
+numberModServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+
+    output$text <- renderText({
+      input$number^2
+    }) |> bindEvent(input$button)
+
+    observe({
+      r$number <- input$number
+      r$button <- input$button
+    })
+
+    numberAnalysisServer("analysis", r = r)
+
+  })
+}
+
+# module 2 -------------------------------------------------------
+numberAnalysisModUI <- function(id) {
+  ns <- NS(id)
+  dataTableOutput(outputId = ns("table"))
+}
+
+numberAnalysisServer <- function(id, r) {
+  moduleServer(id, function(input, output, session) {
+    # display table of squares and highlight the number
+    output$table <- renderDataTable({
+      req(r$number > 0)
+      squares <- 1:(r$number + 5)
+      squares <- data.frame(number = squares, square = squares^2)
+      datatable(squares, rownames = FALSE, selection = "none") |>
+        formatStyle(columns = "number",
+                    target = "row",
+                    border = styleEqual(r$number, "3px"))
+    }) |> bindEvent(r$button)
+  })
+}
+
+# app ------------------------------------------------------------
+ui <- page_navbar(
+  theme = custom_theme,
+  title = "Modular App Blueprint",
+  nav_panel(
+    title = "Numbers",
+    numberModUI("numbers")
+  )
+)
+
+server <- function(input, output, session) {
+
+  r <- reactiveValues(number = NULL,
+                      button = NULL)
+
+  numberModServer("numbers", r = r)
+}
+
+shinyApp(ui, server)
+
+```
+
+:::footer
+[/templates/05_sharing_data](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/05_sharing_data.R)
+:::
+
+# Hands on: modules and sharing data 😎
+
+## Your Shiny journey starts here
+
+You've learned:
+
+- how to create a **Shiny app**
+- how to use **inputs, outputs, observers and reactives**
+- how to use **data**
+- how to use **modules**
+- how to **share data** between modules
+
+:::footer
+[Follow me on LinkedIn 🙋🏼‍♀️](https://www.linkedin.com/in/veerlevanleemput/)
+:::
+
+## Your Shiny journey starts here
+
+Now it's up to you to put this knowledge into practice. Remember to **have fun** and enjoy the process of learning Shiny! 🚀
+
+<br>
+
+Want to keep learning? Check out these resources:
+
+- [ProductioniZing Shiny Course](https://linktr.ee/athlyticz) (launching soon)
+- [Shiny documentation](https://shiny.rstudio.com/)
+- [Mastering Shiny](https://mastering-shiny.org/)
+
+
+:::footer
+[Follow me on LinkedIn 🙋🏼‍♀️](https://www.linkedin.com/in/veerlevanleemput/)
+:::
+
+# Thank you 👋
+
+:::footer
+[Follow me on LinkedIn 🙋🏼‍♀️](https://www.linkedin.com/in/veerlevanleemput/)
+:::
