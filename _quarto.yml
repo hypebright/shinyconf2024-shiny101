@@ -1,0 +1,4 @@
+project:
+  title: "Shiny 101: The Modular App Blueprint"
+  type: website
+  output-dir: docs

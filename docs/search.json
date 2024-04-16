@@ -1,0 +1,464 @@
+[
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#program",
+    "href": "shiny101-modular-app-blueprint.html#program",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Program",
+    "text": "Program\n\n19:30 - 20:00 Introduction to Shiny\n20:00 - 20:30 Hands-on: Building a Shiny App Together\n20:30 - 20:40 Break ☕️\n20:40 - 21:00 Introduction to Shiny modules\n21:00 - 21:30 Hands-on: Implementing Shiny modules\n21:30 - 21:45 Sharing and feedback\n21:45 - 22:00 Recap and Questions"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#learning-objectives",
+    "href": "shiny101-modular-app-blueprint.html#learning-objectives",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nAfter this workshop, you will know:\n\nthe basics of a Shiny application\nhow to make your app modular\nhow to communicate between modules\n\nYou will leave this workshop with:\n\na blueprint for a modular Shiny app in the form of templates"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#shiny-app-basics",
+    "href": "shiny101-modular-app-blueprint.html#shiny-app-basics",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Shiny app basics",
+    "text": "Shiny app basics\nTwo parts of a Shiny app:\n\nUI: User Interface\nServer: Server logic\n\nThey come together in a single script: app.R"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-app.r-script",
+    "href": "shiny101-modular-app-blueprint.html#the-app.r-script",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The app.R script",
+    "text": "The app.R script\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \"Hello, Shiny!\"\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-app.r-script-1",
+    "href": "shiny101-modular-app-blueprint.html#the-app.r-script-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The app.R script",
+    "text": "The app.R script\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \"Hello, Shiny!\"\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-app.r-script-2",
+    "href": "shiny101-modular-app-blueprint.html#the-app.r-script-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The app.R script",
+    "text": "The app.R script\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \"Hello, Shiny!\"\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-app.r-script-3",
+    "href": "shiny101-modular-app-blueprint.html#the-app.r-script-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The app.R script",
+    "text": "The app.R script\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \"Hello, Shiny!\"\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-ui-part",
+    "href": "shiny101-modular-app-blueprint.html#the-ui-part",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The ui part",
+    "text": "The ui part\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \"Hello, Shiny!\"\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\nfluidPage() creates a Bootstrap page"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-ui-part-1",
+    "href": "shiny101-modular-app-blueprint.html#the-ui-part-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The ui part",
+    "text": "The ui part\n\nBootstrap is a free front-end framework used in web development and it includes all the basic to build an app that will work in a web browser on any device.\nIt is built on HTML, CSS and JavaScript\nThere are many version of Bootstrap, the latest being version 5, but Shiny uses version 3"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-ui-part-2",
+    "href": "shiny101-modular-app-blueprint.html#the-ui-part-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The ui part",
+    "text": "The ui part\nUnder the hood, every UI function is translated to HTML:\n\nas.character(titlePanel(\"Hello, Shiny!\"))\n\n[1] \"&lt;h2&gt;Hello, Shiny!&lt;/h2&gt;\"\n\n\n\nThis HTML can have styles attached to it, either by the style attribute, or by a CSS class.\n\nas.character(sidebarPanel())\n\n[1] \"&lt;div class=\\\"col-sm-4\\\"&gt;\\n  &lt;form class=\\\"well\\\" role=\\\"complementary\\\"&gt;&lt;/form&gt;\\n&lt;/div&gt;\""
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-ui-part-3",
+    "href": "shiny101-modular-app-blueprint.html#the-ui-part-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The ui part",
+    "text": "The ui part\nTo let users interact with your app, you can add input controls. A basic input control has:\n\nan inputId\na label\na value"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-ui-part-4",
+    "href": "shiny101-modular-app-blueprint.html#the-ui-part-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The ui part",
+    "text": "The ui part\nFor example:\nnumericInput(inputId = \"number\", \n             label = \"Enter a number\", \n             value = 0)\n\nactionButton(inputId = \"button\", \n             label = \"Click me\")"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nWhen the app runs, every user gets served the same HTML from the ui.\nWhen the user interacts with the UI, we want that HTML to react to the user.\nThe server logic uses reactive programming: when an input changes, all related outputs react and are updated automatically.\nThat is possible because these outputs are reactive outputs."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-1",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nShiny has several functions that turn R objects into reactive outputs for your ui: the *Output family\nEach function creates a specific type of output, for example:\n\n\n\n\nFunction\nOutput type\n\n\n\n\ntextOutput()\ntext\n\n\ntableOutput()\ntable\n\n\nplotOutput()\nplot\n\n\nuiOutput()\nraw HTML"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-2",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nEvery output element needs a single argument: outputId- which is a simple string that needs to be unique.\ntextOutput(outputId = \"text\")\nThis textOutputtells Shiny where to display the object\n\nNext step: tell Shiny how to build the object"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-3",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nThe server function builds an object named output and this object will contain all the code needed to display the R objects in your app\nThis output object is list-like\nEach R object that you want to display has its own entry in this list, therefore the name of every output in your ui needs to match a definition in the server\noutput$text"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-4",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nEach entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:\n\n\n\n\nFunction\nOutput type\nRender function\n\n\n\n\ntextOutput()\ntext\nrenderText()\n\n\ntableOutput()\ntable\nrenderTable()\n\n\nplotOutput()\nplot\nrenderPlot()\n\n\nuiOutput()\nraw HTML\nrenderUI()"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-5",
+    "href": "shiny101-modular-app-blueprint.html#the-server-part-5",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The server part",
+    "text": "The server part\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n  })\n}"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#using-inputs",
+    "href": "shiny101-modular-app-blueprint.html#using-inputs",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Using inputs",
+    "text": "Using inputs\nThis works the same with inputs!\n\nThe server can access an object named input that will contain the value of all the objects defined in the ui\nThis object is list-like, just like the output object. Each input value has its own entry in this list:\ninput$number"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots",
+    "href": "shiny101-modular-app-blueprint.html#connecting-the-dots",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Connecting the dots",
+    "text": "Connecting the dots\nIf we combine the input and output objects, we can create a simple app that displays the square of a number 👏.\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots-1",
+    "href": "shiny101-modular-app-blueprint.html#connecting-the-dots-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Connecting the dots",
+    "text": "Connecting the dots\nAn output is eager: it will update as soon as the input changes.\nThis eagerness is handy: you don’t need to worry about updating the output when the input changes.\nBut what if you want to trigger the calculation only when you want?"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots-2",
+    "href": "shiny101-modular-app-blueprint.html#connecting-the-dots-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Connecting the dots",
+    "text": "Connecting the dots\nYou could use an actionButton as an event that triggers the calculation.\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#observers",
+    "href": "shiny101-modular-app-blueprint.html#observers",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Observers",
+    "text": "Observers\nSo far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.\n\nBut sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.\n\nWe need observers for that!"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#observers-1",
+    "href": "shiny101-modular-app-blueprint.html#observers-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Observers",
+    "text": "Observers\nObservers are functions that run when their dependencies change, just like outputs.\n\nBut where outputs update the HTML in the user’s browser, observers are called for other side-effects.\n\nFor example 👉"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#observers-2",
+    "href": "shiny101-modular-app-blueprint.html#observers-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Observers",
+    "text": "Observers\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n  \n  observe({\n    print(input$number^2)\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#observers-3",
+    "href": "shiny101-modular-app-blueprint.html#observers-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Observers",
+    "text": "Observers\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n  \n  observe({\n    print(input$number^2)\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nOutputs and observers do something.\n\nIf we want to create something, we need reactives."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-1",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nReactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app.\n\nYou can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-2",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nWhen you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.\n\nThat’s similar with a reactive. They can carry and do different things:\n\nreactive(): takes an expression\nreactiveVal(): takes a single value\nreactiveValues(): takes a list of values"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-3",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nYou can see reactive() as a very fancy backpack 🎒🌟.\n\nIt can take multiple inputs, manipulate them and return something simple (a value) or complex (a plot, a table). It can even take other reactives (other backpacks) as input!"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-4",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  number_squared &lt;- reactive({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n  \n  output$text &lt;- renderText({\n    number_squared()\n  })\n  \n  observe({\n    print(number_squared())\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-5",
+    "href": "shiny101-modular-app-blueprint.html#what-about-reactives-5",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What about reactives?",
+    "text": "What about reactives?\nThis fancy backpack is only opened when you ask for it. It is called lazy.\n\nMore technical: when the dependencies of a reactive change, it doesn’t re-execute right away but rather waits until it gets called by someone else."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#and-reactive-values",
+    "href": "shiny101-modular-app-blueprint.html#and-reactive-values",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "And reactive values?",
+    "text": "And reactive values?\nreactive values are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.\n\nYou make a reactive value by calling reactiveVal() and you can update it by calling it with a new value.\n\nYou can make reactive values by calling reactiveValues() and you can update them by assigning a new value to them."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#and-reactive-values-1",
+    "href": "shiny101-modular-app-blueprint.html#and-reactive-values-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "And reactive values?",
+    "text": "And reactive values?\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  number_squared &lt;- reactiveVal(0)\n  \n  observe({\n    number_squared(input$number^2)\n  }) |&gt; bindEvent(input$button)\n  \n  output$text &lt;- renderText({\n    number_squared()\n  })\n  \n  observe({\n    print(number_squared())\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#and-reactive-values-2",
+    "href": "shiny101-modular-app-blueprint.html#and-reactive-values-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "And reactive values?",
+    "text": "And reactive values?\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  r &lt;- reactiveValues(number_squared = 0) \n  \n  observe({\n    r$number_squared &lt;- input$number^2\n  }) |&gt; bindEvent(input$button)\n  \n  output$text &lt;- renderText({\n    r$number_squared\n  })\n  \n  observe({\n    print(r$number_squared)\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#and-reactive-values-3",
+    "href": "shiny101-modular-app-blueprint.html#and-reactive-values-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "And reactive values?",
+    "text": "And reactive values?\nYou can see reactiveValues() as some kind of reactive mini-database. You can use it to store multiple values, retrieve them in different places, and update them.\n\nAnd since it’s reactive, you can use it to trigger other parts of your app when one of its values changes.\n\nRemember the reactiveValues() as we’re going to use that later."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-hard-part-about-shiny",
+    "href": "shiny101-modular-app-blueprint.html#the-hard-part-about-shiny",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The hard part about Shiny",
+    "text": "The hard part about Shiny\nNote that the server part doesn’t run line-by-line. It’s a reactive environment that will run the code when input changes.\n\nCode only reacts when it needs to, which is why it’s called reactive programming.\n\nThis makes it hard to test your code. And it’s hard to understand what’s going on when you’re new to Shiny!"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#the-hard-part-about-shiny-1",
+    "href": "shiny101-modular-app-blueprint.html#the-hard-part-about-shiny-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "The hard part about Shiny",
+    "text": "The hard part about Shiny\nMy personal top ways ways to get more insight into what’s going on:\n\nUse print() statements to see when something is happening\nUse browser() to stop the code and inspect the environment (just as you can do within functions, because that is literally what server is!)\n\nWe’re going to see these in action a little bit later."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#quickly-leveling-up-your-ui",
+    "href": "shiny101-modular-app-blueprint.html#quickly-leveling-up-your-ui",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Quickly leveling up your UI",
+    "text": "Quickly leveling up your UI\n\nThere are many ways to make your app look instantly better\nOne of them is using bslib which is a package that provides a modern UI toolkit for Shiny and R Markdown based on Bootstrap\nThe cool thing: you can get around Shiny’s default usage of Bootstrap version 3!"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#working-with-bslib",
+    "href": "shiny101-modular-app-blueprint.html#working-with-bslib",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Working with {bslib}",
+    "text": "Working with {bslib}\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_navbar(\n  theme = bs_theme(version = 5),\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numericInput(inputId = \"number\",\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = \"button\",\n                 label = \"Click me\"),\n    textOutput(outputId = \"text\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)\n\n/templates/02_bslib"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#working-with-bslib-1",
+    "href": "shiny101-modular-app-blueprint.html#working-with-bslib-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Working with {bslib}",
+    "text": "Working with {bslib}\nlibrary(shiny)\nlibrary(bslib)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  bg = \"#F9F9F9\",\n  fg = \"#003f5c\",\n  primary = \"#bc5090\",\n  secondary = \"#58508d\",\n  warning = \"#ffa600\",\n  danger = \"#ff6361\",\n  info = \"#0091d5\",\n  base_font = font_google(\"PT Sans\")\n)\n\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numericInput(inputId = \"number\",\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = \"button\",\n                 label = \"Click me\",\n                 width = \"100px\"),\n    textOutput(outputId = \"text\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)\n\n/templates/02_bslib"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#shiny-app-recap",
+    "href": "shiny101-modular-app-blueprint.html#shiny-app-recap",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Shiny app recap",
+    "text": "Shiny app recap\nWe covered:\n\nthe ui & server part\nhow to connect the two\nobservers, reactives, reactive values, events\n\nWhat’s next?\n\nhow to use some real data\nbuilding your first Shiny app! 🚀"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#steps",
+    "href": "shiny101-modular-app-blueprint.html#steps",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Steps",
+    "text": "Steps\n\nHead over to github.com/hypebright/shinyconf2024-shiny101\nClone the repository to your computer\nOpen /templates/02_bslib.R\nFollow along!\n\n\nNeed help? David and me are here to help you out! 🚀"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-are-modules",
+    "href": "shiny101-modular-app-blueprint.html#what-are-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What are modules?",
+    "text": "What are modules?\nYou could call modules special functions.\n\nUsing functions in a Shiny app is common:\n\nYou use functions in your UI (e.g. value_box())\nYou use functions in your server\n\n\nThat works well for code that is completely on the ui or server side."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-are-modules-1",
+    "href": "shiny101-modular-app-blueprint.html#what-are-modules-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What are modules?",
+    "text": "What are modules?\nFor code that spans both the ui and the server, you need a new technique: modules\n\nA module consists of some UI code that works together with some server code\n\nModules are special because they create their own namespace: things like input and output ids are isolated from the rest of the app"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#why-use-modules",
+    "href": "shiny101-modular-app-blueprint.html#why-use-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Why use modules?",
+    "text": "Why use modules?\nThere are two main reasons to work with modules:\n\n\nBecause a module creates its own namespace, you can write and run code in isolation. You don’t need to worry about what’s going on outside the module. And remember, ids needed to be unique!\nBecause a module is basically a function, it comes with all the benefits that functions have."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like",
+    "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What does a module look like?",
+    "text": "What does a module look like?\nA module has two parts, and is basically a mini-app:\n\n\nThe module UI, which generates the UI\nThe module server, which runs code inside the server() function"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-1",
+    "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What does a module look like?",
+    "text": "What does a module look like?\nlibrary(shiny)\n\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Click me\"),\n    textOutput(outputId = ns(\"text\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n  })\n}\n\nui &lt;- fluidPage(\n  numberModUI(\"numbers\")\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/03_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-2",
+    "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What does a module look like?",
+    "text": "What does a module look like?\nlibrary(shiny)\n\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Click me\"),\n    textOutput(outputId = ns(\"text\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n  })\n}\n\nui &lt;- fluidPage(\n  numberModUI(\"numbers\")\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/03_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-3",
+    "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What does a module look like?",
+    "text": "What does a module look like?\nlibrary(shiny)\n\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Click me\"),\n    textOutput(outputId = ns(\"text\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n  })\n}\n\nui &lt;- fluidPage(\n  numberModUI(\"numbers\")\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/03_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-4",
+    "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "What does a module look like?",
+    "text": "What does a module look like?\nlibrary(shiny)\n\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Click me\"),\n    textOutput(outputId = ns(\"text\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n  })\n}\n\nui &lt;- fluidPage(\n  numberModUI(\"numbers\")\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/03_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#where-do-you-put-modules",
+    "href": "shiny101-modular-app-blueprint.html#where-do-you-put-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Where do you put modules?",
+    "text": "Where do you put modules?\nYou can simple put the module functions in the app.R file (you call this inline).\n\nOther options:\n\nPut the module in a separate R script in the /R folder. Shiny will automatically source it.\nPut the module in a separate R script in any other folder, and source it using source(“./my_modules/random.R”)."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#nested-modules",
+    "href": "shiny101-modular-app-blueprint.html#nested-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Nested modules",
+    "text": "Nested modules\nModules are composable, and it may make sense to create a module that itself contains a module: this is called nesting\n\nThis sounds complicated, but isn’t any different compared to calling a function within another function"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#nested-modules-1",
+    "href": "shiny101-modular-app-blueprint.html#nested-modules-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Nested modules",
+    "text": "Nested modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    numberAnalysisServer(\"analysis\")\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      squares &lt;- 1:10\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE)\n    })\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/04_nested_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#nested-modules-2",
+    "href": "shiny101-modular-app-blueprint.html#nested-modules-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Nested modules",
+    "text": "Nested modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    numberAnalysisServer(\"analysis\")\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      squares &lt;- 1:10\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE)\n    })\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/04_nested_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#nested-modules-3",
+    "href": "shiny101-modular-app-blueprint.html#nested-modules-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Nested modules",
+    "text": "Nested modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    numberAnalysisServer(\"analysis\")\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      squares &lt;- 1:10\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE)\n    })\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  numberModServer(\"numbers\")\n}\n\nshinyApp(ui, server)\n\n/templates/04_nested_modules"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#nested-modules-4",
+    "href": "shiny101-modular-app-blueprint.html#nested-modules-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Nested modules",
+    "text": "Nested modules\nYou can take this quite far. Let’s say we build out our app to have multiple pages. A page on its own can be a module, and each page can have multiple components that are also modules!\n\nA module inferno! 😉"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#dynamically-calling-modules",
+    "href": "shiny101-modular-app-blueprint.html#dynamically-calling-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Dynamically calling modules",
+    "text": "Dynamically calling modules\nIn our app, it would be cool if we could dynamically call the modules based on what team the user selects.\n\nEvery time the user selects a team, we want to display the corresponding team’s page. Every team page basically looks the same, but with different content: a perfect use case for modules."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nWhen working with modules, the question often arises: “how do I share data between modules?” 🤔 What if you do something in one module that affects another module or other part of your app?\n\nThere are a few ways to do this, and we’ll be looking at one way to which you already got introduced: reactive values."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-1",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nRemember that we talked about reactiveValues as a mini-database that can store values and can be accessed from anywhere in your app?\n\nWe can use this concept to store data that we want to share between modules. And we’re calling this database r.\n\nThis is referred to as the “stratégie du petit r” 🤓"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-2",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    observe({\n      r$number &lt;- input$number\n      r$button &lt;- input$button\n    })\n\n    numberAnalysisServer(\"analysis\", r = r)\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      req(r$number &gt; 0)\n      squares &lt;- 1:(r$number + 5)\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE, selection = \"none\") |&gt;\n        formatStyle(columns = \"number\",\n                    target = \"row\",\n                    border = styleEqual(r$number, \"3px\"))\n    }) |&gt; bindEvent(r$button)\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n    r &lt;- reactiveValues(number = NULL,\n                        button = NULL)\n\n  numberModServer(\"numbers\", r = r)\n}\n\nshinyApp(ui, server)\n\n/templates/05_sharing_data"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-3",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-3",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    observe({\n      r$number &lt;- input$number\n      r$button &lt;- input$button\n    })\n\n    numberAnalysisServer(\"analysis\", r = r)\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      req(r$number &gt; 0)\n      squares &lt;- 1:(r$number + 5)\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE, selection = \"none\") |&gt;\n        formatStyle(columns = \"number\",\n                    target = \"row\",\n                    border = styleEqual(r$number, \"3px\"))\n    }) |&gt; bindEvent(r$button)\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n    r &lt;- reactiveValues(number = NULL,\n                        button = NULL)\n\n  numberModServer(\"numbers\", r = r)\n}\n\nshinyApp(ui, server)\n\n/templates/05_sharing_data"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-4",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-4",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    observe({\n      r$number &lt;- input$number\n      r$button &lt;- input$button\n    })\n\n    numberAnalysisServer(\"analysis\", r = r)\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      req(r$number &gt; 0)\n      squares &lt;- 1:(r$number + 5)\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE, selection = \"none\") |&gt;\n        formatStyle(columns = \"number\",\n                    target = \"row\",\n                    border = styleEqual(r$number, \"3px\"))\n    }) |&gt; bindEvent(r$button)\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n    r &lt;- reactiveValues(number = NULL,\n                        button = NULL)\n\n  numberModServer(\"numbers\", r = r)\n}\n\nshinyApp(ui, server)\n\n/templates/05_sharing_data"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-5",
+    "href": "shiny101-modular-app-blueprint.html#sharing-data-between-modules-5",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Sharing data between modules",
+    "text": "Sharing data between modules\nlibrary(shiny)\nlibrary(bslib)\nlibrary(DT)\n\ncustom_theme &lt;- bs_theme(\n  version = 5,\n  # for themes see: https://bootswatch.com\n  preset = \"quartz\",\n  base_font = font_google(\"PT Sans\")\n)\n\n# module 1 -------------------------------------------------------\nnumberModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  tagList(\n    numericInput(inputId = ns(\"number\"),\n                 label = \"Enter a number\",\n                 value = 0),\n    actionButton(inputId = ns(\"button\"),\n                 label = \"Calculate\"),\n    textOutput(outputId = ns(\"text\")),\n    numberAnalysisModUI(ns(\"analysis\"))\n  )\n}\n\nnumberModServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n\n    output$text &lt;- renderText({\n      input$number^2\n    }) |&gt; bindEvent(input$button)\n\n    observe({\n      r$number &lt;- input$number\n      r$button &lt;- input$button\n    })\n\n    numberAnalysisServer(\"analysis\", r = r)\n\n  })\n}\n\n# module 2 -------------------------------------------------------\nnumberAnalysisModUI &lt;- function(id) {\n  ns &lt;- NS(id)\n  dataTableOutput(outputId = ns(\"table\"))\n}\n\nnumberAnalysisServer &lt;- function(id, r) {\n  moduleServer(id, function(input, output, session) {\n    # display table of squares and highlight the number\n    output$table &lt;- renderDataTable({\n      req(r$number &gt; 0)\n      squares &lt;- 1:(r$number + 5)\n      squares &lt;- data.frame(number = squares, square = squares^2)\n      datatable(squares, rownames = FALSE, selection = \"none\") |&gt;\n        formatStyle(columns = \"number\",\n                    target = \"row\",\n                    border = styleEqual(r$number, \"3px\"))\n    }) |&gt; bindEvent(r$button)\n  })\n}\n\n# app ------------------------------------------------------------\nui &lt;- page_navbar(\n  theme = custom_theme,\n  title = \"Modular App Blueprint\",\n  nav_panel(\n    title = \"Numbers\",\n    numberModUI(\"numbers\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n  r &lt;- reactiveValues(number = NULL,\n                      button = NULL)\n\n  numberModServer(\"numbers\", r = r)\n}\n\nshinyApp(ui, server)\n\n/templates/05_sharing_data"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#your-shiny-journey-starts-here",
+    "href": "shiny101-modular-app-blueprint.html#your-shiny-journey-starts-here",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Your Shiny journey starts here",
+    "text": "Your Shiny journey starts here\nYou’ve learned:\n\nhow to create a Shiny app\nhow to use inputs, outputs, observers and reactives\nhow to use data\nhow to use modules\nhow to share data between modules\n\n\nFollow me on LinkedIn 🙋🏼‍♀️"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#your-shiny-journey-starts-here-1",
+    "href": "shiny101-modular-app-blueprint.html#your-shiny-journey-starts-here-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Your Shiny journey starts here",
+    "text": "Your Shiny journey starts here\nNow it’s up to you to put this knowledge into practice. Remember to have fun and enjoy the process of learning Shiny! 🚀\n\nWant to keep learning? Check out the ProductioniZing Shiny Course with yours truly as course instructor! 🎉👉🏻 https://athlyticz.com/shiny-applications\n\nFollow me on LinkedIn 🙋🏼‍♀️"
+  }
+]
