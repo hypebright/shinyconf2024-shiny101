@@ -1619,12 +1619,14 @@ Now it's up to you to put this knowledge into practice. Remember to **have fun**
 
 <br>
 
-Want to keep learning? Check out these resources:
+Want to keep learning? Check out the [ProductioniZing Shiny Course](https://athlyticz.com/shiny-applications) with yours truly as course instructor! 🎉👉🏻 **https://athlyticz.com/shiny-applications**
 
-- [ProductioniZing Shiny Course](https://linktr.ee/athlyticz) (launching soon)
-- [Shiny documentation](https://shiny.rstudio.com/)
-- [Mastering Shiny](https://mastering-shiny.org/)
 
+:::footer
+[Follow me on LinkedIn 🙋🏼‍♀️](https://www.linkedin.com/in/veerlevanleemput/)
+:::
+
+# Sharing + Questions 💪🏻
 
 :::footer
 [Follow me on LinkedIn 🙋🏼‍♀️](https://www.linkedin.com/in/veerlevanleemput/)
