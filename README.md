@@ -10,7 +10,7 @@ In this workshop, we will be using data related to Women's International Footbal
 
 Want to keep learning? Check out the [ProductioniZing Shiny Course](https://athlyticz.com/shiny-ii)! 🎉 During this course you will learn everything you need to know about Shiny: from building your first app to testing and deployment 🚀.
 
-[![](images/ProductioniZingShiny.png){fig-align="left"}](https://athlyticz.com/shiny-ii)
+![](images/ProductioniZingShiny.png)(https://athlyticz.com/shiny-ii)
 
 ## Other resources
 
