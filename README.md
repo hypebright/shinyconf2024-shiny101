@@ -6,7 +6,7 @@ This repository contains the code for the ShinyConf2024 workshop on building mod
 
 In this workshop, we will be using data related to Women's International Football results ⚽️. The data is available in the `data` folder and it contains some pre-processing. The data is sourced from [Kaggle](https://www.kaggle.com/datasets/martj42/womens-international-football-results?resource=download).
 
-## ProductioniZing Shiny course
+## Shiny courses
 
 Want to keep learning? We are launching two online courses that are all about Shiny ✨:
 
