@@ -835,7 +835,7 @@ shinyApp(ui, server)
 
 ## What does a module look like?
 
-```{.r code-line-numbers="4,6,9,11"}
+```{.r code-line-numbers="3,4,6,9,11"}
 library(shiny)
 
 numberModUI <- function(id) {
@@ -1327,8 +1327,8 @@ ui <- page_navbar(
 
 server <- function(input, output, session) {
 
-    r <- reactiveValues(number = NULL,
-                        button = NULL)
+  r <- reactiveValues(number = NULL,
+                      button = NULL)
 
   numberModServer("numbers", r = r)
 }
@@ -1639,7 +1639,7 @@ Now it's up to you to put this knowledge into practice. Remember to **have fun**
 
 <br>
 
-Want to keep learning? Check out the [ProductioniZing Shiny Course](https://athlyticz.com/shiny-applications) with yours truly as course instructor! 🎉👉🏻 **https://athlyticz.com/shiny-applications**
+Want to keep learning? Check out the [ProductioniZing Shiny Course](https://athlyticz.com/shiny-ii) with yours truly as course instructor! 🎉👉🏻 **https://athlyticz.com/shiny-ii**
 
 
 :::footer
