@@ -402,9 +402,14 @@ Veerle van Leemput
 </div>
 
 </section>
-<section>
 <section id="welcome" class="title-slide slide level1 center">
 <h1>Welcome 👋</h1>
+
+</section>
+
+<section>
+<section id="getting-to-know-each-other" class="title-slide slide level1 center">
+<h1>Getting to know each other ✨</h1>
 
 </section>
 <section id="program" class="slide level2">
@@ -414,9 +419,9 @@ Veerle van Leemput
 <li><strong>20:00 - 20:30</strong> Hands-on: Building a Shiny App Together</li>
 <li><strong>20:30 - 20:40</strong> Break ☕️</li>
 <li><strong>20:40 - 21:00</strong> Introduction to Shiny modules</li>
-<li><strong>21:00 - 21:30</strong> Hands-on: Implementing Shiny modules</li>
-<li><strong>21:30 - 21:45</strong> Sharing and feedback</li>
-<li><strong>21:45 - 22:00</strong> Recap and Questions</li>
+<li><strong>21:00 - 21:40</strong> Hands-on: Implementing Shiny modules</li>
+<li><strong>21:40 - 21:55</strong> Sharing, Feedback + Questions</li>
+<li><strong>21:55 - 22:00</strong> Recap</li>
 </ul>
 </section>
 <section id="learning-objectives" class="slide level2">
@@ -557,22 +562,22 @@ Veerle van Leemput
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">actionButton</span>(<span class="at">inputId =</span> <span class="st">"button"</span>, </span>
 <span id="cb11-2"><a href="#cb11-2"></a>             <span class="at">label =</span> <span class="st">"Click me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-server-part" class="slide level2">
-<h2>The server part</h2>
+<section id="updating-the-ui" class="slide level2">
+<h2>Updating the UI</h2>
 <p>When the app runs, every user gets served the same HTML from the ui.</p>
-<p>When the user interacts with the UI, we want that HTML to react to the user.</p>
+<p>When the user interacts with the UI, we want that HTML to <strong>react</strong> to the user.</p>
 <p>The server logic uses <strong>reactive programming</strong>: when an input changes, all related outputs react and are updated automatically.</p>
 <p>That is possible because these outputs are <strong>reactive outputs</strong>.</p>
 </section>
-<section id="the-server-part-1" class="slide level2">
-<h2>The server part</h2>
+<section id="updating-the-ui-1" class="slide level2">
+<h2>Updating the UI</h2>
 <p>Shiny has several functions that turn R objects into reactive outputs for your ui: the *Output family</p>
 <p>Each function creates a specific type of output, for example:</p>
 <table class="table table-striped table-hover">
 <caption></caption>
 <thead>
 <tr class="header">
-<th>Function</th>
+<th>UI Function</th>
 <th>Output type</th>
 </tr>
 </thead>
@@ -596,29 +601,29 @@ Veerle van Leemput
 </tbody>
 </table>
 </section>
-<section id="the-server-part-2" class="slide level2">
-<h2>The server part</h2>
+<section id="updating-the-ui-2" class="slide level2">
+<h2>Updating the UI</h2>
 <p>Every output element needs a single argument: <code>outputId</code>- which is a simple string that needs to be <strong>unique</strong>.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This <code>textOutput</code>tells Shiny where to display the object</p>
+<p>This <code>textOutput</code>tells Shiny where to display the object. It’s a <strong>placeholder</strong> for what’s to come.</p>
 <p><br></p>
-<p>Next step: tell Shiny how to build the object</p>
+<p>Next step: tell Shiny how to build the object!</p>
 </section>
-<section id="the-server-part-3" class="slide level2">
+<section id="the-server-part" class="slide level2">
 <h2>The server part</h2>
-<p>The server function builds an object named <strong>output</strong> and this object will contain all the code needed to display the R objects in your app</p>
+<p>The server function builds an object named <strong>output</strong> and this object will contain all the code needed to display the R objects in the ui</p>
 <p>This output object is <strong>list-like</strong></p>
 <p>Each R object that you want to display has its own entry in this list, therefore the name of every output in your ui needs to match a definition in the server</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>output<span class="sc">$</span>text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-server-part-4" class="slide level2">
+<section id="the-server-part-1" class="slide level2">
 <h2>The server part</h2>
 <p>Each entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:</p>
 <table class="table table-striped table-hover">
 <caption></caption>
 <thead>
 <tr class="header">
-<th>Function</th>
+<th>UI Function</th>
 <th>Output type</th>
 <th>Render function</th>
 </tr>
@@ -647,18 +652,24 @@ Veerle van Leemput
 </tbody>
 </table>
 </section>
-<section id="the-server-part-5" class="slide level2">
+<section id="the-server-part-2" class="slide level2">
 <h2>The server part</h2>
-<div class="sourceCode" id="cb14" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb14-3"><a href="#cb14-3"></a>  })</span>
-<span id="cb14-4"><a href="#cb14-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-code-line-numbers="3,7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">textOutput</span>(<span class="at">outputId =</span> <span class="st">"text"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb14-8"><a href="#cb14-8"></a>  })</span>
+<span id="cb14-9"><a href="#cb14-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="using-inputs" class="slide level2">
 <h2>Using inputs</h2>
 <p>This works the same with inputs!</p>
 <p><br></p>
-<p>The server can access an object named <code>input</code> that will contain the value of all the objects defined in the ui</p>
+<p>The server can access an object named <code>input</code> that will contain the value of all the input objects defined in the ui</p>
+<p><br></p>
 <p>This object is <strong>list-like</strong>, just like the output object. Each input value has its own entry in this list:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>input<span class="sc">$</span>number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -682,17 +693,22 @@ Veerle van Leemput
 <span id="cb16-15"><a href="#cb16-15"></a>}</span>
 <span id="cb16-16"><a href="#cb16-16"></a></span>
 <span id="cb16-17"><a href="#cb16-17"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/00_base.R">/templates/00_base</a></p>
+</div>
 </section>
 <section id="connecting-the-dots-1" class="slide level2">
 <h2>Connecting the dots</h2>
-<p>An output is eager: it will update as soon as the input changes.</p>
-<p>This eagerness is handy: you don’t need to worry about updating the output when the input changes.</p>
+<p>An output is <strong>eager</strong>: it will update as soon as the input changes.</p>
+<p><br></p>
+<p>This <strong>eagerness</strong> is handy: you don’t need to worry about updating the output when the input changes.</p>
+<p><br></p>
 <p>But what if you want to trigger the calculation only when you want?</p>
 </section>
 <section id="connecting-the-dots-2" class="slide level2">
 <h2>Connecting the dots</h2>
-<p>You could use an <code>actionButton</code> as an <strong>event</strong> that triggers the calculation.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(shiny)</span>
+<p>You could use an <code>actionButton</code> as an <strong>event</strong>:</p>
+<div class="sourceCode" id="cb17" data-code-line-numbers="8-9,15-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">numericInput</span>(<span class="at">inputId =</span> <span class="st">"number"</span>, </span>
@@ -712,12 +728,15 @@ Veerle van Leemput
 <span id="cb17-18"><a href="#cb17-18"></a>}</span>
 <span id="cb17-19"><a href="#cb17-19"></a></span>
 <span id="cb17-20"><a href="#cb17-20"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/01_start.R">/templates/01_start</a></p>
+</div>
 </section>
 <section id="observers" class="slide level2">
 <h2>Observers</h2>
-<p>So far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.</p>
+<p>So far, we used render* function to take care of our output. It’s all happening inside the app.</p>
 <p><br></p>
-<p>But sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.</p>
+<p>But sometimes, we want to reach <strong>outside the app</strong>: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.</p>
 <p><br></p>
 <p>We need <strong>observers</strong> for that!</p>
 </section>
@@ -785,21 +804,21 @@ Veerle van Leemput
 </section>
 <section id="what-about-reactives" class="slide level2">
 <h2>What about reactives?</h2>
-<p>Outputs and observers <strong>do</strong> something.</p>
+<p>Outputs and observers <strong>do</strong> something: update the HTML, print something, call an API, you name it.</p>
 <p><br></p>
 <p>If we want to <strong>create</strong> something, we need <strong>reactives</strong>.</p>
 </section>
 <section id="what-about-reactives-1" class="slide level2">
 <h2>What about reactives?</h2>
-<p>Reactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app.</p>
+<p><strong>Reactives</strong> are functions that <strong>return a value</strong>. You can assign them to an object and you can refer to reactives elsewhere in your app.</p>
 <p><br></p>
-<p>You can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want.</p>
+<p>You can see them as a backpack 🎒: they carry a value around and you can open it whenever you want.</p>
 </section>
 <section id="what-about-reactives-2" class="slide level2">
 <h2>What about reactives?</h2>
-<p>When you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.</p>
+<p>When you go hiking, you pick a backpack that fits your needs. There are <strong>different types</strong> of backpacks that are fit <strong>to carry different things</strong>.</p>
 <p><br></p>
-<p>That’s similar with a reactive. They can carry and do different things:</p>
+<p>That’s similar with a reactive. They carry different things:</p>
 <ul>
 <li><strong>reactive()</strong>: takes an expression</li>
 <li><strong>reactiveVal()</strong>: takes a single value</li>
@@ -853,9 +872,9 @@ Veerle van Leemput
 <h2>And reactive values?</h2>
 <p><strong>reactive values</strong> are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.</p>
 <p><br></p>
-<p>You make a reactive value by calling <code>reactiveVal()</code> and you can update it by calling it with a new value.</p>
+<p>You make a reactive value with <code>reactiveVal()</code> and you can update it by calling it with a new value.</p>
 <p><br></p>
-<p>You can make reactive values by calling <code>reactiveValues()</code> and you can update them by assigning a new value to them.</p>
+<p>You can make reactive values with <code>reactiveValues()</code> and you can update them by assigning a new value to them.</p>
 </section>
 <section id="and-reactive-values-1" class="slide level2">
 <h2>And reactive values?</h2>
@@ -956,7 +975,7 @@ Veerle van Leemput
 <section>
 <section id="all-about-the-looks" class="title-slide slide level1 center">
 <h1>All about the looks 💅</h1>
-<p>Only our app doesn’t have any yet… 😢</p>
+
 </section>
 <section id="quickly-leveling-up-your-ui" class="slide level2">
 <h2>Quickly leveling up your UI</h2>
@@ -968,7 +987,7 @@ Veerle van Leemput
 </section>
 <section id="working-with-bslib" class="slide level2">
 <h2>Working with {bslib}</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(shiny)</span>
+<div class="sourceCode" id="cb23" data-code-line-numbers="2,4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="fu">library</span>(bslib)</span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
 <span id="cb23-4"><a href="#cb23-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_navbar</span>(</span>
@@ -1062,7 +1081,7 @@ Veerle van Leemput
 <h2>Steps</h2>
 <ol type="1">
 <li>Head over to <a href="https://github.com/hypebright/shinyconf2024-shiny101">github.com/hypebright/shinyconf2024-shiny101</a></li>
-<li>Clone the repository to your computer</li>
+<li>Fork the repository to your computer</li>
 <li>Open <strong>/templates/02_bslib.R</strong></li>
 <li>Follow along!</li>
 </ol>
@@ -1071,12 +1090,12 @@ Veerle van Leemput
 </section></section>
 <section id="break" class="title-slide slide level1 center">
 <h1>Break ☕️</h1>
-
+<p>See you in <a href="https://www.bigtimer.net/?minutes=10&amp;repeat=false">10 minutes</a></p>
 </section>
 
 <section>
 <section id="shiny-modules" class="title-slide slide level1 center">
-<h1>Shiny modules</h1>
+<h1>Shiny modules ⚙️</h1>
 
 </section>
 <section id="what-are-modules" class="slide level2">
@@ -1113,7 +1132,7 @@ Veerle van Leemput
 <p>A module has two parts, and is basically a mini-app:</p>
 <p><br></p>
 <ol type="1">
-<li><p><strong>The module UI</strong>, which generates the UI</p></li>
+<li><p><strong>The module UI</strong>, which generates the HTML and runs code inside the <code>ui()</code> function</p></li>
 <li><p><strong>The module server</strong>, which runs code inside the <code>server()</code> function</p></li>
 </ol>
 </section>

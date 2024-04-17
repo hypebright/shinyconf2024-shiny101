@@ -14,15 +14,17 @@ highlight-style: "nord"
 
 # Welcome 👋 
 
+# Getting to know each other ✨ 
+
 ## Program
 
 - **19:30 - 20:00** Introduction to Shiny
 - **20:00 - 20:30** Hands-on: Building a Shiny App Together
 - **20:30 - 20:40** Break ☕️
 - **20:40 - 21:00** Introduction to Shiny modules
-- **21:00 - 21:30** Hands-on: Implementing Shiny modules
-- **21:30 - 21:45** Sharing and feedback
-- **21:45 - 22:00** Recap and Questions
+- **21:00 - 21:40** Hands-on: Implementing Shiny modules
+- **21:40 - 21:55** Sharing, Feedback + Questions
+- **21:55 - 22:00** Recap
 
 ## Learning objectives
 
@@ -177,23 +179,23 @@ actionButton(inputId = "button",
              label = "Click me")
 ```
 
-## The server part
+## Updating the UI
 
 When the app runs, every user gets served the same HTML from the ui.
 
-When the user interacts with the UI, we want that HTML to react to the user.
+When the user interacts with the UI, we want that HTML to **react** to the user.
 
 The server logic uses **reactive programming**: when an input changes, all related outputs react and are updated automatically.
 
 That is possible because these outputs are  **reactive outputs**.
 
-## The server part
+## Updating the UI
 
 Shiny has several functions that turn R objects into reactive outputs for your ui: the *Output family
 
 Each function creates a specific type of output, for example:
 
-| Function | Output type |
+| UI Function | Output type |
 |----------|-------------|
 | textOutput() | text |
 | tableOutput() | table |
@@ -201,7 +203,7 @@ Each function creates a specific type of output, for example:
 | uiOutput() | raw HTML |
 : {.table .table-striped .table-hover}
 
-## The server part
+## Updating the UI
 
 Every output element needs a single argument: `outputId`- which is a simple string that needs to be **unique**.
 
@@ -209,15 +211,15 @@ Every output element needs a single argument: `outputId`- which is a simple stri
 textOutput(outputId = "text")
 ```
 
-This `textOutput `tells Shiny where to display the object
+This `textOutput `tells Shiny where to display the object. It's a **placeholder** for what's to come.
 
 <br>
 
-Next step: tell Shiny how to build the object
+Next step: tell Shiny how to build the object!
 
 ## The server part
 
-The server function builds an object named **output** and this object will contain all the code needed to display the R objects in your app
+The server function builds an object named **output** and this object will contain all the code needed to display the R objects in the ui
 
 This output object is **list-like**
 
@@ -231,7 +233,7 @@ output$text
 
 Each entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:
 
-| Function | Output type | Render function |
+| UI Function | Output type | Render function |
 |----------|-------------|-----------------|
 | textOutput() | text | renderText() |
 | tableOutput() | table | renderTable() |
@@ -241,7 +243,12 @@ Each entry in the output list should contain a render* function. You must use re
 
 ## The server part
 
-```{.r code-line-numbers="2-3"}
+```{.r code-line-numbers="3,7-8"}
+
+ui <- fluidPage(
+  textOutput(outputId = "text")
+)
+
 server <- function(input, output, session) {
   output$text <- renderText({
   })
@@ -254,7 +261,9 @@ This works the same with inputs!
 
 <br>
 
-The server can access an object named `input` that will contain the value of all the objects defined in the ui
+The server can access an object named `input` that will contain the value of all the input objects defined in the ui
+
+<br>
 
 This object is **list-like**, just like the output object. Each input value has its own entry in this list:
 
@@ -286,19 +295,27 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+:::footer
+[/templates/00_base](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/00_base.R)
+:::
+
 ## Connecting the dots
 
-An output is eager: it will update as soon as the input changes.
+An output is **eager**: it will update as soon as the input changes.
 
-This eagerness is handy: you don't need to worry about updating the output when the input changes.
+<br>
+
+This **eagerness** is handy: you don't need to worry about updating the output when the input changes.
+
+<br>
 
 But what if you want to trigger the calculation only when you want?
 
 ## Connecting the dots
 
-You could use an `actionButton` as an **event** that triggers the calculation.
+You could use an `actionButton` as an **event**:
 
-```{.r}
+```{.r code-line-numbers="8-9,15-17"}
 library(shiny)
 
 ui <- fluidPage(
@@ -322,13 +339,17 @@ shinyApp(ui, server)
 
 ```
 
+:::footer
+[/templates/01_start](https://github.com/hypebright/shinyconf2024-shiny101/blob/main/templates/01_start.R)
+:::
+
 ## Observers
 
-So far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.
+So far, we used render* function to take care of our output. It’s all happening inside the app.
 
 <br>
 
-But sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.
+But sometimes, we want to reach **outside the app**: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.
 
 <br>
 
@@ -409,7 +430,7 @@ shinyApp(ui, server)
 
 ## What about reactives?
 
-Outputs and observers **do** something.
+Outputs and observers **do** something: update the HTML, print something, call an API, you name it.
 
 <br>
 
@@ -417,19 +438,19 @@ If we want to **create** something, we need **reactives**.
 
 ## What about reactives?
 
-Reactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app. 
+**Reactives** are functions that **return a value**. You can assign them to an object and you can refer to reactives elsewhere in your app. 
 
 <br>
 
-You can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want.
+You can see them as a backpack 🎒: they carry a value around and you can open it whenever you want.
 
 ## What about reactives?
 
-When you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.
+When you go hiking, you pick a backpack that fits your needs. There are **different types** of backpacks that are fit **to carry different things**.
 
 <br>
 
-That's similar with a reactive. They can carry and do different things:
+That's similar with a reactive. They carry different things:
 
 - **reactive()**: takes an expression
 - **reactiveVal()**: takes a single value
@@ -491,11 +512,11 @@ More technical: when the dependencies of a reactive change, it doesn't re-execut
 
 <br>
 
-You make a reactive value by calling `reactiveVal()` and you can update it by calling it with a new value.
+You make a reactive value with `reactiveVal()` and you can update it by calling it with a new value.
 
 <br>
 
-You can make reactive values by calling `reactiveValues()` and you can update them by assigning a new value to them.
+You can make reactive values with `reactiveValues()` and you can update them by assigning a new value to them.
 
 ## And reactive values?
 
@@ -607,9 +628,6 @@ We're going to see these in action a little bit later.
 
 # All about the looks 💅
 
-Only our app doesn't have any yet... 😢
-
-
 ## Quickly leveling up your UI
 
 - There are many ways to make your app look instantly better
@@ -618,7 +636,7 @@ Only our app doesn't have any yet... 😢
 
 ## Working with {bslib}
 
-```{.r}
+```{.r code-line-numbers="2,4-7"}
 library(shiny)
 library(bslib)
 
@@ -713,7 +731,7 @@ What's next?
 ## Steps
 
 1. Head over to [github.com/hypebright/shinyconf2024-shiny101](https://github.com/hypebright/shinyconf2024-shiny101)
-2. Clone the repository to your computer
+2. Fork the repository to your computer
 3. Open **/templates/02_bslib.R**
 4. Follow along!
 
@@ -723,7 +741,9 @@ Need help? David and me are here to help you out! 🚀
 
 # Break ☕️
 
-# Shiny modules 
+See you in [10 minutes](https://www.bigtimer.net/?minutes=10&repeat=false)
+
+# Shiny modules ⚙️
 
 ## What are modules?
 
@@ -768,7 +788,7 @@ A module has two parts, and is basically a mini-app:
 
 <br>
 
-1. **The module UI**, which generates the UI
+1. **The module UI**, which generates the HTML and runs code inside the `ui()` function
 
 2. **The module server**, which runs code inside the `server()` function
 

@@ -4,7 +4,7 @@
     "href": "shiny101-modular-app-blueprint.html#program",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Program",
-    "text": "Program\n\n19:30 - 20:00 Introduction to Shiny\n20:00 - 20:30 Hands-on: Building a Shiny App Together\n20:30 - 20:40 Break ☕️\n20:40 - 21:00 Introduction to Shiny modules\n21:00 - 21:30 Hands-on: Implementing Shiny modules\n21:30 - 21:45 Sharing and feedback\n21:45 - 22:00 Recap and Questions"
+    "text": "Program\n\n19:30 - 20:00 Introduction to Shiny\n20:00 - 20:30 Hands-on: Building a Shiny App Together\n20:30 - 20:40 Break ☕️\n20:40 - 21:00 Introduction to Shiny modules\n21:00 - 21:40 Hands-on: Implementing Shiny modules\n21:40 - 21:55 Sharing, Feedback + Questions\n21:55 - 22:00 Recap"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#learning-objectives",
@@ -84,81 +84,81 @@
     "text": "The ui part\nFor example:\nnumericInput(inputId = \"number\", \n             label = \"Enter a number\", \n             value = 0)\n\nactionButton(inputId = \"button\", \n             label = \"Click me\")"
   },
   {
+    "objectID": "shiny101-modular-app-blueprint.html#updating-the-ui",
+    "href": "shiny101-modular-app-blueprint.html#updating-the-ui",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Updating the UI",
+    "text": "Updating the UI\nWhen the app runs, every user gets served the same HTML from the ui.\nWhen the user interacts with the UI, we want that HTML to react to the user.\nThe server logic uses reactive programming: when an input changes, all related outputs react and are updated automatically.\nThat is possible because these outputs are reactive outputs."
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#updating-the-ui-1",
+    "href": "shiny101-modular-app-blueprint.html#updating-the-ui-1",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Updating the UI",
+    "text": "Updating the UI\nShiny has several functions that turn R objects into reactive outputs for your ui: the *Output family\nEach function creates a specific type of output, for example:\n\n\n\n\nUI Function\nOutput type\n\n\n\n\ntextOutput()\ntext\n\n\ntableOutput()\ntable\n\n\nplotOutput()\nplot\n\n\nuiOutput()\nraw HTML"
+  },
+  {
+    "objectID": "shiny101-modular-app-blueprint.html#updating-the-ui-2",
+    "href": "shiny101-modular-app-blueprint.html#updating-the-ui-2",
+    "title": "Shiny 101: The Modular App Blueprint",
+    "section": "Updating the UI",
+    "text": "Updating the UI\nEvery output element needs a single argument: outputId- which is a simple string that needs to be unique.\ntextOutput(outputId = \"text\")\nThis textOutputtells Shiny where to display the object. It’s a placeholder for what’s to come.\n\nNext step: tell Shiny how to build the object!"
+  },
+  {
     "objectID": "shiny101-modular-app-blueprint.html#the-server-part",
     "href": "shiny101-modular-app-blueprint.html#the-server-part",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "The server part",
-    "text": "The server part\nWhen the app runs, every user gets served the same HTML from the ui.\nWhen the user interacts with the UI, we want that HTML to react to the user.\nThe server logic uses reactive programming: when an input changes, all related outputs react and are updated automatically.\nThat is possible because these outputs are reactive outputs."
+    "text": "The server part\nThe server function builds an object named output and this object will contain all the code needed to display the R objects in the ui\nThis output object is list-like\nEach R object that you want to display has its own entry in this list, therefore the name of every output in your ui needs to match a definition in the server\noutput$text"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#the-server-part-1",
     "href": "shiny101-modular-app-blueprint.html#the-server-part-1",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "The server part",
-    "text": "The server part\nShiny has several functions that turn R objects into reactive outputs for your ui: the *Output family\nEach function creates a specific type of output, for example:\n\n\n\n\nFunction\nOutput type\n\n\n\n\ntextOutput()\ntext\n\n\ntableOutput()\ntable\n\n\nplotOutput()\nplot\n\n\nuiOutput()\nraw HTML"
+    "text": "The server part\nEach entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:\n\n\n\n\nUI Function\nOutput type\nRender function\n\n\n\n\ntextOutput()\ntext\nrenderText()\n\n\ntableOutput()\ntable\nrenderTable()\n\n\nplotOutput()\nplot\nrenderPlot()\n\n\nuiOutput()\nraw HTML\nrenderUI()"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#the-server-part-2",
     "href": "shiny101-modular-app-blueprint.html#the-server-part-2",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "The server part",
-    "text": "The server part\nEvery output element needs a single argument: outputId- which is a simple string that needs to be unique.\ntextOutput(outputId = \"text\")\nThis textOutputtells Shiny where to display the object\n\nNext step: tell Shiny how to build the object"
-  },
-  {
-    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-3",
-    "href": "shiny101-modular-app-blueprint.html#the-server-part-3",
-    "title": "Shiny 101: The Modular App Blueprint",
-    "section": "The server part",
-    "text": "The server part\nThe server function builds an object named output and this object will contain all the code needed to display the R objects in your app\nThis output object is list-like\nEach R object that you want to display has its own entry in this list, therefore the name of every output in your ui needs to match a definition in the server\noutput$text"
-  },
-  {
-    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-4",
-    "href": "shiny101-modular-app-blueprint.html#the-server-part-4",
-    "title": "Shiny 101: The Modular App Blueprint",
-    "section": "The server part",
-    "text": "The server part\nEach entry in the output list should contain a render* function. You must use render* functions that match the *Output functions:\n\n\n\n\nFunction\nOutput type\nRender function\n\n\n\n\ntextOutput()\ntext\nrenderText()\n\n\ntableOutput()\ntable\nrenderTable()\n\n\nplotOutput()\nplot\nrenderPlot()\n\n\nuiOutput()\nraw HTML\nrenderUI()"
-  },
-  {
-    "objectID": "shiny101-modular-app-blueprint.html#the-server-part-5",
-    "href": "shiny101-modular-app-blueprint.html#the-server-part-5",
-    "title": "Shiny 101: The Modular App Blueprint",
-    "section": "The server part",
-    "text": "The server part\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n  })\n}"
+    "text": "The server part\n\nui &lt;- fluidPage(\n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n  })\n}"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#using-inputs",
     "href": "shiny101-modular-app-blueprint.html#using-inputs",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Using inputs",
-    "text": "Using inputs\nThis works the same with inputs!\n\nThe server can access an object named input that will contain the value of all the objects defined in the ui\nThis object is list-like, just like the output object. Each input value has its own entry in this list:\ninput$number"
+    "text": "Using inputs\nThis works the same with inputs!\n\nThe server can access an object named input that will contain the value of all the input objects defined in the ui\n\nThis object is list-like, just like the output object. Each input value has its own entry in this list:\ninput$number"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots",
     "href": "shiny101-modular-app-blueprint.html#connecting-the-dots",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Connecting the dots",
-    "text": "Connecting the dots\nIf we combine the input and output objects, we can create a simple app that displays the square of a number 👏.\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  })\n}\n\nshinyApp(ui, server)"
+    "text": "Connecting the dots\nIf we combine the input and output objects, we can create a simple app that displays the square of a number 👏.\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  })\n}\n\nshinyApp(ui, server)\n\n/templates/00_base"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots-1",
     "href": "shiny101-modular-app-blueprint.html#connecting-the-dots-1",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Connecting the dots",
-    "text": "Connecting the dots\nAn output is eager: it will update as soon as the input changes.\nThis eagerness is handy: you don’t need to worry about updating the output when the input changes.\nBut what if you want to trigger the calculation only when you want?"
+    "text": "Connecting the dots\nAn output is eager: it will update as soon as the input changes.\n\nThis eagerness is handy: you don’t need to worry about updating the output when the input changes.\n\nBut what if you want to trigger the calculation only when you want?"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#connecting-the-dots-2",
     "href": "shiny101-modular-app-blueprint.html#connecting-the-dots-2",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Connecting the dots",
-    "text": "Connecting the dots\nYou could use an actionButton as an event that triggers the calculation.\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)"
+    "text": "Connecting the dots\nYou could use an actionButton as an event:\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  numericInput(inputId = \"number\", \n               label = \"Enter a number\", \n               value = 0),\n               \n  actionButton(inputId = \"button\", \n               label = \"Click me\"),\n               \n  textOutput(outputId = \"text\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$text &lt;- renderText({\n    input$number^2\n  }) |&gt; bindEvent(input$button)\n}\n\nshinyApp(ui, server)\n\n/templates/01_start"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#observers",
     "href": "shiny101-modular-app-blueprint.html#observers",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Observers",
-    "text": "Observers\nSo far, we used render* functions and reactives to take care of our output. It’s all happening inside the app.\n\nBut sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.\n\nWe need observers for that!"
+    "text": "Observers\nSo far, we used render* function to take care of our output. It’s all happening inside the app.\n\nBut sometimes, we want to reach outside the app: call an API, send data to a database, send debugging messages. We want to call a function for its side-effects.\n\nWe need observers for that!"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#observers-1",
@@ -186,21 +186,21 @@
     "href": "shiny101-modular-app-blueprint.html#what-about-reactives",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "What about reactives?",
-    "text": "What about reactives?\nOutputs and observers do something.\n\nIf we want to create something, we need reactives."
+    "text": "What about reactives?\nOutputs and observers do something: update the HTML, print something, call an API, you name it.\n\nIf we want to create something, we need reactives."
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-1",
     "href": "shiny101-modular-app-blueprint.html#what-about-reactives-1",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "What about reactives?",
-    "text": "What about reactives?\nReactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app.\n\nYou can see them as a backpack 🎒: they carry a value around and you can ask them for it whenever you want."
+    "text": "What about reactives?\nReactives are functions that return a value. You can assign them to an object and you can refer to reactives elsewhere in your app.\n\nYou can see them as a backpack 🎒: they carry a value around and you can open it whenever you want."
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-2",
     "href": "shiny101-modular-app-blueprint.html#what-about-reactives-2",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "What about reactives?",
-    "text": "What about reactives?\nWhen you go hiking, you choose a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.\n\nThat’s similar with a reactive. They can carry and do different things:\n\nreactive(): takes an expression\nreactiveVal(): takes a single value\nreactiveValues(): takes a list of values"
+    "text": "What about reactives?\nWhen you go hiking, you pick a backpack that fits your needs. There are different types of backpacks that are fit to carry different things.\n\nThat’s similar with a reactive. They carry different things:\n\nreactive(): takes an expression\nreactiveVal(): takes a single value\nreactiveValues(): takes a list of values"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#what-about-reactives-3",
@@ -228,7 +228,7 @@
     "href": "shiny101-modular-app-blueprint.html#and-reactive-values",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "And reactive values?",
-    "text": "And reactive values?\nreactive values are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.\n\nYou make a reactive value by calling reactiveVal() and you can update it by calling it with a new value.\n\nYou can make reactive values by calling reactiveValues() and you can update them by assigning a new value to them."
+    "text": "And reactive values?\nreactive values are simpler backpacks. They carry one or more value(s) that you can unpack, but also update.\n\nYou make a reactive value with reactiveVal() and you can update it by calling it with a new value.\n\nYou can make reactive values with reactiveValues() and you can update them by assigning a new value to them."
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#and-reactive-values-1",
@@ -298,7 +298,7 @@
     "href": "shiny101-modular-app-blueprint.html#steps",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "Steps",
-    "text": "Steps\n\nHead over to github.com/hypebright/shinyconf2024-shiny101\nClone the repository to your computer\nOpen /templates/02_bslib.R\nFollow along!\n\n\nNeed help? David and me are here to help you out! 🚀"
+    "text": "Steps\n\nHead over to github.com/hypebright/shinyconf2024-shiny101\nFork the repository to your computer\nOpen /templates/02_bslib.R\nFollow along!\n\n\nNeed help? David and me are here to help you out! 🚀"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#what-are-modules",
@@ -326,7 +326,7 @@
     "href": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like",
     "title": "Shiny 101: The Modular App Blueprint",
     "section": "What does a module look like?",
-    "text": "What does a module look like?\nA module has two parts, and is basically a mini-app:\n\n\nThe module UI, which generates the UI\nThe module server, which runs code inside the server() function"
+    "text": "What does a module look like?\nA module has two parts, and is basically a mini-app:\n\n\nThe module UI, which generates the HTML and runs code inside the ui() function\nThe module server, which runs code inside the server() function"
   },
   {
     "objectID": "shiny101-modular-app-blueprint.html#what-does-a-module-look-like-1",
