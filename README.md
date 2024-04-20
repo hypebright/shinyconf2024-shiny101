@@ -20,7 +20,7 @@ Want to keep learning? We are launching two online courses that are all about Sh
 
 Some of my favourite resources to learn more about Shiny:
 
-- [Outstanding Interfaces with Shiny](https://unleash-shiny.rinterface.com) by David Granjon
+- [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com) by David Granjon
 - [Mastering Shiny](https://mastering-shiny.org)
 - [Engineering Production-Grade Shiny Applications](https://engineering-shiny.org)
 - [Official Shiny Documentation](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html)
